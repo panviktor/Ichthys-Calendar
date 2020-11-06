@@ -52,11 +52,9 @@
 		7767E7252555541600870197 /* Ichthys Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				7767E7262555541600870197 /* Ichthys_CalendarApp.swift */,
-				7767E7282555541600870197 /* ContentView.swift */,
-				7767E72A2555541800870197 /* Assets.xcassets */,
-				7767E72F2555541800870197 /* Info.plist */,
-				7767E72C2555541800870197 /* Preview Content */,
+				7767E738255556F000870197 /* App */,
+				7767E739255556F900870197 /* View */,
+				7767E737255556BE00870197 /* Resources */,
 			);
 			path = "Ichthys Calendar";
 			sourceTree = "<group>";
@@ -67,6 +65,32 @@
 				7767E72D2555541800870197 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7767E737255556BE00870197 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7767E72A2555541800870197 /* Assets.xcassets */,
+				7767E72C2555541800870197 /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7767E738255556F000870197 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7767E7262555541600870197 /* Ichthys_CalendarApp.swift */,
+				7767E72F2555541800870197 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7767E739255556F900870197 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7767E7282555541600870197 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +295,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Ichthys Calendar/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar/App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -280,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SwiftViktor.Ichthys-Calendar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -293,8 +317,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Ichthys Calendar/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar/App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SwiftViktor.Ichthys-Calendar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
