@@ -13,10 +13,7 @@ struct Saint: Codable {
     let name: String?
     let title: String?
     let titleGenitive: String?
-    let newmartyr, priority: Int?
-    let uri, url, linkToService, worldlyActivities: String?
-    let number, group, splitGroup, combinedGroup: Int?
-    let hideIdeograph: Int?
+    let uri, url: String?
     let typeOfSanctity: String?
     let churchTitle, churchTitleGenitive: String?
     let typeOfSanctityPlural: String?
@@ -26,20 +23,13 @@ struct Saint: Codable {
     let saintPrefix: String??
     let suffix: String?
     let dateid: Int?
-    let ideograph, bold, isCathedral, saintsDatesStatsFltr: Int?
     let imgs: [SaintImg]?
     
     enum CodingKeys: String, CodingKey {
         case id
         case name, title
         case titleGenitive = "title_genitive"
-        case newmartyr, priority, uri, url
-        case linkToService = "link_to_service"
-        case worldlyActivities = "worldly_activities"
-        case number, group
-        case splitGroup = "split_group"
-        case combinedGroup = "combined_group"
-        case hideIdeograph = "hide_ideograph"
+        case uri, url
         case typeOfSanctity = "type_of_sanctity"
         case churchTitle = "church_title"
         case churchTitleGenitive = "church_title_genitive"
@@ -52,11 +42,14 @@ struct Saint: Codable {
         case saintPrefix = "prefix"
         case suffix
         case dateid = "date_id"
-        case ideograph, bold
-        case isCathedral = "is_cathedral"
-        case saintsDatesStatsFltr = "saints_dates_stats_fltr"
         case imgs
     }
 }
 
 extension Saint: Identifiable {}
+
+extension Saint: Equatable {
+    static func == (lhs: Saint, rhs: Saint) -> Bool {
+        lhs.id == rhs.id
+    }
+}

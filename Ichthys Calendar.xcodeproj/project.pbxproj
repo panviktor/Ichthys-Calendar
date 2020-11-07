@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7767E7272555541600870197 /* Ichthys_CalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7767E7262555541600870197 /* Ichthys_CalendarApp.swift */; };
-		7767E7292555541600870197 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7767E7282555541600870197 /* ContentView.swift */; };
+		7767E7292555541600870197 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7767E7282555541600870197 /* CalendarView.swift */; };
 		7767E72B2555541800870197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7767E72A2555541800870197 /* Assets.xcassets */; };
 		7767E72E2555541800870197 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7767E72D2555541800870197 /* Preview Assets.xcassets */; };
 		7788CB3725557231000D70D8 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7788CB3625557231000D70D8 /* DayData.swift */; };
@@ -24,12 +24,18 @@
 		77F06FF52556703C00BFDD3A /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FF42556703C00BFDD3A /* APISession.swift */; };
 		77F06FFA2556A69F00BFDD3A /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FF92556A69F00BFDD3A /* CalendarService.swift */; };
 		77F06FFD2556A8B500BFDD3A /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FFC2556A8B500BFDD3A /* CalendarViewModel.swift */; };
+		77F070012556F28900BFDD3A /* DayIconImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070002556F28900BFDD3A /* DayIconImages.swift */; };
+		77F0700B25570A9500BFDD3A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0700A25570A9500BFDD3A /* ImageLoader.swift */; };
+		77F0701125570B2500BFDD3A /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701025570B2500BFDD3A /* AsyncImage.swift */; };
+		77F070142557234B00BFDD3A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070132557234B00BFDD3A /* ImageCache.swift */; };
+		77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070162557260300BFDD3A /* TemporaryImageCache.swift */; };
+		77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701925572C0300BFDD3A /* ImageCacheKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7767E7232555541600870197 /* Ichthys Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ichthys Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7767E7262555541600870197 /* Ichthys_CalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ichthys_CalendarApp.swift; sourceTree = "<group>"; };
-		7767E7282555541600870197 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7767E7282555541600870197 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		7767E72A2555541800870197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7767E72D2555541800870197 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7767E72F2555541800870197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +52,12 @@
 		77F06FF42556703C00BFDD3A /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
 		77F06FF92556A69F00BFDD3A /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		77F06FFC2556A8B500BFDD3A /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		77F070002556F28900BFDD3A /* DayIconImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIconImages.swift; sourceTree = "<group>"; };
+		77F0700A25570A9500BFDD3A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		77F0701025570B2500BFDD3A /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		77F070132557234B00BFDD3A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		77F070162557260300BFDD3A /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
+		77F0701925572C0300BFDD3A /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +129,8 @@
 		7767E739255556F900870197 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7767E7282555541600870197 /* ContentView.swift */,
+				7767E7282555541600870197 /* CalendarView.swift */,
+				77F070002556F28900BFDD3A /* DayIconImages.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,8 +189,21 @@
 				77F06FF92556A69F00BFDD3A /* CalendarService.swift */,
 				779B7BD02555D45D009C6835 /* Extension+URLRequest.swift */,
 				77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */,
+				77F0700D25570A9900BFDD3A /* ImageAPI */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		77F0700D25570A9900BFDD3A /* ImageAPI */ = {
+			isa = PBXGroup;
+			children = (
+				77F0701025570B2500BFDD3A /* AsyncImage.swift */,
+				77F0700A25570A9500BFDD3A /* ImageLoader.swift */,
+				77F0701925572C0300BFDD3A /* ImageCacheKey.swift */,
+				77F070132557234B00BFDD3A /* ImageCache.swift */,
+				77F070162557260300BFDD3A /* TemporaryImageCache.swift */,
+			);
+			path = ImageAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,11 +282,17 @@
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
 				77F06FFA2556A69F00BFDD3A /* CalendarService.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
+				77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */,
 				779B7BBF2555CC16009C6835 /* SaintImg.swift in Sources */,
 				77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */,
+				77F070142557234B00BFDD3A /* ImageCache.swift in Sources */,
 				77F06FFD2556A8B500BFDD3A /* CalendarViewModel.swift in Sources */,
+				77F0701125570B2500BFDD3A /* AsyncImage.swift in Sources */,
 				77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */,
-				7767E7292555541600870197 /* ContentView.swift in Sources */,
+				77F0700B25570A9500BFDD3A /* ImageLoader.swift in Sources */,
+				77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */,
+				77F070012556F28900BFDD3A /* DayIconImages.swift in Sources */,
+				7767E7292555541600870197 /* CalendarView.swift in Sources */,
 				779B7BD82555D4BE009C6835 /* CalendarEndpoint.swift in Sources */,
 				7767E7272555541600870197 /* Ichthys_CalendarApp.swift in Sources */,
 				77F06FF52556703C00BFDD3A /* APISession.swift in Sources */,

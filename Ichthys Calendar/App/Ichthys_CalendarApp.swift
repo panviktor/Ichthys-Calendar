@@ -11,7 +11,7 @@ import SwiftUI
 struct Ichthys_CalendarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CalendarView()
         }
     }
 }

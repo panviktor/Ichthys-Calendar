@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CalendarView: View {
     @ObservedObject var viewModel = CalendarViewModel()
     
     var body: some View {
@@ -15,14 +15,18 @@ struct ContentView: View {
             NavigationView {
                 List(self.viewModel.saints) { saint in
                     HStack {
+                        DayIconImages()
                         Text("\(saint.title!)")
                         Text("\(saint.name!)")
+                            .onAppear {
+                                print(saint.imgs!)
+                            }
                     }
                 }
                 .navigationBarTitle("Ichthys Calendar")
             }
             .tabItem {
-                Image(systemName: "person.3")
+                Image(systemName: "calendar")
                 Text("Today")
             }
         }
@@ -34,6 +38,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CalendarView()
     }
 }
+

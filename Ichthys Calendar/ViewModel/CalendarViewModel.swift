@@ -29,7 +29,7 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-//                self.holidays = dayData.holidays
+               self.holidays = dayData.holidays
                self.saints = dayData.saints
             }
         cancellables.insert(cancellable)
