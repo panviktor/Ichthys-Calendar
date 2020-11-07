@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = CalendarViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            NavigationView {
+                List(self.viewModel.saints) { saint in
+                    HStack {
+                        Text("\(saint.title!)")
+                        Text("\(saint.name!)")
+                    }
+                }
+                .navigationBarTitle("Ichthys Calendar")
+            }
+            .tabItem {
+                Image(systemName: "person.3")
+                Text("Today")
+            }
+        }
+        .onAppear {
+            self.viewModel.getCalandarDayData()
+        }
     }
 }
 
