@@ -18,4 +18,9 @@ extension CalendarService {
         return apiSession.request(with: CalendarEndpoint.currentDate)
             .eraseToAnyPublisher()
     }
+    
+    func getCalandarDayData(from certainDay: String) -> AnyPublisher<DayData, APIError> {
+        return apiSession.request(with: CalendarEndpoint.certainDay(date: certainDay))
+            .eraseToAnyPublisher()
+    }
 }

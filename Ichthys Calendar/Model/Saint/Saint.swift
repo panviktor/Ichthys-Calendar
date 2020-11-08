@@ -9,11 +9,10 @@ import Foundation
 
 // MARK: - Saint
 struct Saint: Codable {
-    let id: Int
+    let id: Int?
     let name: String?
     let title: String?
     let titleGenitive: String?
-    let uri, url: String?
     let typeOfSanctity: String?
     let churchTitle, churchTitleGenitive: String?
     let typeOfSanctityPlural: String?
@@ -29,7 +28,6 @@ struct Saint: Codable {
         case id
         case name, title
         case titleGenitive = "title_genitive"
-        case uri, url
         case typeOfSanctity = "type_of_sanctity"
         case churchTitle = "church_title"
         case churchTitleGenitive = "church_title_genitive"
@@ -43,6 +41,16 @@ struct Saint: Codable {
         case suffix
         case dateid = "date_id"
         case imgs
+    }
+    
+    var validImgUrl: URL {
+        guard let img = imgs?.first else {
+            return URL(string: "https://cdn.azbyka.ru/")!
+        }
+        guard let url = URL(string: "https://cdn.azbyka.ru/days/assets/img/saints/\(img.saintid ?? 00)/\(img.image ?? "")") else {
+            return URL(string: "https://cdn.azbyka.ru/")!
+        }
+        return url
     }
 }
 

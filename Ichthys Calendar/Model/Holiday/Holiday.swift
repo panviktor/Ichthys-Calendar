@@ -9,15 +9,17 @@ import Foundation
 
 // MARK: - Holiday
 struct Holiday: Codable {
-    let id: Int
+    let item: String?
+    let id: Int?
     let title: String?
     let imgs: [HolidayImg]?
     
     var unwrappedTitle: String {
-       return title ?? "Title not found"
+        return title ?? "Title not found"
     }
     
     enum CodingKeys: String, CodingKey {
+        case item
         case id
         case title
         case imgs

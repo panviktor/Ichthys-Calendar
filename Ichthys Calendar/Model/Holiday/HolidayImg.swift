@@ -9,10 +9,10 @@ import Foundation
 
 // MARK: - HolidayImg
 struct HolidayImg: Codable {
-    let id, holidayid: Int
-    let image: String
-    let priority: Int
-    let imgDescription, preview: String
+    let id, holidayid: Int?
+    let image: String?
+    let priority: Int?
+    let imgDescription, preview: String?
     
     enum CodingKeys: String, CodingKey {
         case id

@@ -9,12 +9,12 @@ import Foundation
 
 // MARK: - SaintImg
 struct SaintImg: Codable {
-    let id: Int
-    let title, image: String
-    let saintid, priority: Int
-    let imgDescription: String
-    let onlyMain: Int
-    let preview: String
+    let id: Int?
+    let title, image: String?
+    let saintid, priority: Int?
+    let imgDescription: String?
+    let onlyMain: Int?
+    let preview: String?
     
     enum CodingKeys: String, CodingKey {
         case id, title, image
@@ -25,3 +25,5 @@ struct SaintImg: Codable {
         case preview
     }
 }
+
+extension SaintImg: Identifiable {}

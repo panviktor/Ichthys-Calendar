@@ -15,15 +15,31 @@ struct CalendarView: View {
             NavigationView {
                 List(self.viewModel.saints) { saint in
                     HStack {
-                        DayIconImages()
+                        //FIXME: Fix model!
+                        DayIconImages(url: saint.validImgUrl)
                         Text("\(saint.title!)")
-                        Text("\(saint.name!)")
-                            .onAppear {
-                                print(saint.imgs!)
-                            }
                     }
                 }
                 .navigationBarTitle("Ichthys Calendar")
+            //  .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        VStack {
+                            Button("Today") {
+                                self.viewModel.getTodayData()
+                            }
+                        }
+                    }
+                }
+                .navigationBarItems(leading: HStack {
+                    Button("Previous day") {
+                        self.viewModel.getPreviousDayData()
+                    }
+                }, trailing: HStack {
+                    Button("Next Day") {
+                        self.viewModel.getNextDayData()
+                    }
+                })
             }
             .tabItem {
                 Image(systemName: "calendar")
