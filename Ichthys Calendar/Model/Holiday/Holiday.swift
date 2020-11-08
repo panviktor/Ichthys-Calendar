@@ -12,6 +12,7 @@ struct Holiday: Codable {
     let item: String?
     let id: Int?
     let title: String?
+    let metaDescription: String?
     let imgs: [HolidayImg]?
     
     var unwrappedTitle: String {
@@ -22,6 +23,7 @@ struct Holiday: Codable {
         case item
         case id
         case title
+        case metaDescription = "meta_description"
         case imgs
     }
 }

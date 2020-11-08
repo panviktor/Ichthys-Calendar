@@ -41,7 +41,11 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-           //     self.holidays = dayData.holidays
+                
+                
+                //FIXME: Fix model!
+                
+                self.holidays = dayData.holidays!
                 self.saints = dayData.saints
             }
         cancellables.insert(cancellable)
@@ -80,7 +84,11 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-//                self.holidays = dayData.holidays
+                
+                //FIXME: Fix model!
+                
+                
+                self.holidays = dayData.holidays!
                 self.saints = dayData.saints
             }
         cancellables.insert(cancellable)

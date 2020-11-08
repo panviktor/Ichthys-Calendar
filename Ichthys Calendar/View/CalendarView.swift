@@ -13,15 +13,25 @@ struct CalendarView: View {
     var body: some View {
         TabView {
             NavigationView {
-                List(self.viewModel.saints) { saint in
-                    HStack {
-                        //FIXME: Fix model!
-                        DayIconImages(url: saint.validImgUrl)
-                        Text("\(saint.title!)")
+                
+                VStack {
+                    List(self.viewModel.saints) { saint in
+                        HStack {
+                            //FIXME: Fix model!
+                            DayIconImages(url: saint.validImgUrl)
+                            Text("\(saint.title!)")
+                        }
+                    }
+                    List(self.viewModel.holidays) { holiday in
+                        HStack {
+                            Text("\(holiday.title!)")
+                            Text("\(holiday.metaDescription ?? "")").font(.subheadline)
+                        }
                     }
                 }
+                
                 .navigationBarTitle("Ichthys Calendar")
-            //  .navigationBarTitleDisplayMode(.inline)
+                //  .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         VStack {
