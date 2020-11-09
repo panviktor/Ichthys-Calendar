@@ -11,12 +11,14 @@ import Foundation
 struct DayData: Codable {
     let saints: [Saint]
     let holidays: [Holiday]?
+    let fasting: Fasting?
     
-    private enum CodingKeys: String, CodingKey { case saints, holidays }
+    private enum CodingKeys: String, CodingKey { case saints, holidays, fasting }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         saints = try container.decode([Saint].self, forKey: .saints)
+        fasting = try container.decode(Fasting.self, forKey: .fasting)
         do {
             holidays = try container.decode([Holiday].self, forKey: .holidays)
         } catch DecodingError.typeMismatch {

@@ -23,4 +23,10 @@ extension CalendarService {
         return apiSession.request(with: CalendarEndpoint.certainDay(date: certainDay))
             .eraseToAnyPublisher()
     }
+    
+    //FIXME: Split Protocol
+    func getCertainSaintData(from certainSaint: Int) -> AnyPublisher<Saint, APIError> {
+        return apiSession.request(with: CalendarEndpoint.certainSaint(id: certainSaint))
+            .eraseToAnyPublisher()
+    }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImageCacheKey: EnvironmentKey {
-    static let defaultValue: ImageCache = TemporaryImageCache()
+  static let defaultValue: ImageCache = TemporaryImageCache()
 }
 
 extension EnvironmentValues {

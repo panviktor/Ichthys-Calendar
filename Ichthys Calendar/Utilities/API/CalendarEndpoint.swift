@@ -11,8 +11,8 @@ enum CalendarEndpoint {
     case currentDate
     case currentHoliday
     case certainDay(date: String)
-    case certainHoliday(id: Holiday.ID)
-    case certainSaint(id: Saint.ID)
+    case certainHoliday(id: Int)
+    case certainSaint(id: Int)
     case searchIсon(id: Int)
 }
 

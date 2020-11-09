@@ -13,21 +13,37 @@ struct CalendarView: View {
     var body: some View {
         TabView {
             NavigationView {
-                
                 VStack {
-                    List(self.viewModel.saints) { saint in
-                        HStack {
-                            //FIXME: Fix model!
-                            DayIconImages(url: saint.validImgUrl)
-                            Text("\(saint.title!)")
-                        }
+                    if viewModel.fasting.fasting {
+                        Text("Not Fasting!")
+                    } else {
+                        Text("Fasting")
                     }
-                    List(self.viewModel.holidays) { holiday in
-                        HStack {
-                            Text("\(holiday.title!)")
-                            Text("\(holiday.metaDescription ?? "")").font(.subheadline)
-                        }
+                    
+                    
+                    List {
+                        ForEach(self.viewModel.saints) { saint in
+                            NavigationLink(
+                                destination: DetailSaintView(id: saint.unwrappedID),
+                                label: {
+                                    Group {
+                                        DayIconImages(url: saint.validImgUrl)
+                                        Text("\(saint.title!)")
+                                    }
+                                }
+                            )}
                     }
+                    
+                    
+                    //                    List(self.viewModel.holidays) { holiday in
+                    //                        HStack {
+                    //                            Text("\(holiday.title!)")
+                    //                            Text("\(holiday.metaDescription ?? "")").font(.subheadline)
+                    //                        }
+                    //                    }
+                    
+                    
+                    
                 }
                 
                 .navigationBarTitle("Ichthys Calendar")
@@ -41,6 +57,7 @@ struct CalendarView: View {
                         }
                     }
                 }
+                
                 .navigationBarItems(leading: HStack {
                     Button("Previous day") {
                         self.viewModel.getPreviousDayData()
@@ -50,6 +67,7 @@ struct CalendarView: View {
                         self.viewModel.getNextDayData()
                     }
                 })
+                
             }
             .tabItem {
                 Image(systemName: "calendar")

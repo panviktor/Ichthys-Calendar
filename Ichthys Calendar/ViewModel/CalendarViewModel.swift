@@ -26,6 +26,7 @@ class CalendarViewModel: ObservableObject, CalendarService {
     
     @Published var holidays = [Holiday]()
     @Published var saints = [Saint]()
+    @Published var fasting: Fasting = Fasting()
     
     init(apiSession: APIService = APISession()) {
         self.apiSession = apiSession
@@ -41,12 +42,11 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-                
-                
                 //FIXME: Fix model!
+                self.saints = dayData.saints
                 
                 self.holidays = dayData.holidays!
-                self.saints = dayData.saints
+                self.fasting = dayData.fasting!
             }
         cancellables.insert(cancellable)
     }
@@ -84,12 +84,10 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-                
                 //FIXME: Fix model!
-                
-                
-                self.holidays = dayData.holidays!
                 self.saints = dayData.saints
+                self.holidays = dayData.holidays!
+                self.fasting = dayData.fasting!
             }
         cancellables.insert(cancellable)
     }

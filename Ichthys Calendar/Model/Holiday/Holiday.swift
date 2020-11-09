@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Holiday
 struct Holiday: Codable {
     let item: String?
-    let id: Int?
+    let id: Int
     let title: String?
     let metaDescription: String?
     let imgs: [HolidayImg]?
