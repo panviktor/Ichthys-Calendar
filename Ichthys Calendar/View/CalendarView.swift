@@ -29,7 +29,11 @@ struct CalendarView: View {
                                 destination: DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: saint.unwrappedID)),
                                 label: {
                                     Group {
-                                        DayIconImages(url: saint.validImgUrl)
+                                        if let url = saint.validImgUrl {
+                                            DayIconImages(url: url)
+                                        } else {
+                                            MainImagePlaceholder()
+                                        }
                                         Text("\(saint.title!)")
                                     }
                                 }

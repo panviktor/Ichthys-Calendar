@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct DayIconImages: View {
-    let url: URL 
+    let url: URL
     
     var body: some View {
-            AsyncImage(
-                url: url,
-                placeholder: { Image(systemName: "person.crop.square")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                },
-                image: { (Image(uiImage: $0).resizable())
-                })
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        AsyncImage(
+            url: url,
+            placeholder: { MainImagePlaceholder() },
+            image: { (Image(uiImage: $0).resizable()) })
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 

@@ -8,19 +8,35 @@
 import Combine
 import SwiftUI
 
-class DetailSaintViewModel: ObservableObject, CalendarService {
+class DetailSaintViewModel: ObservableObject, SaintService {
     var apiSession: APIService
     private var cancellables = Set<AnyCancellable>()
-    private var saint: Saint!
     private let saintID: Int
+    private var saint: Saint! {
+        didSet {
+            print("fetch saint")
+            self.name = saint.unwrappedName
+            self.fullName = saint.unwrappedTitle
+            self.description = saint.unwrappedDescription
+            self.metaDescription = saint.unwrappedMetaDescription
+            self.imageURL = saint.validImgUrl
+        }
+    }
     
+    //MARK: - VM
+    @Published private(set) var name = ""
+    @Published private(set) var fullName = ""
+    @Published private(set) var description = ""
+    @Published private(set) var metaDescription = ""
+    @Published private(set) var imageURL: URL?
+
     init(apiSession: APIService = APISession(), saintID: Int ) {
         self.apiSession = apiSession
         self.saintID = saintID
     }
     
-    func getCertainSaint(id: Int) {
-        let cancellable = self.getCertainSaintData(from: id)
+    func getCertainSaint() {
+        let cancellable = self.getCertainSaintData(from: saintID)
             .sink(receiveCompletion: { result in
                 switch result {
                 case .failure(let error):

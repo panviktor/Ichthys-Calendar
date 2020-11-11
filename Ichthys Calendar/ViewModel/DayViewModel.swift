@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class DayViewModel: ObservableObject, CalendarService {
+class DayViewModel: ObservableObject, CalendarDayService {
     //MARK: - Main Service
     var apiSession: APIService
     var cancellables = Set<AnyCancellable>()
@@ -24,6 +24,7 @@ class DayViewModel: ObservableObject, CalendarService {
     }
     var currentDateInt = 0
     
+    //MARK: - VM 
     @Published private(set) var holidays = [Holiday]()
     @Published private(set) var saints = [Saint]()
     @Published private(set) var fasting = Fasting()

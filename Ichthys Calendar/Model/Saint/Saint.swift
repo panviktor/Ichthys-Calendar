@@ -117,12 +117,14 @@ struct Saint: Codable {
         case imgs
     }
     
-    var validImgUrl: URL {
+    var validImgUrl: URL? {
         guard let img = imgs?.first else {
-            return URL(string: "https://cdn.azbyka.ru/")!
+            return nil
         }
-        guard let url = URL(string: "https://cdn.azbyka.ru/days/assets/img/saints/\(img.saintid ?? 00)/\(img.image ?? "")") else {
-            return URL(string: "https://cdn.azbyka.ru/")!
+        
+        guard let imgSaintID = img.saintid, let imgImage = img.image,
+              let url = URL(string: "https://cdn.azbyka.ru/days/assets/img/saints/\(imgSaintID)/\(imgImage)") else {
+            return nil
         }
         return url
     }
