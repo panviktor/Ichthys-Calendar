@@ -44,22 +44,40 @@ struct DetailSaintView: View {
     }
     
     
+    var headerView: some View {
+        ZStack {
+            if let imageURL = detailSaintViewModel.imageURL {
+                BigIconImage(url: imageURL)
+            } else {
+                ZStack {
+                    BigIconImagePlaceholder()
+                    Text("No Image")
+                        .font(.system(size: 45, weight: .bold, design: .default))
+                }
+            }
+        }
+    }
+    
+    
     var body: some View {
         ScrollView {
             GeometryReader { geometry in
                 ZStack {
-                    if let imageURL = detailSaintViewModel.imageURL {
-                        BigIconImage(url: imageURL)
+                    if geometry.frame(in: .global).minY <= 0 {
+                        headerView
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .offset(y: geometry.frame(in: .global).minY/9)
+                        .clipped()
                     } else {
-                        ZStack {
-                            BigIconImagePlaceholder()
-                            Text("No Image")
-                                .font(.system(size: 45, weight: .bold, design: .default))
-                        }
+                        headerView
+                        .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
+                        .clipped()
+                        .offset(y: -geometry.frame(in: .global).minY)
                     }
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height)
             }
+            .frame(height: 350)
+            
 
             VStack(alignment: .leading, spacing: 16) {
                 VStack(alignment: .leading, spacing: 5) {
@@ -71,12 +89,11 @@ struct DetailSaintView: View {
                     Text("History").font(.title)
                     Text(detailSaintViewModel.metaDescription).font(.subheadline)
                         .lineLimit(nil)
-
+                    
                 }.padding(.horizontal)
             }
         }
         .navigationBarTitle(Text(detailSaintViewModel.name), displayMode: .inline)
-        .edgesIgnoringSafeArea(.bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton, trailing: saveButton)
         .onAppear {
