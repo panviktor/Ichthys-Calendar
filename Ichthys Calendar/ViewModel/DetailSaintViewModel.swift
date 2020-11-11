@@ -9,18 +9,14 @@ import Combine
 import SwiftUI
 
 class DetailSaintViewModel: ObservableObject, CalendarService {
-    struct UnwrapedDetailSaint {
-        
-    }
-    
-    
-    private var cancellables = Set<AnyCancellable>()
     var apiSession: APIService
+    private var cancellables = Set<AnyCancellable>()
+    private var saint: Saint!
+    private let saintID: Int
     
-    @Published var saint: Saint?
-    
-    init(apiSession: APIService = APISession(), saintID: Int? = nil ) {
+    init(apiSession: APIService = APISession(), saintID: Int ) {
         self.apiSession = apiSession
+        self.saintID = saintID
     }
     
     func getCertainSaint(id: Int) {
@@ -38,7 +34,3 @@ class DetailSaintViewModel: ObservableObject, CalendarService {
         cancellables.insert(cancellable)
     }
 }
-
-
-
-

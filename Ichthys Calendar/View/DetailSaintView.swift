@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct DetailSaintView: View {
-    let id: Int
-    @ObservedObject var viewModel = DetailSaintViewModel()
+    @ObservedObject var detailSaintViewModel: DetailSaintViewModel
+    
+    
+    init(detailSaintViewModel: DetailSaintViewModel) {
+        self.detailSaintViewModel = detailSaintViewModel
+    }
     
     var body: some View {
         VStack {
             ScrollView {
-                Text("ID: \(viewModel.saint?.unwrappedDescription ?? "")")
+                Text("")
             }
-        }
-        .onAppear {
-            viewModel.getCertainSaint(id: id)
         }
     }
 }
 
 struct DetailSaintView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailSaintView(id: 1)
+        DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: 1))
     }
 }

@@ -10,8 +10,8 @@ import Foundation
 // MARK: - DayData
 struct DayData: Codable {
     let saints: [Saint]
-    let holidays: [Holiday]?
-    let fasting: Fasting?
+    let holidays: [Holiday]
+    let fasting: Fasting
     
     private enum CodingKeys: String, CodingKey { case saints, holidays, fasting }
     

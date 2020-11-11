@@ -1,5 +1,5 @@
 //
-//  CalendarViewModel.swift
+//  DayViewModel.swift
 //  Ichthys Calendar
 //
 //  Created by Viktor on 07.11.2020.
@@ -8,25 +8,25 @@
 import Combine
 import SwiftUI
 
-class CalendarViewModel: ObservableObject, CalendarService {
+class DayViewModel: ObservableObject, CalendarService {
+    //MARK: - Main Service
     var apiSession: APIService
     var cancellables = Set<AnyCancellable>()
     
-    var date = Date()
-    var currentDateInt = 0
-    
+    //MARK: - Date
+    let date = Date()
+    let theCalendar = Calendar.current
+    var dayComponent = DateComponents()
     var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter
     }
+    var currentDateInt = 0
     
-    var dayComponent = DateComponents()
-    let theCalendar = Calendar.current
-    
-    @Published var holidays = [Holiday]()
-    @Published var saints = [Saint]()
-    @Published var fasting: Fasting = Fasting()
+    @Published private(set) var holidays = [Holiday]()
+    @Published private(set) var saints = [Saint]()
+    @Published private(set) var fasting = Fasting()
     
     init(apiSession: APIService = APISession()) {
         self.apiSession = apiSession
@@ -42,11 +42,9 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-                //FIXME: Fix model!
                 self.saints = dayData.saints
-                
-                self.holidays = dayData.holidays!
-                self.fasting = dayData.fasting!
+                self.holidays = dayData.holidays
+                self.fasting = dayData.fasting
             }
         cancellables.insert(cancellable)
     }
@@ -84,10 +82,9 @@ class CalendarViewModel: ObservableObject, CalendarService {
                     break
                 }
             }) { dayData in
-                //FIXME: Fix model!
                 self.saints = dayData.saints
-                self.holidays = dayData.holidays!
-                self.fasting = dayData.fasting!
+                self.holidays = dayData.holidays
+                self.fasting = dayData.fasting
             }
         cancellables.insert(cancellable)
     }

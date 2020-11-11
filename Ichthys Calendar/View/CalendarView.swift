@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @ObservedObject var viewModel = CalendarViewModel()
+    @ObservedObject var dayViewModel: DayViewModel
+    
+    init(dayViewModel: DayViewModel) {
+        self.dayViewModel = dayViewModel
+    }
     
     var body: some View {
         TabView {
             NavigationView {
                 VStack {
-                    if viewModel.fasting.fasting {
+                    if dayViewModel.fasting.fasting {
                         Text("Not Fasting!")
                     } else {
                         Text("Fasting")
                     }
-                    
-                    
                     List {
-                        ForEach(self.viewModel.saints) { saint in
+                        ForEach(self.dayViewModel.saints) { saint in
                             NavigationLink(
-                                destination: DetailSaintView(id: saint.unwrappedID),
+                                destination: DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: saint.unwrappedID)),
                                 label: {
                                     Group {
                                         DayIconImages(url: saint.validImgUrl)
@@ -33,41 +35,32 @@ struct CalendarView: View {
                                 }
                             )}
                     }
-                    
-                    
                     //                    List(self.viewModel.holidays) { holiday in
                     //                        HStack {
                     //                            Text("\(holiday.title!)")
                     //                            Text("\(holiday.metaDescription ?? "")").font(.subheadline)
                     //                        }
                     //                    }
-                    
-                    
-                    
                 }
-                
                 .navigationBarTitle("Ichthys Calendar")
-                //  .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         VStack {
                             Button("Today") {
-                                self.viewModel.getTodayData()
+                                self.dayViewModel.getTodayData()
                             }
                         }
                     }
                 }
-                
                 .navigationBarItems(leading: HStack {
                     Button("Previous day") {
-                        self.viewModel.getPreviousDayData()
+                        self.dayViewModel.getPreviousDayData()
                     }
                 }, trailing: HStack {
                     Button("Next Day") {
-                        self.viewModel.getNextDayData()
+                        self.dayViewModel.getNextDayData()
                     }
                 })
-                
             }
             .tabItem {
                 Image(systemName: "calendar")
@@ -75,14 +68,14 @@ struct CalendarView: View {
             }
         }
         .onAppear {
-            self.viewModel.getCalandarDayData()
+            self.dayViewModel.getCalandarDayData()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        CalendarView(dayViewModel: DayViewModel())
     }
 }
 
