@@ -1,27 +1,25 @@
 //
-//  DayIconImages.swift
+//  BigIconImage.swift
 //  Ichthys Calendar
 //
-//  Created by Viktor on 07.11.2020.
+//  Created by Viktor on 11.11.2020.
 //
 
 import SwiftUI
 
-struct DayIconImages: View {
+struct BigIconImage: View {
     let gradient = LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)), Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
-    let url: URL
     
+    let url: URL
+
     var body: some View {
         ZStack {
             gradient
             AsyncImage(
                 url: url,
-                placeholder: { MainImagePlaceholder() },
+                placeholder: { BigIconImagePlaceholder() },
                 image: { (Image(uiImage: $0).resizable()) })
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-                .clipped()
-                .cornerRadius(5)
                 .padding(5)
                 .background(RoundedRectangle(cornerRadius: 5)
                                 .stroke(gradient, lineWidth: 5)
@@ -30,9 +28,10 @@ struct DayIconImages: View {
     }
 }
 
-struct DayIconImages_Previews: PreviewProvider {
+struct BigIconImage_Previews: PreviewProvider {
     static var previews: some View {
-        DayIconImages(url: URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!)
+        BigIconImage(url: URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!)
     }
 }
+
 

@@ -28,12 +28,15 @@ struct CalendarView: View {
                             NavigationLink(
                                 destination: DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: saint.unwrappedID)),
                                 label: {
-                                    Group {
-                                        if let url = saint.validImgUrl {
-                                            DayIconImages(url: url)
-                                        } else {
-                                            MainImagePlaceholder()
+                                    HStack {
+                                        Group {
+                                            if let url = saint.validImgUrl {
+                                                DayIconImages(url: url)
+                                            } else {
+                                                MainImagePlaceholder()
+                                            }
                                         }
+                                        .frame(width: 100, height: 100)
                                         Text("\(saint.title!)")
                                     }
                                 }
