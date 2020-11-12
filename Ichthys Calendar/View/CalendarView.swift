@@ -68,6 +68,7 @@ struct CalendarView: View {
                         self.dayViewModel.getNextDayData()
                     }
                 })
+                WelcomeView()
             }
             .tabItem {
                 Image(systemName: "calendar")

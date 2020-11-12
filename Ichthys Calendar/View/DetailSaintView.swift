@@ -21,9 +21,13 @@ struct DetailSaintView: View {
         self.presentationMode.wrappedValue.dismiss()
     }) {
         HStack {
-            Image(systemName: "arrow.backward.square.fill")
-                .aspectRatio(contentMode: .fit)
-            Text("Go back")
+            if sizeClass == .compact {
+                Image(systemName: "arrow.backward.square.fill")
+                    .aspectRatio(contentMode: .fit)
+                Text("Go back")
+            } else {
+                EmptyView()
+            }
         }}
     }
     
@@ -43,7 +47,6 @@ struct DetailSaintView: View {
     .animation(.spring())
     }
     
-    
     var headerView: some View {
         ZStack {
             if let imageURL = detailSaintViewModel.imageURL {
@@ -58,44 +61,56 @@ struct DetailSaintView: View {
         }
     }
     
-    
     var body: some View {
         ScrollView {
             GeometryReader { geometry in
                 ZStack {
-                    if geometry.frame(in: .global).minY <= 0 {
+                    if geometry.frame(in: .local).minY <= 0 {
                         headerView
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .offset(y: geometry.frame(in: .global).minY/9)
-                        .clipped()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .offset(y: geometry.frame(in: .local).minY / 9)
+                            .clipped()
                     } else {
                         headerView
-                        .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
-                        .clipped()
-                        .offset(y: -geometry.frame(in: .global).minY)
+                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .local).minY)
+                            .clipped()
+                            .offset(y: -geometry.frame(in: .global).minY)
                     }
                 }
             }
             .frame(height: 350)
             
+            Group {
+                Text(detailSaintViewModel.fullName).font(.title2)
+                DisclosureGroup(
+                    content: {
+                        Text(detailSaintViewModel.metaDescription)
+                            .font(.body)
+                            .fontWeight(.light)
+                    },
+                    label: {
+                        Text("Short History")
+                            .font(.body)
+                            .bold()
+                    })
+                DisclosureGroup(
+                    content: {
+                        Text(detailSaintViewModel.description)
+                            .font(.body)
+                            .fontWeight(.light)
+                    },
+                    label: {
+                        Text("History")
+                            .font(.body)
+                            .bold()
+                    })
 
-            VStack(alignment: .leading, spacing: 16) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(detailSaintViewModel.fullName).font(.title2)
-                    Text("Description").font(.title)
-                    Text(detailSaintViewModel.description).font(.subheadline)
-                        .lineLimit(nil)
-                    
-                    Text("History").font(.title)
-                    Text(detailSaintViewModel.metaDescription).font(.subheadline)
-                        .lineLimit(nil)
-                    
-                }.padding(.horizontal)
             }
+            .padding(.horizontal)
         }
-        .navigationBarTitle(Text(detailSaintViewModel.name), displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton, trailing: saveButton)
+        .navigationBarTitle(Text(detailSaintViewModel.name), displayMode: .inline)
+        .navigationBarItems(leading:backButton, trailing: saveButton)
         .onAppear {
             detailSaintViewModel.getCertainSaint()
         }
