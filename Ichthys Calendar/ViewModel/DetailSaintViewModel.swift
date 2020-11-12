@@ -20,6 +20,8 @@ class DetailSaintViewModel: ObservableObject, SaintService {
             self.description = saint.unwrappedDescription
             self.metaDescription = saint.unwrappedMetaDescription
             self.imageURL = saint.validImgUrl
+            self.prayers = saint.unwrappedPrayers
+            self.canons = saint.unwrappedCanons
         }
     }
     
@@ -29,6 +31,8 @@ class DetailSaintViewModel: ObservableObject, SaintService {
     @Published private(set) var description = ""
     @Published private(set) var metaDescription = ""
     @Published private(set) var imageURL: URL?
+    @Published private(set) var prayers = [Prayer]()
+    @Published private(set) var canons = [Canon]()
 
     init(apiSession: APIService = APISession(), saintID: Int ) {
         self.apiSession = apiSession

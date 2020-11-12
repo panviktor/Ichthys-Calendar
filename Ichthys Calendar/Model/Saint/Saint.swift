@@ -58,7 +58,7 @@ struct Saint: Codable {
     var unwrappedTypeOfSanctityComplete: String {
         typeOfSanctityComplete ?? "Type Of Sanctity Complete"
     }
-        
+    
     let typeOfSanctityCompleteFemale: String?
     var unwrappedTypeOfSanctityCompleteFemale: String {
         typeOfSanctityCompleteFemale ?? "Type Of Sanctity Complete Female"
@@ -68,7 +68,7 @@ struct Saint: Codable {
     var unwrappedEnableChurchTitle: Int {
         enableChurchTitle ?? 0
     }
-        
+    
     let enableTypeOfSanctity: Int?
     var unwrappedEnableTypeOfSanctity: Int {
         enableTypeOfSanctity ?? 0
@@ -88,13 +88,23 @@ struct Saint: Codable {
     var unwrappedDescription: String {
         description?.html2String ?? "Description"
     }
-
+    
     let metaDescription: String?
     var unwrappedMetaDescription: String {
         metaDescription?.html2String ?? "Description"
     }
     
     let imgs: [SaintImg]?
+    
+    let prayers: [Prayer]?
+    var unwrappedPrayers: [Prayer] {
+        prayers ?? [Prayer]()
+    }
+    
+    let canons: [Canon]?
+    var unwrappedCanons: [Canon] {
+        canons ?? [Canon]()
+    }
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -115,6 +125,8 @@ struct Saint: Codable {
         case description
         case metaDescription = "meta_description"
         case imgs
+        case prayers = "taks"
+        case canons = "caa"
     }
     
     var validImgUrl: URL? {
