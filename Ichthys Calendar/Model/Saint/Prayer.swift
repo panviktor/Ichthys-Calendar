@@ -20,7 +20,7 @@ struct Prayer: Codable {
     
     let text: String?
     var unwrappedText: String {
-        text?.html2String ?? "Text"
+        text?.html2StringCustomREG ?? "Unwrapped Text"
     }
     
     let title: String?
@@ -28,17 +28,12 @@ struct Prayer: Codable {
         title ?? "Title"
     }
     
-    let voice: String?
-    let priority: Int?
-    let audioSource: String?
-    
     enum CodingKeys: String, CodingKey {
         case id
         case type
         case text
         case title
-        case voice
-        case priority
-        case audioSource = "audio_source"
     }
 }
+
+extension Prayer: Identifiable {}

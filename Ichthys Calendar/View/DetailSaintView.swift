@@ -104,9 +104,43 @@ struct DetailSaintView: View {
                             .font(.body)
                             .bold()
                     })
-
+                DisclosureGroup(
+                    content: {
+                        ForEach(self.detailSaintViewModel.canons) { canon in
+                            Text(canon.unwrappedTitle)
+                            Divider()
+                            Text(canon.unwrappedMetaDescription)
+                            Divider()
+                            Text(canon.unwrappedText)
+                            Divider()
+                        }
+                    },
+                    label: {
+                        Text("Canon")
+                            .font(.body)
+                            .bold()
+                    })
+                
+                
+                DisclosureGroup(
+                    content: {
+                        ForEach(self.detailSaintViewModel.prayers) { prayer in
+                            Group {
+                                Text(prayer.unwrappedType).bold()
+                                Divider()
+                                Text(prayer.unwrappedText)
+                                Divider()
+                            }
+                        }
+                    },
+                    label: {
+                        Text("Prayers")
+                            .font(.body)
+                            .bold()
+                    })
             }
             .padding(.horizontal)
+            
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle(Text(detailSaintViewModel.name), displayMode: .inline)

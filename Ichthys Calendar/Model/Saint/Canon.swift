@@ -18,7 +18,7 @@ struct Canon: Codable {
     
     let text: String?
     var unwrappedText: String {
-        text?.html2String ?? "Text"
+        text?.html2StringCustomREGLite ?? "Text"
     }
     
     let title: String?
@@ -27,15 +27,12 @@ struct Canon: Codable {
     }
     
     let titleShort: String?
-    let voice: String?
-    let file: String?
+
     
     let metaDescription: String?
     var unwrappedMetaDescription: String {
         metaDescription ?? "Title"
     }
-    
-    let redirecturl: String?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -44,9 +41,8 @@ struct Canon: Codable {
         case text
         case title
         case titleShort = "title_short"
-        case voice
-        case file
         case metaDescription = "meta_description"
-        case redirecturl = "redirect_url"
     }
 }
+
+extension Canon: Identifiable {}

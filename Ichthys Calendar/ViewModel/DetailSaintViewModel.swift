@@ -14,14 +14,11 @@ class DetailSaintViewModel: ObservableObject, SaintService {
     private let saintID: Int
     private var saint: Saint! {
         didSet {
-            print("fetch saint")
             self.name = saint.unwrappedName
             self.fullName = saint.unwrappedTitle
             self.description = saint.unwrappedDescription
             self.metaDescription = saint.unwrappedMetaDescription
             self.imageURL = saint.validImgUrl
-            self.prayers = saint.unwrappedPrayers
-            self.canons = saint.unwrappedCanons
         }
     }
     
@@ -33,8 +30,8 @@ class DetailSaintViewModel: ObservableObject, SaintService {
     @Published private(set) var imageURL: URL?
     @Published private(set) var prayers = [Prayer]()
     @Published private(set) var canons = [Canon]()
-
-    init(apiSession: APIService = APISession(), saintID: Int ) {
+    
+    init(apiSession: APIService = APISession(), saintID: Int) {
         self.apiSession = apiSession
         self.saintID = saintID
     }
@@ -50,6 +47,8 @@ class DetailSaintViewModel: ObservableObject, SaintService {
                 }
             }) { saint in
                 self.saint = saint
+                self.prayers = saint.unwrappedPrayers
+                self.canons = saint.unwrappedCanons
             }
         cancellables.insert(cancellable)
     }
