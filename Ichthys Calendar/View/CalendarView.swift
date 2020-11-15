@@ -10,14 +10,45 @@ import SwiftUI
 struct CalendarView: View {
     @ObservedObject var dayViewModel: DayViewModel
     
+    @State private var date = Date()
+    
     init(dayViewModel: DayViewModel) {
         self.dayViewModel = dayViewModel
+    }
+    
+    var previousDayButton : some View { Button(action: {
+        self.dayViewModel.getPreviousDayData()
+    }) {
+        HStack {
+            Image(systemName: "chevron.backward.2")
+                .animation(.easeInOut(duration: 0.5))
+        }}
+    .animation(.spring())
+    }
+    
+    var nextDayButton : some View { Button(action: {
+        self.dayViewModel.getNextDayData()
+    }) {
+        HStack {
+            Image(systemName: "chevron.forward.2")
+                .animation(.easeInOut(duration: 0.5))
+        }}
+    .animation(.spring())
+    }
+    
+    var todayButton : some View { Button(action: {
+        self.dayViewModel.getTodayData()
+    }) {
+        HStack {
+            Image(systemName: "calendar")
+        }}
     }
     
     var body: some View {
         TabView {
             NavigationView {
                 VStack {
+                    Text("Day is \(dayViewModel.selectedDay)")
                     if dayViewModel.fasting.fasting {
                         Text("Not Fasting!")
                     } else {
@@ -42,31 +73,27 @@ struct CalendarView: View {
                                 }
                             )}
                     }
-                    //                    List(self.viewModel.holidays) { holiday in
-                    //                        HStack {
-                    //                            Text("\(holiday.title!)")
-                    //                            Text("\(holiday.metaDescription ?? "")").font(.subheadline)
-                    //                        }
-                    //                    }
+//                    ScrollView(.horizontal) {
+//                        ForEach(self.dayViewModel.holidays) { holiday in
+//                            HStack {
+//                                Text("\(holiday.title!)")
+//                                Text("\(holiday.metaDescription ?? "")").font(.subheadline)
+//                            }
+//                        }
+//                    }
                 }
                 .navigationBarTitle("Ichthys Calendar")
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         VStack {
-                            Button("Today") {
-                                self.dayViewModel.getTodayData()
-                            }
+                            todayButton
                         }
                     }
                 }
                 .navigationBarItems(leading: HStack {
-                    Button("Previous day") {
-                        self.dayViewModel.getPreviousDayData()
-                    }
+                    previousDayButton
                 }, trailing: HStack {
-                    Button("Next Day") {
-                        self.dayViewModel.getNextDayData()
-                    }
+                    nextDayButton
                 })
                 WelcomeView()
             }

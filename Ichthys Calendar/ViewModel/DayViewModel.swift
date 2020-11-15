@@ -28,9 +28,11 @@ class DayViewModel: ObservableObject, CalendarDayService {
     @Published private(set) var holidays = [Holiday]()
     @Published private(set) var saints = [Saint]()
     @Published private(set) var fasting = Fasting()
+    @Published private(set) var selectedDay = ""
     
     init(apiSession: APIService = APISession()) {
         self.apiSession = apiSession
+        self.selectedDay = dateFormatter.string(from: date)
     }
     
     func getCalandarDayData()  {
@@ -55,7 +57,7 @@ class DayViewModel: ObservableObject, CalendarDayService {
         dayComponent.day = currentDateInt
         let nextDay = theCalendar.date(byAdding: dayComponent, to: date)
         let dateString = dateFormatter.string(from: nextDay!)
-        print(dateString)
+        selectedDay = dateString
         getCalandarDayData(from: dateString)
     }
     
@@ -64,7 +66,7 @@ class DayViewModel: ObservableObject, CalendarDayService {
         dayComponent.day = currentDateInt
         let previousDay = theCalendar.date(byAdding: dayComponent, to: date)
         let dateString = dateFormatter.string(from: previousDay!)
-        print(dateString)
+        selectedDay = dateString
         getCalandarDayData(from: dateString)
     }
     

@@ -84,17 +84,6 @@ struct DetailSaintView: View {
                 Text(detailSaintViewModel.fullName).font(.title2)
                 DisclosureGroup(
                     content: {
-                        Text(detailSaintViewModel.metaDescription)
-                            .font(.body)
-                            .fontWeight(.light)
-                    },
-                    label: {
-                        Text("Short History")
-                            .font(.body)
-                            .bold()
-                    })
-                DisclosureGroup(
-                    content: {
                         Text(detailSaintViewModel.description)
                             .font(.body)
                             .fontWeight(.light)
@@ -120,8 +109,6 @@ struct DetailSaintView: View {
                             .font(.body)
                             .bold()
                     })
-                
-                
                 DisclosureGroup(
                     content: {
                         ForEach(self.detailSaintViewModel.prayers) { prayer in
@@ -140,7 +127,6 @@ struct DetailSaintView: View {
                     })
             }
             .padding(.horizontal)
-            
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle(Text(detailSaintViewModel.name), displayMode: .inline)
