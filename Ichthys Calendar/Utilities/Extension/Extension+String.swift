@@ -42,7 +42,6 @@ extension String {
         }
         return newString
     }
-    
 }
 
 

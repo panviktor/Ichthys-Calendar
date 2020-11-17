@@ -13,66 +13,73 @@ class DayViewModel: ObservableObject, CalendarDayService {
     var apiSession: APIService
     var cancellables = Set<AnyCancellable>()
     
-    //MARK: - Date
-    let date = Date()
-    let theCalendar = Calendar.current
-    var dayComponent = DateComponents()
-    var dateFormatter: DateFormatter {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter
+    //MARK: - VM
+    let interval = Date.daysFromToday(-365 * 2) ... Date.daysFromToday(+365)
+    @Published var date = Date() {
+        didSet {
+            componentsFromDate(date: date)
+            getSelectedDayData(date: date)
+        }
     }
-    var currentDateInt = 0
     
-    //MARK: - VM 
     @Published private(set) var holidays = [Holiday]()
     @Published private(set) var saints = [Saint]()
     @Published private(set) var fasting = Fasting()
-    @Published private(set) var selectedDay = ""
+
     
+    //MARK: - Date
+    private var calendar = Calendar.current
+    private var year = 2020
+    private var month = 11
+    private var day = 2
+    
+
     init(apiSession: APIService = APISession()) {
         self.apiSession = apiSession
-        self.selectedDay = dateFormatter.string(from: date)
+        self.componentsFromDate(date: date)
     }
     
-    func getCalandarDayData()  {
-        let cancellable = self.getCalandarDayData()
-            .sink(receiveCompletion: { result in
-                switch result {
-                case .failure(let error):
-                    print("Handle error: \(error)")
-                case .finished:
-                    break
-                }
-            }) { dayData in
-                self.saints = dayData.saints
-                self.holidays = dayData.holidays
-                self.fasting = dayData.fasting
-            }
-        cancellables.insert(cancellable)
+
+    //MARK: - Main Public method
+    func getTodayData() {
+        date = Date()
+        getCalandarDayData(from: date.dayMonthYear)
     }
     
     func getNextDayData() {
-        currentDateInt += 1
-        dayComponent.day = currentDateInt
-        let nextDay = theCalendar.date(byAdding: dayComponent, to: date)
-        let dateString = dateFormatter.string(from: nextDay!)
-        selectedDay = dateString
-        getCalandarDayData(from: dateString)
+        let newDate = daysFromToday( +1)
+        componentsFromDate(date: newDate)
+        date = newDate
     }
     
     func getPreviousDayData() {
-        currentDateInt -= 1
-        dayComponent.day = currentDateInt
-        let previousDay = theCalendar.date(byAdding: dayComponent, to: date)
-        let dateString = dateFormatter.string(from: previousDay!)
-        selectedDay = dateString
-        getCalandarDayData(from: dateString)
+        let newDate = daysFromToday( -1)
+        componentsFromDate(date: newDate)
+        date = newDate
     }
     
-    func getTodayData() {
-        currentDateInt = 0
-        getCalandarDayData()
+    //MARK: - Main Private method
+    private func componentsFromDate(date: Date) {
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        year = components.year ?? 2020
+        month = components.month ?? 11
+        day = components.day ?? 2
+    }
+    
+    private func getSelectedDayData(date: Date) {
+        getCalandarDayData(from: date.dayMonthYear)
+    }
+    
+    private func daysFromToday(_ days: Int) -> Date {
+        dateFromComponents().addingTimeInterval(TimeInterval(60 * 60 * 24 * days))
+    }
+    
+    private func dateFromComponents() -> Date {
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        return calendar.date(from: components)!
     }
     
     private func getCalandarDayData(from certainDay: String) {

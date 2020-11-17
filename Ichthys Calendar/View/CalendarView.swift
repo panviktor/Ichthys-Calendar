@@ -9,46 +9,22 @@ import SwiftUI
 
 struct CalendarView: View {
     @ObservedObject var dayViewModel: DayViewModel
+   
     
-    @State private var date = Date()
+   
     
     init(dayViewModel: DayViewModel) {
         self.dayViewModel = dayViewModel
     }
     
-    var previousDayButton : some View { Button(action: {
-        self.dayViewModel.getPreviousDayData()
-    }) {
-        HStack {
-            Image(systemName: "chevron.backward.2")
-                .animation(.easeInOut(duration: 0.5))
-        }}
-    .animation(.spring())
-    }
-    
-    var nextDayButton : some View { Button(action: {
-        self.dayViewModel.getNextDayData()
-    }) {
-        HStack {
-            Image(systemName: "chevron.forward.2")
-                .animation(.easeInOut(duration: 0.5))
-        }}
-    .animation(.spring())
-    }
-    
-    var todayButton : some View { Button(action: {
-        self.dayViewModel.getTodayData()
-    }) {
-        HStack {
-            Image(systemName: "calendar")
-        }}
-    }
-    
     var body: some View {
         TabView {
             NavigationView {
-                VStack {
-                    Text("Day is \(dayViewModel.selectedDay)")
+                VStack{
+                    Group {
+                        DatePicker("date", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
+                    }
+                    
                     if dayViewModel.fasting.fasting {
                         Text("Not Fasting!")
                     } else {
@@ -82,7 +58,7 @@ struct CalendarView: View {
 //                        }
 //                    }
                 }
-                .navigationBarTitle("Ichthys Calendar")
+                .navigationBarTitle("Ichthys Calendar", displayMode: .inline)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         VStack {
@@ -103,14 +79,44 @@ struct CalendarView: View {
             }
         }
         .onAppear {
-            self.dayViewModel.getCalandarDayData()
+            self.dayViewModel.getTodayData()
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_PreviewsCalendarViewNew: PreviewProvider {
     static var previews: some View {
         CalendarView(dayViewModel: DayViewModel())
     }
 }
 
+//MARK: - Buttons
+extension CalendarView {
+    var previousDayButton : some View { Button(action: {
+        self.dayViewModel.getPreviousDayData()
+    }) {
+        HStack {
+            Image(systemName: "chevron.backward.2")
+                .animation(.easeInOut(duration: 0.5))
+        }}
+    .animation(.spring())
+    }
+    
+    var nextDayButton : some View { Button(action: {
+        self.dayViewModel.getNextDayData()
+    }) {
+        HStack {
+            Image(systemName: "chevron.forward.2")
+                .animation(.easeInOut(duration: 0.5))
+        }}
+    .animation(.spring())
+    }
+    
+    var todayButton : some View { Button(action: {
+        self.dayViewModel.getTodayData()
+    }) {
+        HStack {
+            Image(systemName: "calendar")
+        }}
+    }
+}
