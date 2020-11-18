@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalendarView: View {
     @ObservedObject var dayViewModel: DayViewModel
-    
+
     init(dayViewModel: DayViewModel) {
         self.dayViewModel = dayViewModel 
     }
