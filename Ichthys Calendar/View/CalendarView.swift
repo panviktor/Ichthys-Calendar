@@ -9,9 +9,6 @@ import SwiftUI
 
 struct CalendarView: View {
     @ObservedObject var dayViewModel: DayViewModel
-   
-    
-   
     
     init(dayViewModel: DayViewModel) {
         self.dayViewModel = dayViewModel
@@ -21,15 +18,9 @@ struct CalendarView: View {
         TabView {
             NavigationView {
                 VStack{
-                    Group {
-                        DatePicker("date", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
-                    }
-                    
-                    if dayViewModel.fasting.fasting {
-                        Text("Not Fasting!")
-                    } else {
-                        Text("Fasting")
-                    }
+                    DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
+                    Divider()
+                    HolidayView(holidays: dayViewModel.holidays)
                     List {
                         ForEach(self.dayViewModel.saints) { saint in
                             NavigationLink(
@@ -49,28 +40,8 @@ struct CalendarView: View {
                                 }
                             )}
                     }
-//                    ScrollView(.horizontal) {
-//                        ForEach(self.dayViewModel.holidays) { holiday in
-//                            HStack {
-//                                Text("\(holiday.title!)")
-//                                Text("\(holiday.metaDescription ?? "")").font(.subheadline)
-//                            }
-//                        }
-//                    }
                 }
                 .navigationBarTitle("Ichthys Calendar", displayMode: .inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        VStack {
-                            todayButton
-                        }
-                    }
-                }
-                .navigationBarItems(leading: HStack {
-                    previousDayButton
-                }, trailing: HStack {
-                    nextDayButton
-                })
                 WelcomeView()
             }
             .tabItem {

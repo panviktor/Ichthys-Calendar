@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-class DetailSaintViewModel: ObservableObject, SaintService {
+final class DetailSaintViewModel: ObservableObject, SaintService {
     var apiSession: APIService
     private var cancellables = Set<AnyCancellable>()
     private let saintID: Int
