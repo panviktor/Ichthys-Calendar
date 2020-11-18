@@ -11,37 +11,57 @@ struct CalendarView: View {
     @ObservedObject var dayViewModel: DayViewModel
     
     init(dayViewModel: DayViewModel) {
-        self.dayViewModel = dayViewModel
+        self.dayViewModel = dayViewModel 
     }
     
     var body: some View {
         TabView {
             NavigationView {
-                VStack{
-                    DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
-                    Divider()
-                    HolidayView(holidays: dayViewModel.holidays)
-                    List {
-                        ForEach(self.dayViewModel.saints) { saint in
-                            NavigationLink(
-                                destination: DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: saint.unwrappedID)),
-                                label: {
-                                    HStack {
-                                        Group {
-                                            if let url = saint.validImgUrl {
-                                                DayIconImages(url: url)
-                                            } else {
-                                                MainImagePlaceholder()
+                GeometryReader { geometry in
+                    Color.white
+                    VStack {
+                        ZStack {
+                            WaveShape()
+                                .fill(Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)).opacity(0.3))
+                        }
+                        .frame(width: geometry.size.width, height: 45)
+                        .edgesIgnoringSafeArea(.top)
+                        Spacer()
+                        
+                        VStack{
+                            DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
+                                .padding(.horizontal)
+                            Divider()
+                            HolidayView(holidays: dayViewModel.holidays)
+                            List {
+                                ForEach(self.dayViewModel.saints) { saint in
+                                    NavigationLink(
+                                        destination: DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: saint.unwrappedID)),
+                                        label: {
+                                            
+                                            
+                                            HStack {
+                                                Group {
+                                                    if let url = saint.validImgUrl {
+                                                        DayIconImages(url: url)
+                                                    } else {
+                                                        MainImagePlaceholder()
+                                                    }
+                                                }
+                                                .frame(width: 100, height: 100)
+                                                Text("\(saint.unwrappedTitle)")
                                             }
+                                            
+                                            
                                         }
-                                        .frame(width: 100, height: 100)
-                                        Text("\(saint.title!)")
-                                    }
-                                }
-                            )}
+                                    )}
+                            }
+                        }
+                        Spacer()
                     }
-                }
-                .navigationBarTitle("Ichthys Calendar", displayMode: .inline)
+                    
+                    .navigationBarTitle("Ichthys Calendar", displayMode: .inline)
+                }.navigationBarHidden(true)
                 WelcomeView()
             }
             .tabItem {
