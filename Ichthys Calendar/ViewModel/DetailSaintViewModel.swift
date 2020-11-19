@@ -45,7 +45,8 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
                 case .finished:
                     break
                 }
-            }) { saint in
+            }) { [weak self] saint in
+                guard let self = self else { return }
                 self.saint = saint
                 self.prayers = saint.unwrappedPrayers
                 self.canons = saint.unwrappedCanons

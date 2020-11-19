@@ -18,6 +18,9 @@
 		7767E7292555541600870197 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7767E7282555541600870197 /* CalendarView.swift */; };
 		7767E72B2555541800870197 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7767E72A2555541800870197 /* Assets.xcassets */; };
 		7767E72E2555541800870197 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7767E72D2555541800870197 /* Preview Assets.xcassets */; };
+		776B81B42566BD300073C47E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776B81B32566BD300073C47E /* Constant.swift */; };
+		776B81BB256705D60073C47E /* SavedSaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776B81BA256705D60073C47E /* SavedSaint.swift */; };
+		776B81BE256705DF0073C47E /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776B81BD256705DF0073C47E /* About.swift */; };
 		7774ACC3255C125000FE1252 /* SaintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC2255C125000FE1252 /* SaintService.swift */; };
 		7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */; };
 		7774ACC9255C56B100FE1252 /* BigIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC8255C56B100FE1252 /* BigIconImage.swift */; };
@@ -44,6 +47,8 @@
 		77F070142557234B00BFDD3A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070132557234B00BFDD3A /* ImageCache.swift */; };
 		77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070162557260300BFDD3A /* TemporaryImageCache.swift */; };
 		77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701925572C0300BFDD3A /* ImageCacheKey.swift */; };
+		77F94F2F2566BAD50015DA7A /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */; };
+		77F94F322566BC020015DA7A /* SaintRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F312566BC020015DA7A /* SaintRow.swift */; };
 		77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AB2559637B001AE985 /* Extension+String.swift */; };
 		77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AE2559638A001AE985 /* Extension+Data.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,9 @@
 		7767E72A2555541800870197 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7767E72D2555541800870197 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7767E72F2555541800870197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		776B81B32566BD300073C47E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		776B81BA256705D60073C47E /* SavedSaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSaint.swift; sourceTree = "<group>"; };
+		776B81BD256705DF0073C47E /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		7774ACC2255C125000FE1252 /* SaintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintService.swift; sourceTree = "<group>"; };
 		7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImagePlaceholder.swift; sourceTree = "<group>"; };
 		7774ACC8255C56B100FE1252 /* BigIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIconImage.swift; sourceTree = "<group>"; };
@@ -88,6 +96,8 @@
 		77F070132557234B00BFDD3A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		77F070162557260300BFDD3A /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
 		77F0701925572C0300BFDD3A /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
+		77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		77F94F312566BC020015DA7A /* SaintRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintRow.swift; sourceTree = "<group>"; };
 		77FC05AB2559637B001AE985 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		77FC05AE2559638A001AE985 /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +190,8 @@
 				7717BAA6255D426F002AD3A6 /* WelcomeView.swift */,
 				7767E7282555541600870197 /* CalendarView.swift */,
 				7766267125595B700009B6FA /* DetailSaintView.swift */,
+				776B81BA256705D60073C47E /* SavedSaint.swift */,
+				776B81BD256705DF0073C47E /* About.swift */,
 				7783F20925599F1600993068 /* SupportingView */,
 			);
 			path = View;
@@ -193,6 +205,7 @@
 				7774ACC8255C56B100FE1252 /* BigIconImage.swift */,
 				7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */,
 				773B351525650EFC00B0BFE1 /* HolidayView.swift */,
+				77F94F312566BC020015DA7A /* SaintRow.swift */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
 			);
 			path = SupportingView;
@@ -243,6 +256,7 @@
 			children = (
 				77FC05B1255963C0001AE985 /* Extension */,
 				77F06FED25566F7600BFDD3A /* API */,
+				776B81B32566BD300073C47E /* Constant.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -282,6 +296,7 @@
 				77FC05AE2559638A001AE985 /* Extension+Data.swift */,
 				77B5A4A62563E3BC00AEE081 /* Extension+Date.swift */,
 				773B3512256431A500B0BFE1 /* Extension+DateFormatter.swift */,
+				77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -364,10 +379,12 @@
 				779B7BD12555D45D009C6835 /* Extension+URLRequest.swift in Sources */,
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
 				7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */,
+				776B81BB256705D60073C47E /* SavedSaint.swift in Sources */,
 				773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */,
 				77F06FFA2556A69F00BFDD3A /* CalendarDayService.swift in Sources */,
 				77B5A4A72563E3BC00AEE081 /* Extension+Date.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
+				77F94F2F2566BAD50015DA7A /* Extension+UIColor.swift in Sources */,
 				77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */,
 				779B7BBF2555CC16009C6835 /* SaintImg.swift in Sources */,
 				77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */,
@@ -380,6 +397,8 @@
 				7774ACC3255C125000FE1252 /* SaintService.swift in Sources */,
 				7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */,
 				7774ACC9255C56B100FE1252 /* BigIconImage.swift in Sources */,
+				77F94F322566BC020015DA7A /* SaintRow.swift in Sources */,
+				776B81B42566BD300073C47E /* Constant.swift in Sources */,
 				77CEBE8F255DC2E30018B632 /* Canon.swift in Sources */,
 				77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */,
 				77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */,
@@ -388,6 +407,7 @@
 				77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */,
 				77F070012556F28900BFDD3A /* DayIconImages.swift in Sources */,
 				7767E7292555541600870197 /* CalendarView.swift in Sources */,
+				776B81BE256705DF0073C47E /* About.swift in Sources */,
 				7735CF2625658EB00048BD9D /* WaveShape.swift in Sources */,
 				779B7BD82555D4BE009C6835 /* CalendarEndpoint.swift in Sources */,
 				7767E7272555541600870197 /* Ichthys_CalendarApp.swift in Sources */,
@@ -520,7 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
@@ -543,7 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;

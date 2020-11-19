@@ -88,7 +88,8 @@ final class DayViewModel: ObservableObject, CalendarDayService {
                 case .finished:
                     break
                 }
-            }) { dayData in
+            }) { [weak self] dayData in
+                guard let self = self else { return }
                 self.saints = dayData.saints
                 self.holidays = dayData.holidays
                 self.fasting = dayData.fasting

@@ -8,25 +8,24 @@
 import SwiftUI
 
 struct DayIconImages: View {
-    let gradient = LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)), Color(#colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
     let url: URL
     
     var body: some View {
         ZStack {
-            gradient
+            Constant.gradient
             AsyncImage(
                 url: url,
                 placeholder: { MainImagePlaceholder() },
                 image: { (Image(uiImage: $0).resizable()) })
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-                .clipped()
-                .cornerRadius(5)
-                .padding(5)
+                .padding(3)
                 .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke(gradient, lineWidth: 5)
+                                .stroke( Constant.gradient, lineWidth: 5)
                                 .saturation(1.8))
+                .clipped()
         }
+        .frame(width: 120, height: 120)
+        .cornerRadius(5)
     }
 }
 
