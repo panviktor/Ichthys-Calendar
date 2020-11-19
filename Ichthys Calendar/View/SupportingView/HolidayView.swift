@@ -44,7 +44,7 @@ struct HolidayItem: View {
             VStack {
                 Text(holiday.unwrappedTitle)
                     .font(.footnote)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                     .multilineTextAlignment(.center)
                     .lineLimit(3)
             }

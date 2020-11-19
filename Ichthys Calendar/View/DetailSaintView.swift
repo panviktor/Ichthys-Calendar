@@ -12,6 +12,7 @@ struct DetailSaintView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @ObservedObject var detailSaintViewModel: DetailSaintViewModel
     @State private var isFavorited = false
+    @GestureState private var dragOffset = CGSize.zero
     
     init(detailSaintViewModel: DetailSaintViewModel) {
         self.detailSaintViewModel = detailSaintViewModel
@@ -134,6 +135,11 @@ struct DetailSaintView: View {
         .onAppear {
             detailSaintViewModel.getCertainSaint()
         }
+        .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
+            if (value.startLocation.x < 20 && value.translation.width > 100) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }))
     }
 }
 struct DetailSaintView_Previews: PreviewProvider {

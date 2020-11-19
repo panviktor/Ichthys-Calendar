@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var dayViewModel: DayViewModel
 
     init(dayViewModel: DayViewModel) {
@@ -18,7 +19,7 @@ struct CalendarView: View {
         TabView {
             NavigationView {
                 GeometryReader { geometry in
-                    Color.white
+                    colorScheme == .dark ?  Color.black : Color.white
                     VStack {
                         ZStack {
                             WaveShape()
