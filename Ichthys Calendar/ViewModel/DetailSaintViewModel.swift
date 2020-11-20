@@ -23,6 +23,8 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
         }
     }
     
+    @Environment(\.managedObjectContext) var moc
+    
     //MARK: - VM
     @Published private(set) var name = ""
     @Published private(set) var fullName = ""

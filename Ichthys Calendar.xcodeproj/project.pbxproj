@@ -32,6 +32,7 @@
 		779B7BBF2555CC16009C6835 /* SaintImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BBE2555CC16009C6835 /* SaintImg.swift */; };
 		779B7BD12555D45D009C6835 /* Extension+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BD02555D45D009C6835 /* Extension+URLRequest.swift */; };
 		779B7BD82555D4BE009C6835 /* CalendarEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BD72555D4BE009C6835 /* CalendarEndpoint.swift */; };
+		779E6B8D2567E26C00DD3A8C /* SaintData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 779E6B8B2567E26C00DD3A8C /* SaintData.xcdatamodeld */; };
 		77B5A4A72563E3BC00AEE081 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5A4A62563E3BC00AEE081 /* Extension+Date.swift */; };
 		77CEBE8F255DC2E30018B632 /* Canon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE8E255DC2E30018B632 /* Canon.swift */; };
 		77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE91255DC2FF0018B632 /* Prayer.swift */; };
@@ -81,6 +82,7 @@
 		779B7BBE2555CC16009C6835 /* SaintImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintImg.swift; sourceTree = "<group>"; };
 		779B7BD02555D45D009C6835 /* Extension+URLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URLRequest.swift"; sourceTree = "<group>"; };
 		779B7BD72555D4BE009C6835 /* CalendarEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEndpoint.swift; sourceTree = "<group>"; };
+		779E6B8C2567E26C00DD3A8C /* SaintData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaintData.xcdatamodel; sourceTree = "<group>"; };
 		77B5A4A62563E3BC00AEE081 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		77CEBE8E255DC2E30018B632 /* Canon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canon.swift; sourceTree = "<group>"; };
 		77CEBE91255DC2FF0018B632 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				779B7BBB2555CBFE009C6835 /* Saint.swift */,
+				779E6B8B2567E26C00DD3A8C /* SaintData.xcdatamodeld */,
 				77CEBE8E255DC2E30018B632 /* Canon.swift */,
 				77CEBE91255DC2FF0018B632 /* Prayer.swift */,
 				779B7BBE2555CC16009C6835 /* SaintImg.swift */,
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779E6B8D2567E26C00DD3A8C /* SaintData.xcdatamodeld in Sources */,
 				77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */,
 				773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */,
 				7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */,
@@ -602,6 +606,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		779E6B8B2567E26C00DD3A8C /* SaintData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				779E6B8C2567E26C00DD3A8C /* SaintData.xcdatamodel */,
+			);
+			currentVersion = 779E6B8C2567E26C00DD3A8C /* SaintData.xcdatamodel */;
+			path = SaintData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7767E71B2555541600870197 /* Project object */;
 }
