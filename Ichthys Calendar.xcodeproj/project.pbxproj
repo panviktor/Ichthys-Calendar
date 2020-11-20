@@ -10,7 +10,7 @@
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
 		7735CF2625658EB00048BD9D /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735CF2525658EB00048BD9D /* WaveShape.swift */; };
 		773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B3512256431A500B0BFE1 /* Extension+DateFormatter.swift */; };
-		773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B351525650EFC00B0BFE1 /* HolidayView.swift */; };
+		773B351625650EFC00B0BFE1 /* HolidayRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B351525650EFC00B0BFE1 /* HolidayRow.swift */; };
 		77662664255932CD0009B6FA /* Fasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77662663255932CD0009B6FA /* Fasting.swift */; };
 		7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766266E25595ADF0009B6FA /* DetailSaintViewModel.swift */; };
 		7766267225595B700009B6FA /* DetailSaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7766267125595B700009B6FA /* DetailSaintView.swift */; };
@@ -57,7 +57,7 @@
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7735CF2525658EB00048BD9D /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		773B3512256431A500B0BFE1 /* Extension+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DateFormatter.swift"; sourceTree = "<group>"; };
-		773B351525650EFC00B0BFE1 /* HolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayView.swift; sourceTree = "<group>"; };
+		773B351525650EFC00B0BFE1 /* HolidayRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayRow.swift; sourceTree = "<group>"; };
 		77662663255932CD0009B6FA /* Fasting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fasting.swift; sourceTree = "<group>"; };
 		7766266E25595ADF0009B6FA /* DetailSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSaintViewModel.swift; sourceTree = "<group>"; };
 		7766267125595B700009B6FA /* DetailSaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSaintView.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 				7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */,
 				7774ACC8255C56B100FE1252 /* BigIconImage.swift */,
 				7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */,
-				773B351525650EFC00B0BFE1 /* HolidayView.swift */,
+				773B351525650EFC00B0BFE1 /* HolidayRow.swift */,
 				77F94F312566BC020015DA7A /* SaintRow.swift */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
 			);
@@ -380,7 +380,7 @@
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
 				7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */,
 				776B81BB256705D60073C47E /* SavedSaint.swift in Sources */,
-				773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */,
+				773B351625650EFC00B0BFE1 /* HolidayRow.swift in Sources */,
 				77F06FFA2556A69F00BFDD3A /* CalendarDayService.swift in Sources */,
 				77B5A4A72563E3BC00AEE081 /* Extension+Date.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import CoreData
 
 final class DetailSaintViewModel: ObservableObject, SaintService {
     var apiSession: APIService
@@ -53,4 +54,6 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
             }
         cancellables.insert(cancellable)
     }
+    
+    
 }

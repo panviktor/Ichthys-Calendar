@@ -35,7 +35,7 @@ struct CalendarView: View {
                             
                             DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
                                 .padding(.horizontal)
-                            HolidayView(holidays: dayViewModel.holidays)
+                            HolidayRow(holidays: dayViewModel.holidays)
                             ScrollView {
                                 LazyVStack {
                                     ForEach(self.dayViewModel.saints) { saint in
