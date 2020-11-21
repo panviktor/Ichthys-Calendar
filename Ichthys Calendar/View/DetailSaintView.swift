@@ -42,7 +42,7 @@ struct DetailSaintView: View {
                 .foregroundColor(isFavorited ? Color.red : Color.gray)
                 .animation(.easeInOut(duration: 0.5))
                 .onTapGesture {
-                    self.saveSaintToCoreData()
+                    self.detailSaintViewModel.saveSaintToCoreData()
                     self.isFavorited.toggle()
                 }
         }}
@@ -149,22 +149,5 @@ struct DetailSaintView: View {
 struct DetailSaintView_Previews: PreviewProvider {
     static var previews: some View {
         DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: 1))
-    }
-}
-
-//MARK: - CoreData model
-extension DetailSaintView {
-    func saveSaintToCoreData() {
-        let newSaint = SaintCDM(context: viewContext)
-        newSaint.id = UUID()
-        newSaint.timestamp = Date()
-        newSaint.name = detailSaintViewModel.fullName
-        
-        do {
-            try viewContext.save()
-        } catch {
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
     }
 }

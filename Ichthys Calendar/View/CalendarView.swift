@@ -42,7 +42,7 @@ struct CalendarView: View {
                                         NavigationLink(
                                             destination: DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: saint.unwrappedID)),
                                             label: {
-                                                SaintRow(saintName: saint.unwrappedTitle, saintImageURL: saint.validImgUrl) })
+                                                SaintRow(saintName: saint.unwrappedTitle, saintImageURL: saint.firstValidImgUrl) })
                                             .buttonStyle(PlainButtonStyle())
                                             .padding(.horizontal)
                                     }

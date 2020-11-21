@@ -32,10 +32,10 @@ struct SavedSaint: View {
                         .edgesIgnoringSafeArea(.top)
                         
                         List {
-                            ForEach(items) { item in
+                            ForEach(items) { saint in
                                 VStack {
-                                    Text("Item at \(item.name!)")
-                                    Text("Item at \(item.timestamp!)")
+                                    Text("Item at \(saint.fullName!)")
+                                    Text("Item at \(saint.timestamp!)")
                                 }
                               
                             }
@@ -43,19 +43,6 @@ struct SavedSaint: View {
                         }
                     }
                 }
-            }
-        }
-    }
-    
-    private func addItem() {
-        withAnimation {
-            let newItem = SaintCDM(context: viewContext)
-            newItem.timestamp = Date()
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }

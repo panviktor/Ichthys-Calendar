@@ -18,8 +18,7 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
             self.name = saint.unwrappedName
             self.fullName = saint.unwrappedTitle
             self.description = saint.unwrappedDescription
-            self.metaDescription = saint.unwrappedMetaDescription
-            self.imageURL = saint.validImgUrl
+            self.imageURL = saint.firstValidImgUrl
         }
     }
     
@@ -27,7 +26,6 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
     @Published private(set) var name = ""
     @Published private(set) var fullName = ""
     @Published private(set) var description = ""
-    @Published private(set) var metaDescription = ""
     @Published private(set) var imageURL: URL?
     @Published private(set) var prayers = [Prayer]()
     @Published private(set) var canons = [Canon]()
@@ -53,5 +51,10 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
                 self.canons = saint.unwrappedCanons
             }
         cancellables.insert(cancellable)
+    }
+    
+    func saveSaintToCoreData() {
+        CoreDataManager.shared.saveItem(shortName: name, fullName: fullName,
+                                        saintDescription: description, serverID: saintID)
     }
 }

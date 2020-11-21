@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct Ichthys_CalendarApp: App {
     @Environment(\.scenePhase) private var scenePhase
-    let persistenceController = PersistenceController.shared
+    let calendarCoreDataManager = PersistenceManager.shared
     
     var body: some Scene {
         WindowGroup {
             CalendarView(dayViewModel: DayViewModel())
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, calendarCoreDataManager.persistentContainer.viewContext)
         }
         .onChange(of: scenePhase) { phase in
             switch phase {
@@ -25,9 +25,7 @@ struct Ichthys_CalendarApp: App {
                 print("inactive")
             case .background:
                 print("background")
-                if persistenceController.container.viewContext.hasChanges {
-                   try? persistenceController.container.viewContext.save()
-                }
+                calendarCoreDataManager.saveContext()
             @unknown default:
                 print("unknown")
             }

@@ -129,7 +129,7 @@ struct Saint: Codable {
         case canons = "caa"
     }
     
-    var validImgUrl: URL? {
+    var firstValidImgUrl: URL? {
         guard let img = imgs?.first else {
             return nil
         }
