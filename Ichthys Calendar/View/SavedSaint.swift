@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct SavedSaint: View {
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \SaintCDM.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<SaintCDM>
+    
     
     var body: some View {
         NavigationView {
@@ -20,10 +28,46 @@ struct SavedSaint: View {
                             WaveShape()
                                 .fill(Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)).opacity(0.3))
                         }
-                        .frame(width: geometry.size.width, height: 45)
+                        .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
+                        
+                        List {
+                            ForEach(items) { item in
+                                VStack {
+                                    Text("Item at \(item.name!)")
+                                    Text("Item at \(item.timestamp!)")
+                                }
+                              
+                            }
+                            .onDelete(perform: deleteItems)
+                        }
                     }
                 }
+            }
+        }
+    }
+    
+    private func addItem() {
+        withAnimation {
+            let newItem = SaintCDM(context: viewContext)
+            newItem.timestamp = Date()
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { items[$0] }.forEach(viewContext.delete)
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
@@ -35,3 +79,10 @@ struct SavedSaint_Previews: PreviewProvider {
         SavedSaint()
     }
 }
+
+private let itemFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .medium
+    return formatter
+}()

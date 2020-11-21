@@ -10,13 +10,14 @@ import SwiftUI
 struct DetailSaintView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var sizeClass
-    @ObservedObject var detailSaintViewModel: DetailSaintViewModel
+    @StateObject var detailSaintViewModel: DetailSaintViewModel
     @State private var isFavorited = false
     @GestureState private var dragOffset = CGSize.zero
     
-    init(detailSaintViewModel: DetailSaintViewModel) {
-        self.detailSaintViewModel = detailSaintViewModel
-    }
+    //MARK: - CoreData Object
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [], animation: .default)
+    private var items: FetchedResults<SaintCDM>
     
     var backButton : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
@@ -33,7 +34,6 @@ struct DetailSaintView: View {
     }
     
     var saveButton : some View { Button(action: {
-        print("Save")
     }) {
         HStack {
             Image(systemName: "heart.circle")
@@ -42,6 +42,7 @@ struct DetailSaintView: View {
                 .foregroundColor(isFavorited ? Color.red : Color.gray)
                 .animation(.easeInOut(duration: 0.5))
                 .onTapGesture {
+                    self.saveSaintToCoreData()
                     self.isFavorited.toggle()
                 }
         }}
@@ -141,9 +142,29 @@ struct DetailSaintView: View {
             }
         }))
     }
+    
+
+    
 }
 struct DetailSaintView_Previews: PreviewProvider {
     static var previews: some View {
         DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: 1))
+    }
+}
+
+//MARK: - CoreData model
+extension DetailSaintView {
+    func saveSaintToCoreData() {
+        let newSaint = SaintCDM(context: viewContext)
+        newSaint.id = UUID()
+        newSaint.timestamp = Date()
+        newSaint.name = detailSaintViewModel.fullName
+        
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
