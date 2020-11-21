@@ -9,15 +9,11 @@ import SwiftUI
 
 struct CalendarView: View {
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var dayViewModel: DayViewModel
+    @StateObject var dayViewModel: DayViewModel
     @State private var dragOffset = CGSize.zero
     @State private var dragGestureText = ""
     @State private var gestureDirection = "goforward"
     @State private var showGestureView = false
-    
-    init(dayViewModel: DayViewModel) {
-        self.dayViewModel = dayViewModel 
-    }
     
     var body: some View {
         TabView {
