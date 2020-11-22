@@ -140,6 +140,15 @@ struct Saint: Codable {
         }
         return url
     }
+    
+    var validImageArray: [URL]? {
+        guard let imgArray = imgs else { return  nil }
+        var imageURLArray = [URL?]()
+        imgArray.forEach { guard let imgSaintID = $0.saintid, let imgImage = $0.image else { return }
+            imageURLArray.append(URL(string: "https://cdn.azbyka.ru/days/assets/img/saints/\(imgSaintID)/\(imgImage)"))
+        }
+        return imageURLArray.compactMap { $0 }
+    }
 }
 
 extension Saint: Identifiable {}

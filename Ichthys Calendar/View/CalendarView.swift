@@ -81,7 +81,7 @@ struct CalendarView: View {
                 Image(systemName: "calendar")
                 Text("Today")
             }
-            SavedSaint()
+            SavedSaintList()
                 .tabItem {
                     Image(systemName: "heart.circle")
                     Text("Saved")

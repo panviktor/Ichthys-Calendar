@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C5048k" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CanonCDM" representedClassName="CanonCDM" syncable="YES" codeGenerationType="class">
+    <entity name="CanonCDM" representedClassName="CanonCDM" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="metaDescription" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toCanon" inverseEntity="SaintCDM"/>
     </entity>
-    <entity name="PrayerCDM" representedClassName="PrayerCDM" syncable="YES" codeGenerationType="class">
+    <entity name="PrayerCDM" representedClassName="PrayerCDM" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toPrayer" inverseEntity="SaintCDM"/>
     </entity>
-    <entity name="SaintCDM" representedClassName="SaintCDM" syncable="YES" codeGenerationType="class">
+    <entity name="SaintCDM" representedClassName="SaintCDM" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="saintDescription" optional="YES" attributeType="String"/>
         <attribute name="serverID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="shortName" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="toCanon" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CanonCDM" inverseName="toSaint" inverseEntity="CanonCDM"/>
+        <relationship name="toPrayer" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PrayerCDM" inverseName="toSaint" inverseEntity="PrayerCDM"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="serverID"/>
@@ -20,8 +29,8 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="CanonCDM" positionX="-54" positionY="9" width="128" height="14"/>
-        <element name="PrayerCDM" positionX="-63" positionY="18" width="128" height="14"/>
-        <element name="SaintCDM" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="CanonCDM" positionX="-54" positionY="9" width="128" height="104"/>
+        <element name="PrayerCDM" positionX="-63" positionY="18" width="128" height="89"/>
+        <element name="SaintCDM" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

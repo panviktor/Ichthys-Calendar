@@ -7,7 +7,6 @@
 
 import Combine
 import SwiftUI
-import CoreData
 
 final class DetailSaintViewModel: ObservableObject, SaintService {
     var apiSession: APIService
@@ -18,7 +17,9 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
             self.name = saint.unwrappedName
             self.fullName = saint.unwrappedTitle
             self.description = saint.unwrappedDescription
+            
             self.imageURL = saint.firstValidImgUrl
+            self.imageURLArray = saint.validImageArray
         }
     }
     
@@ -26,7 +27,10 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
     @Published private(set) var name = ""
     @Published private(set) var fullName = ""
     @Published private(set) var description = ""
+    
     @Published private(set) var imageURL: URL?
+    @Published private(set) var imageURLArray: [URL]?
+    
     @Published private(set) var prayers = [Prayer]()
     @Published private(set) var canons = [Canon]()
     
@@ -54,7 +58,12 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
     }
     
     func saveSaintToCoreData() {
-        CoreDataManager.shared.saveItem(shortName: name, fullName: fullName,
-                                        saintDescription: description, serverID: saintID)
+        prayers.forEach { prayer in
+            CoreDataManager.shared.savePrayer(type: prayer.unwrappedType, text: prayer.unwrappedText)
+        }
+        canons.forEach { canon in
+            CoreDataManager.shared.saveCanon(title: canon.unwrappedTitle, metaDescription: canon.unwrappedMetaDescription, text: canon.unwrappedText)
+        }
+        CoreDataManager.shared.saveSaint(shortName: name, fullName: fullName, saintDescription: description, serverID: saintID)
     }
 }

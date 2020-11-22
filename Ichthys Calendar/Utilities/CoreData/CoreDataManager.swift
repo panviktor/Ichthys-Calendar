@@ -6,17 +6,41 @@
 
 import CoreData
 
+//    @Environment(\.managedObjectContext) private var viewContext
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \SaintCDM.timestamp, ascending: true)],
+//        animation: .default)
+//
+//    private var items: FetchedResults<SaintCDM>
+   
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
+
+
 class CoreDataManager {
     static let shared = CoreDataManager(moc: NSManagedObjectContext.current)
     
     private var moc: NSManagedObjectContext
-   
+    
     private init(moc: NSManagedObjectContext) {
         self.moc = moc
         self.moc.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
     
-    func saveItem(shortName: String, fullName: String, saintDescription: String, serverID: Int) {
+    var prayerCDM = [PrayerCDM]()
+    var canonCDM = [CanonCDM]()
+    
+    //MARK: - SaintCDM
+    func saveSaint(shortName: String, fullName: String, saintDescription: String, serverID: Int) {
         let request: NSFetchRequest<SaintCDM> = SaintCDM.fetchRequest()
         request.predicate = NSPredicate(format: "serverID == %@", String(serverID))
         
@@ -28,14 +52,27 @@ class CoreDataManager {
         saint.fullName = fullName
         saint.saintDescription = saintDescription
         
+        prayerCDM.forEach {
+            saint.addToToPrayer($0)
+        }
+        
+        canonCDM.forEach {
+            saint.addToToCanon($0)
+        }
+        
         do {
             try self.moc.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        print(#line, saint)
+        
+        canonCDM.removeAll()
+        prayerCDM.removeAll()
     }
     
     func fetchAllSaintCDM() -> [SaintCDM] {
+        print(#function, #line)
         var allSaints = [SaintCDM]()
         let saintRequest: NSFetchRequest<SaintCDM> = SaintCDM.fetchRequest()
         do {
@@ -47,6 +84,7 @@ class CoreDataManager {
     }
     
     func fetchSaint(_ serverID: Int32) -> SaintCDM? {
+        print(#line, #function)
         var saints = [SaintCDM]()
         let request: NSFetchRequest<SaintCDM> = SaintCDM.fetchRequest()
         request.predicate = NSPredicate(format: "serverID == %@", String(serverID))
@@ -56,6 +94,13 @@ class CoreDataManager {
         } catch let error as NSError {
             print(error)
         }
+        
+        let canons = saints.first?.toCanon as! Set<CanonCDM>
+        print(#line, canons)
+        
+        let prayers = saints.first?.toPrayer as! Set<PrayerCDM>
+        print(#line, prayers.first?.text)
+        
         return saints.first
     }
     
@@ -68,5 +113,26 @@ class CoreDataManager {
         } catch let error as NSError {
             print(error)
         }
+    }
+    
+    //MARK: - CanonCDM
+    func saveCanon(title: String, metaDescription: String, text: String) {
+        let canon = CanonCDM(context: self.moc)
+        canon.id = UUID()
+        canon.title = title
+        canon.metaDescription = metaDescription
+        canon.text = text
+        print(#line, canon)
+        canonCDM.append(canon)
+    }
+    
+    //MARK: - PrayerCDM
+    func savePrayer(type: String, text: String) {
+        let prayer = PrayerCDM(context: self.moc)
+        prayer.id = UUID()
+        prayer.type = type
+        prayer.text = text
+        print(#line, prayer)
+        prayerCDM.append(prayer)
     }
 }

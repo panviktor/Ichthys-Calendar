@@ -14,11 +14,6 @@ struct DetailSaintView: View {
     @State private var isFavorited = false
     @GestureState private var dragOffset = CGSize.zero
     
-    //MARK: - CoreData Object
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [], animation: .default)
-    private var items: FetchedResults<SaintCDM>
-    
     var backButton : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
     }) {
@@ -63,17 +58,39 @@ struct DetailSaintView: View {
         }
     }
     
+    var headerScrollView: some View {
+        ZStack {
+            if let imageURLs = detailSaintViewModel.imageURLArray {
+                if imageURLs.count > 1 {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(imageURLs, id: \.self) { BigIconImage(url: $0) }
+                        }
+                    }
+                } else {
+                    headerView
+                }
+            } else {
+                ZStack {
+                    BigIconImagePlaceholder()
+                    Text("No Image")
+                        .font(.system(size: 45, weight: .bold, design: .default))
+                }
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView {
             GeometryReader { geometry in
                 ZStack {
                     if geometry.frame(in: .local).minY <= 0 {
-                        headerView
+                        headerScrollView
                             .frame(width: geometry.size.width, height: geometry.size.height)
-                            .offset(y: geometry.frame(in: .local).minY / 9)
                             .clipped()
+                            .offset(y: geometry.frame(in: .local).minY / 9)
                     } else {
-                        headerView
+                        headerScrollView
                             .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .local).minY)
                             .clipped()
                             .offset(y: -geometry.frame(in: .global).minY)
@@ -142,9 +159,6 @@ struct DetailSaintView: View {
             }
         }))
     }
-    
-
-    
 }
 struct DetailSaintView_Previews: PreviewProvider {
     static var previews: some View {

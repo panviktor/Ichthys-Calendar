@@ -19,9 +19,10 @@ struct BigIconImage: View {
                 url: url,
                 placeholder: { BigIconImagePlaceholder() },
                 image: { (Image(uiImage: $0).resizable()) })
+                .clipped()
                 .aspectRatio(contentMode: .fit)
                 .padding(5)
-                .clipped()
+               
                 .background(RoundedRectangle(cornerRadius: 5)
                                 .stroke(gradient, lineWidth: 5)
                                 .saturation(1.8))
