@@ -5,6 +5,8 @@
 //
 
 import CoreData
+import Combine
+import SwiftUI
 
 //    @Environment(\.managedObjectContext) private var viewContext
 //    @FetchRequest(
@@ -12,7 +14,7 @@ import CoreData
 //        animation: .default)
 //
 //    private var items: FetchedResults<SaintCDM>
-   
+
 //    private func deleteItems(offsets: IndexSet) {
 //        withAnimation {
 //            offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -38,6 +40,7 @@ class CoreDataManager {
     
     var prayerCDM = [PrayerCDM]()
     var canonCDM = [CanonCDM]()
+    var imageCDM = [ImageCDM]()
     
     //MARK: - SaintCDM
     func saveSaint(shortName: String, fullName: String, saintDescription: String, serverID: Int) {
@@ -60,13 +63,17 @@ class CoreDataManager {
             saint.addToToCanon($0)
         }
         
+        imageCDM.forEach {
+            saint.addToToImage($0)
+        }
+        
         do {
             try self.moc.save()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-        print(#line, saint)
         
+        imageCDM.removeAll()
         canonCDM.removeAll()
         prayerCDM.removeAll()
     }
@@ -95,11 +102,14 @@ class CoreDataManager {
             print(error)
         }
         
-        let canons = saints.first?.toCanon as! Set<CanonCDM>
-        print(#line, canons)
+        //        let canons = saints.first?.toCanon as! Set<CanonCDM>
+        //        print(#line, canons)
+        //
+        //        let prayers = saints.first?.toPrayer as! Set<PrayerCDM>
+        //        print(#line, prayers.first?.text)
         
-        let prayers = saints.first?.toPrayer as! Set<PrayerCDM>
-        print(#line, prayers.first?.text)
+        //        let imgData = saints.first?.toImage as! Set<ImageCDM>
+        //        print(#line, imgData.first?.image)
         
         return saints.first
     }
@@ -122,7 +132,6 @@ class CoreDataManager {
         canon.title = title
         canon.metaDescription = metaDescription
         canon.text = text
-        print(#line, canon)
         canonCDM.append(canon)
     }
     
@@ -132,7 +141,27 @@ class CoreDataManager {
         prayer.id = UUID()
         prayer.type = type
         prayer.text = text
-        print(#line, prayer)
         prayerCDM.append(prayer)
+    }
+    
+    //MARK: - ImageCDM
+    func saveImage(url: URL) {
+        var cancellable: AnyCancellable?
+        let loader =  ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue)
+        let image = ImageCDM(context: self.moc)
+        image.id = UUID()
+        
+        cancellable = loader.$image
+            .map {$0?.jpegData(compressionQuality: 1.0) }
+            .sink { [weak self] in
+                guard let self = self else { return }
+                image.image = $0
+                if $0 != nil {
+                    self.imageCDM.append(image)
+                }
+            }
+        loader.load()
+        
+        cancellable?.cancel()
     }
 }

@@ -17,36 +17,35 @@ final class DetailSavedSaintViewModel: ObservableObject {
             self.name = saint.shortName!
             self.fullName = saint.fullName!
             self.description = saint.saintDescription!
-
-//            self.imageURL = saint.firstValidImgUrl
-//            self.imageURLArray = saint.validImageArray
-
-
+            
+            //            self.imageURL = saint.firstValidImgUrl
+            //            self.imageURLArray = saint.validImageArray
+            
+            
             //FIXME: add to Coredata Unwrapped
             let setCanons = saint.toCanon as! Set<CanonCDM>
             let setPrayer = saint.toPrayer as! Set<PrayerCDM>
+            let setImages = saint.toImage as! Set<ImageCDM>
             
             self.canons = Array(setCanons)
-         self.prayers = Array(setPrayer)
-      
-//
+            self.prayers = Array(setPrayer)
             
-            print(#line, prayers)
-            print(#line, canons)
+            //FIXME: - Refactoring
+            self.images = Array(setImages).map { UIImage(data: $0.image!)! }
+                
+//                .map { Image(uiImage: $0) }
         }
     }
-
-    
     
     
     //MARK: - VM
     @Published private(set) var name = ""
     @Published private(set) var fullName = ""
     @Published private(set) var description = ""
-
-//    @Published private(set) var imageURL: URL?
-//    @Published private(set) var imageURLArray: [URL]?
-
+    
+    //    @Published private(set) var imageURL: URL?
+    
+    @Published private(set) var images = [UIImage]()
     @Published private(set) var prayers = [PrayerCDM]()
     @Published private(set) var canons = [CanonCDM]()
     
@@ -58,12 +57,4 @@ final class DetailSavedSaintViewModel: ObservableObject {
         self.saint = CoreDataManager.shared.fetchSaint(Int32(saintServerID))!
     }
     
-}
-
-
-extension NSSet {
-  func toArray<T>() -> [T] {
-    let array = self.map({ $0 as! T})
-    return array
-  }
 }

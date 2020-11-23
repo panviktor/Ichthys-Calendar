@@ -58,6 +58,12 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
     }
     
     func saveSaintToCoreData() {
+        if let imgURLArray = imageURLArray  {
+            imgURLArray.forEach { imageURL in
+                CoreDataManager.shared.saveImage(url: imageURL)
+            }
+        }
+        
         prayers.forEach { prayer in
             CoreDataManager.shared.savePrayer(type: prayer.unwrappedType, text: prayer.unwrappedText)
         }

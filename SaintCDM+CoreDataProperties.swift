@@ -2,7 +2,7 @@
 //  SaintCDM+CoreDataProperties.swift
 //  Ichthys Calendar
 //
-//  Created by Viktor on 22.11.2020.
+//  Created by Viktor on 23.11.2020.
 //
 //
 
@@ -23,6 +23,7 @@ extension SaintCDM {
     @NSManaged public var shortName: String?
     @NSManaged public var timestamp: Date?
     @NSManaged public var toCanon: NSSet?
+    @NSManaged public var toImage: NSSet?
     @NSManaged public var toPrayer: NSSet?
 
 }
@@ -41,6 +42,23 @@ extension SaintCDM {
 
     @objc(removeToCanon:)
     @NSManaged public func removeFromToCanon(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for toImage
+extension SaintCDM {
+
+    @objc(addToImageObject:)
+    @NSManaged public func addToToImage(_ value: ImageCDM)
+
+    @objc(removeToImageObject:)
+    @NSManaged public func removeFromToImage(_ value: ImageCDM)
+
+    @objc(addToImage:)
+    @NSManaged public func addToToImage(_ values: NSSet)
+
+    @objc(removeToImage:)
+    @NSManaged public func removeFromToImage(_ values: NSSet)
 
 }
 

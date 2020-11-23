@@ -7,6 +7,11 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toCanon" inverseEntity="SaintCDM"/>
     </entity>
+    <entity name="ImageCDM" representedClassName="ImageCDM" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toImage" inverseEntity="SaintCDM"/>
+    </entity>
     <entity name="PrayerCDM" representedClassName="PrayerCDM" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
@@ -21,6 +26,7 @@
         <attribute name="shortName" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="toCanon" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CanonCDM" inverseName="toSaint" inverseEntity="CanonCDM"/>
+        <relationship name="toImage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageCDM" inverseName="toSaint" inverseEntity="ImageCDM"/>
         <relationship name="toPrayer" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PrayerCDM" inverseName="toSaint" inverseEntity="PrayerCDM"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -30,7 +36,8 @@
     </entity>
     <elements>
         <element name="CanonCDM" positionX="-54" positionY="9" width="128" height="104"/>
+        <element name="ImageCDM" positionX="-54" positionY="54" width="128" height="74"/>
         <element name="PrayerCDM" positionX="-63" positionY="18" width="128" height="89"/>
-        <element name="SaintCDM" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="SaintCDM" positionX="-63" positionY="-18" width="128" height="164"/>
     </elements>
 </model>

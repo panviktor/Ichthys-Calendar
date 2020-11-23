@@ -51,22 +51,26 @@ struct DetailSavedSaint: View {
     
     var body: some View {
         ScrollView {
-//            GeometryReader { geometry in
-//                ZStack {
-//                    if geometry.frame(in: .local).minY <= 0 {
+            GeometryReader { geometry in
+                HStack {
+              
+                    
+                    ForEach(self.detailSavedSaintViewModel.images, id: \.self) { img in
+                        Image(uiImage: img)
+                    }
+                   
+                     
+                        
+                    
+                    
 //                        headerScrollView
 //                            .frame(width: geometry.size.width, height: geometry.size.height)
 //                            .clipped()
 //                            .offset(y: geometry.frame(in: .local).minY / 9)
-//                    } else {
-//                        headerScrollView
-//                            .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .local).minY)
-//                            .clipped()
-//                            .offset(y: -geometry.frame(in: .global).minY)
-//                    }
+
 //                }
-//            }
-//            .frame(height: 350)
+            }
+            .frame(height: 350)
             
            Group {
             Text(detailSavedSaintViewModel.fullName).font(.title2)
@@ -140,3 +144,4 @@ struct DetailSavedSaint: View {
 //   }
 //
 //}
+}
