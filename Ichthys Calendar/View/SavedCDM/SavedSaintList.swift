@@ -32,7 +32,8 @@ struct SavedSaintList: View {
                                         destination:
                                             DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID))),
                                         label: {
-                                            SaintRow(saintName: saint.fullName ?? "String!", saintImageURL: URL(string: "ya.ru")!)
+                                            SaintRow(saintName: saint.unwrappedFullName,
+                                                     saintSavedImage:  saint.unwrappedToImage.compactMap { $0.image }.compactMap { UIImage(data: $0) }.first )
                                             
                                         })
                                         .buttonStyle(PlainButtonStyle())
