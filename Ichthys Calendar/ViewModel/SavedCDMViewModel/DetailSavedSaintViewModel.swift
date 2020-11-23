@@ -12,28 +12,15 @@ final class DetailSavedSaintViewModel: ObservableObject {
     
     private var saint: SaintCDM! {
         didSet {
-            print(#line)
-            //FIXME: add to Coredata Unwrapped
-            self.name = saint.shortName!
-            self.fullName = saint.fullName!
-            self.description = saint.saintDescription!
+            self.name = saint.unwrappedShortName
+            self.fullName = saint.unwrappedFullName
+            self.description = saint.unwrappedSaintDescription
             
-            //            self.imageURL = saint.firstValidImgUrl
-            //            self.imageURLArray = saint.validImageArray
+            self.canons = saint.unwrappedToCanon
+            self.prayers = saint.unwrappedToPrayer
             
-            
-            //FIXME: add to Coredata Unwrapped
-            let setCanons = saint.toCanon as! Set<CanonCDM>
-            let setPrayer = saint.toPrayer as! Set<PrayerCDM>
-            let setImages = saint.toImage as! Set<ImageCDM>
-            
-            self.canons = Array(setCanons)
-            self.prayers = Array(setPrayer)
-            
-            //FIXME: - Refactoring
-            self.images = Array(setImages).map { UIImage(data: $0.image!)! }
-                
-//                .map { Image(uiImage: $0) }
+            let setImages = saint.unwrappedToImage
+            self.images = setImages.compactMap { $0.image }.compactMap { UIImage(data: $0) }
         }
     }
     
@@ -42,8 +29,6 @@ final class DetailSavedSaintViewModel: ObservableObject {
     @Published private(set) var name = ""
     @Published private(set) var fullName = ""
     @Published private(set) var description = ""
-    
-    //    @Published private(set) var imageURL: URL?
     
     @Published private(set) var images = [UIImage]()
     @Published private(set) var prayers = [PrayerCDM]()

@@ -16,9 +16,17 @@ extension PrayerCDM {
         return NSFetchRequest<PrayerCDM>(entityName: "PrayerCDM")
     }
 
-    @NSManaged public var id: UUID?
+    @NSManaged public var id: UUID
     @NSManaged public var type: String?
+    public var unwrappedType: String {
+        type ?? "Unwrapped Type"
+    }
+    
     @NSManaged public var text: String?
+    public var unwrappedText: String {
+        text ?? "Unwrapped Text"
+    }
+    
     @NSManaged public var toSaint: SaintCDM?
 }
 

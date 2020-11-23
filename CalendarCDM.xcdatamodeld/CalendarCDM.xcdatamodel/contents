@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C5048k" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CanonCDM" representedClassName="CanonCDM" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="metaDescription" optional="YES" attributeType="String"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toCanon" inverseEntity="SaintCDM"/>
     </entity>
     <entity name="ImageCDM" representedClassName="ImageCDM" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toImage" inverseEntity="SaintCDM"/>
     </entity>
     <entity name="PrayerCDM" representedClassName="PrayerCDM" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="toSaint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SaintCDM" inverseName="toPrayer" inverseEntity="SaintCDM"/>
     </entity>
     <entity name="SaintCDM" representedClassName="SaintCDM" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="saintDescription" optional="YES" attributeType="String"/>
-        <attribute name="serverID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="serverID" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="shortName" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="toCanon" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CanonCDM" inverseName="toSaint" inverseEntity="CanonCDM"/>

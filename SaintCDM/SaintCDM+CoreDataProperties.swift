@@ -6,26 +6,47 @@
 //
 //
 
-import Foundation
 import CoreData
 
-
 extension SaintCDM {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SaintCDM> {
         return NSFetchRequest<SaintCDM>(entityName: "SaintCDM")
     }
+    
+    @NSManaged public var id: UUID
+    @NSManaged public var serverID: Int32
+    @NSManaged public var timestamp: Date
+    
+    @NSManaged public var shortName: String?
+    public var unwrappedShortName: String {
+        shortName ?? "Unwrapped Short Name"
+    }
 
     @NSManaged public var fullName: String?
-    @NSManaged public var id: UUID?
+    public var unwrappedFullName: String {
+        fullName ?? "Unwrapped Full Name"
+    }
+    
     @NSManaged public var saintDescription: String?
-    @NSManaged public var serverID: Int32
-    @NSManaged public var shortName: String?
-    @NSManaged public var timestamp: Date?
+    public var unwrappedSaintDescription: String {
+        saintDescription ?? "Unwrapped Saint Description"
+    }
+    
     @NSManaged public var toCanon: NSSet?
-    @NSManaged public var toImage: NSSet?
+    public var unwrappedToCanon: [CanonCDM] {
+        return toCanon?.allObjects as? [CanonCDM] ?? [CanonCDM]()
+    }
+    
     @NSManaged public var toPrayer: NSSet?
-
+    public var unwrappedToPrayer: [PrayerCDM] {
+        return toPrayer?.allObjects as? [PrayerCDM] ?? [PrayerCDM]()
+    }
+    
+    @NSManaged public var toImage: NSSet?
+    public var unwrappedToImage: [ImageCDM] {
+        return toImage?.allObjects as? [ImageCDM] ?? [ImageCDM]()
+    }
+    
 }
 
 // MARK: Generated accessors for toCanon

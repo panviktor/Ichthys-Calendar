@@ -11,6 +11,7 @@ struct SaintRow: View {
     
     @State var saintName: String
     @State var saintImageURL: URL?
+    @State var saintSavedImage: UIImage?
     
     var body: some View {
     
@@ -24,6 +25,8 @@ struct SaintRow: View {
                         VStack {
                             if let url = saintImageURL {
                                 DayIconImages(url: url)
+                            } else if let image = saintSavedImage {
+                            Image(uiImage: image)
                             } else {
                                 MainImagePlaceholder()
                             }

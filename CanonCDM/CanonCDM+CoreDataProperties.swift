@@ -16,14 +16,24 @@ extension CanonCDM {
         return NSFetchRequest<CanonCDM>(entityName: "CanonCDM")
     }
 
-    @NSManaged public var id: UUID?
+    @NSManaged public var id: UUID
+    
     @NSManaged public var title: String?
+    public var unwrappedTitle: String {
+        title ?? "Unwrapped Title"
+    }
+    
     @NSManaged public var metaDescription: String?
+    public var unwrappedMetaDescription: String {
+        metaDescription ?? "Unwrapped MetaDescription"
+    }
+    
     @NSManaged public var text: String?
+    public var unwrappedText: String {
+        text ?? "Unwrapped Full Name"
+    }
+    
     @NSManaged public var toSaint: SaintCDM?
-
 }
 
-extension CanonCDM : Identifiable {
-
-}
+extension CanonCDM : Identifiable {}

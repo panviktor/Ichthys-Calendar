@@ -17,7 +17,7 @@ extension ImageCDM {
     }
 
     @NSManaged public var image: Data?
-    @NSManaged public var id: UUID?
+    @NSManaged public var id: UUID
     @NSManaged public var toSaint: SaintCDM?
 
 }

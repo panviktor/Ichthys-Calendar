@@ -169,6 +169,42 @@
 			path = CustomNavigationView;
 			sourceTree = "<group>";
 		};
+		774F8993256C268500A84663 /* SaintCDM */ = {
+			isa = PBXGroup;
+			children = (
+				774F898B256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift */,
+				774F898C256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift */,
+			);
+			path = SaintCDM;
+			sourceTree = "<group>";
+		};
+		774F8995256C274800A84663 /* ImageCDM */ = {
+			isa = PBXGroup;
+			children = (
+				7736262B256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift */,
+				7736262C256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift */,
+			);
+			path = ImageCDM;
+			sourceTree = "<group>";
+		};
+		774F8997256C275C00A84663 /* PrayerCDM */ = {
+			isa = PBXGroup;
+			children = (
+				77AC6A0F256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift */,
+				77AC6A10256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift */,
+			);
+			path = PrayerCDM;
+			sourceTree = "<group>";
+		};
+		774F8999256C276500A84663 /* CanonCDM */ = {
+			isa = PBXGroup;
+			children = (
+				77AC6A13256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift */,
+				77AC6A14256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift */,
+			);
+			path = CanonCDM;
+			sourceTree = "<group>";
+		};
 		77662666255932D40009B6FA /* Fasting */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,8 +298,8 @@
 		7788CB3925557238000D70D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				77AC6A0825697D64004BAEE9 /* CalendarCoreDataModel */,
 				7788CB3625557231000D70D8 /* DayData.swift */,
+				77AC6A0825697D64004BAEE9 /* CalendarCoreDataModel */,
 				779B7BC12555CC19009C6835 /* Saint */,
 				779B7BB92555CBEC009C6835 /* Holiday */,
 				77662666255932D40009B6FA /* Fasting */,
@@ -283,7 +319,6 @@
 		779B7BC12555CC19009C6835 /* Saint */ = {
 			isa = PBXGroup;
 			children = (
-				779D729825684F030090E948 /* CalendarCDM.xcdatamodeld */,
 				779B7BBB2555CBFE009C6835 /* Saint.swift */,
 				77CEBE8E255DC2E30018B632 /* Canon.swift */,
 				77CEBE91255DC2FF0018B632 /* Prayer.swift */,
@@ -325,14 +360,11 @@
 		77AC6A0825697D64004BAEE9 /* CalendarCoreDataModel */ = {
 			isa = PBXGroup;
 			children = (
-				774F898B256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift */,
-				774F898C256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift */,
-				77AC6A0F256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift */,
-				77AC6A10256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift */,
-				77AC6A13256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift */,
-				77AC6A14256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift */,
-				7736262B256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift */,
-				7736262C256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift */,
+				779D729825684F030090E948 /* CalendarCDM.xcdatamodeld */,
+				774F8993256C268500A84663 /* SaintCDM */,
+				774F8997256C275C00A84663 /* PrayerCDM */,
+				774F8999256C276500A84663 /* CanonCDM */,
+				774F8995256C274800A84663 /* ImageCDM */,
 			);
 			name = CalendarCoreDataModel;
 			path = ../..;
