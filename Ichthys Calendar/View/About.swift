@@ -9,7 +9,7 @@ import SwiftUI
 
 struct About: View {
     @Environment(\.colorScheme) var colorScheme
-    
+    //FIXME: - Add Logic
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
