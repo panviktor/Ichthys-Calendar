@@ -6,72 +6,55 @@
 //
 
 import SwiftUI
-
+//FIXME: - Add Removing Logic
 struct DetailSavedSaint: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var sizeClass
     @StateObject var detailSavedSaintViewModel: DetailSavedSaintViewModel
     @GestureState private var dragOffset = CGSize.zero
     
-    //    var headerView: some View {
-    //        ZStack {
-    //            if let imageURL = detailSavedSaintViewModel.imageURL {
-    //                BigIconImage(url: imageURL)
-    //            } else {
-    //                ZStack {
-    //                    BigIconImagePlaceholder()
-    //                    Text("No Image")
-    //                        .font(.system(size: 45, weight: .bold, design: .default))
-    //                }
-    //            }
-    //        }
-    //    }
-    //
-    //    var headerScrollView: some View {
-    //        ZStack {
-    //            if let imageURLs = detailSavedSaintViewModel.imageURLArray {
-    //                if imageURLs.count > 1 {
-    //                    ScrollView(.horizontal) {
-    //                        HStack {
-    //                            ForEach(imageURLs, id: \.self) { BigIconImage(url: $0) }
-    //                        }
-    //                    }
-    //                } else {
-    //                    headerView
-    //                }
-    //            } else {
-    //                ZStack {
-    //                    BigIconImagePlaceholder()
-    //                    Text("No Image")
-    //                        .font(.system(size: 45, weight: .bold, design: .default))
-    //                }
-    //            }
-    //        }
-    //    }
+    var emptyView: some View {
+        ZStack {
+            BigIconImagePlaceholder()
+            Text("No Image")
+                .font(.system(size: 45, weight: .bold, design: .default))
+        }
+    }
+    
+    var headerView: some View {
+        ZStack {
+            if let image = detailSavedSaintViewModel.images.first {
+                BigIconImageSaved(image: image)
+            } else {
+                ZStack {
+                    emptyView
+                }
+            }
+        }
+    }
+    
+    var headerScrollView: some View {
+        ZStack {
+            if let images = detailSavedSaintViewModel.images {
+                if images.count > 1 {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(images, id: \.self) { BigIconImageSaved(image: $0) }
+                        }
+                    }
+                } else {
+                    headerView
+                }
+            } else {
+                emptyView
+            }
+        }
+    }
     
     var body: some View {
         ScrollView {
-            //            GeometryReader { geometry in
-            //                HStack {
-            //
-            
-            //                    ForEach(self.detailSavedSaintViewModel.images, id: \.self) { img in
-            //                        Image(uiImage: img)
-            //                    }
-            
-            
-            
-            
-            
-            //                        headerScrollView
-            //                            .frame(width: geometry.size.width, height: geometry.size.height)
-            //                            .clipped()
-            //                            .offset(y: geometry.frame(in: .local).minY / 9)
-            
-            //                }
-            //            }
-            //            .frame(height: 350)
-            //
+            headerScrollView
+                .frame(height: 350)
             Group {
                 Text(detailSavedSaintViewModel.fullName).font(.title2)
                 DisclosureGroup(

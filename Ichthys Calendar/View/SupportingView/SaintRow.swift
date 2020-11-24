@@ -25,7 +25,7 @@ struct SaintRow: View {
                             if let url = saintImageURL {
                                 DayIconImages(url: url)
                             } else if let image = saintSavedImage {
-                                DayIconSavedImages(image: image)
+                                DayIconImageSaved(image: image)
                             } else {
                               MainImagePlaceholder()
                             }

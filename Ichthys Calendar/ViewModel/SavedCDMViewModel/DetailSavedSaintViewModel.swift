@@ -24,7 +24,6 @@ final class DetailSavedSaintViewModel: ObservableObject {
         }
     }
     
-    
     //MARK: - VM
     @Published private(set) var name = ""
     @Published private(set) var fullName = ""

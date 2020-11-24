@@ -34,6 +34,7 @@
 		7788CB3725557231000D70D8 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7788CB3625557231000D70D8 /* DayData.swift */; };
 		779724A92569119D008C03D5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779724A82569119D008C03D5 /* PersistenceManager.swift */; };
 		779724AD2569133C008C03D5 /* Extension+NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */; };
+		779A2537256D0F4600440E45 /* BigIconImageSaved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A2536256D0F4600440E45 /* BigIconImageSaved.swift */; };
 		779B7BB42555CBD1009C6835 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BB32555CBD1009C6835 /* Holiday.swift */; };
 		779B7BB72555CBE4009C6835 /* HolidayImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BB62555CBE4009C6835 /* HolidayImg.swift */; };
 		779B7BBC2555CBFE009C6835 /* Saint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BBB2555CBFE009C6835 /* Saint.swift */; };
@@ -61,7 +62,7 @@
 		77F070142557234B00BFDD3A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070132557234B00BFDD3A /* ImageCache.swift */; };
 		77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070162557260300BFDD3A /* TemporaryImageCache.swift */; };
 		77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701925572C0300BFDD3A /* ImageCacheKey.swift */; };
-		77F50300256D09A500CEB92D /* DayIconSavedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F502FF256D09A500CEB92D /* DayIconSavedImages.swift */; };
+		77F50300256D09A500CEB92D /* DayIconImageSaved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F502FF256D09A500CEB92D /* DayIconImageSaved.swift */; };
 		77F94F2F2566BAD50015DA7A /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */; };
 		77F94F322566BC020015DA7A /* SaintRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F312566BC020015DA7A /* SaintRow.swift */; };
 		77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AB2559637B001AE985 /* Extension+String.swift */; };
@@ -99,6 +100,7 @@
 		7788CB3625557231000D70D8 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
 		779724A82569119D008C03D5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSManagedObjectContext.swift"; sourceTree = "<group>"; };
+		779A2536256D0F4600440E45 /* BigIconImageSaved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIconImageSaved.swift; sourceTree = "<group>"; };
 		779B7BB32555CBD1009C6835 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		779B7BB62555CBE4009C6835 /* HolidayImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayImg.swift; sourceTree = "<group>"; };
 		779B7BBB2555CBFE009C6835 /* Saint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saint.swift; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		77F070132557234B00BFDD3A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		77F070162557260300BFDD3A /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
 		77F0701925572C0300BFDD3A /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
-		77F502FF256D09A500CEB92D /* DayIconSavedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIconSavedImages.swift; sourceTree = "<group>"; };
+		77F502FF256D09A500CEB92D /* DayIconImageSaved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIconImageSaved.swift; sourceTree = "<group>"; };
 		77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		77F94F312566BC020015DA7A /* SaintRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintRow.swift; sourceTree = "<group>"; };
 		77FC05AB2559637B001AE985 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
@@ -288,8 +290,7 @@
 			children = (
 				77F94F312566BC020015DA7A /* SaintRow.swift */,
 				77F50302256D09BE00CEB92D /* DayIconRowImage */,
-				7774ACC8255C56B100FE1252 /* BigIconImage.swift */,
-				7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */,
+				779A2533256D0DAF00440E45 /* BigIconImage */,
 				773B351525650EFC00B0BFE1 /* HolidayRow.swift */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
 			);
@@ -306,6 +307,16 @@
 				77662666255932D40009B6FA /* Fasting */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		779A2533256D0DAF00440E45 /* BigIconImage */ = {
+			isa = PBXGroup;
+			children = (
+				7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */,
+				7774ACC8255C56B100FE1252 /* BigIconImage.swift */,
+				779A2536256D0F4600440E45 /* BigIconImageSaved.swift */,
+			);
+			path = BigIconImage;
 			sourceTree = "<group>";
 		};
 		779B7BB92555CBEC009C6835 /* Holiday */ = {
@@ -404,7 +415,7 @@
 			children = (
 				7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */,
 				77F070002556F28900BFDD3A /* DayIconImages.swift */,
-				77F502FF256D09A500CEB92D /* DayIconSavedImages.swift */,
+				77F502FF256D09A500CEB92D /* DayIconImageSaved.swift */,
 			);
 			path = DayIconRowImage;
 			sourceTree = "<group>";
@@ -492,7 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */,
-				77F50300256D09A500CEB92D /* DayIconSavedImages.swift in Sources */,
+				77F50300256D09A500CEB92D /* DayIconImageSaved.swift in Sources */,
 				773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */,
 				7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */,
 				77AC6A15256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift in Sources */,
@@ -514,6 +525,7 @@
 				7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
 				779724AD2569133C008C03D5 /* Extension+NSManagedObjectContext.swift in Sources */,
+				779A2537256D0F4600440E45 /* BigIconImageSaved.swift in Sources */,
 				774F898D256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift in Sources */,
 				779D729A25684F030090E948 /* CalendarCDM.xcdatamodeld in Sources */,
 				77F94F2F2566BAD50015DA7A /* Extension+UIColor.swift in Sources */,

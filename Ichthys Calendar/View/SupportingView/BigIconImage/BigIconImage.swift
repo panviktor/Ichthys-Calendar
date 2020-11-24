@@ -17,13 +17,15 @@ struct BigIconImage: View {
                 url: url,
                 placeholder: { BigIconImagePlaceholder() },
                 image: { (Image(uiImage: $0).resizable()) })
-                .clipped()
                 .aspectRatio(contentMode: .fit)
-                .padding(5)
+                .clipped()
                 .background(RoundedRectangle(cornerRadius: 5)
                                 .stroke(Constant.gradient, lineWidth: 5)
                                 .saturation(1.8))
+                .padding(8)
         }
+        .cornerRadius(5)
+        .frame(width: 350, height: 350)
     }
 }
 
@@ -32,5 +34,6 @@ struct BigIconImage_Previews: PreviewProvider {
         BigIconImage(url: URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!)
     }
 }
+
 
 

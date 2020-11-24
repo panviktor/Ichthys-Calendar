@@ -1,5 +1,5 @@
 //
-//  DayIconSavedImages.swift
+//  DayIconImageSaved.swift
 //  Ichthys Calendar
 //
 //  Created by Viktor on 24.11.2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DayIconSavedImages: View {
+struct DayIconImageSaved: View {
     let image: UIImage
     
     var body: some View {
