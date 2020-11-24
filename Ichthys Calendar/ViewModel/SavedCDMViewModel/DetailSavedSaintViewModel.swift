@@ -10,17 +10,20 @@ import SwiftUI
 final class DetailSavedSaintViewModel: ObservableObject {
     let saintServerID: Int
     
-    private var saint: SaintCDM! {
+    private var saint: SaintCDM? {
         didSet {
-            self.name = saint.unwrappedShortName
-            self.fullName = saint.unwrappedFullName
-            self.description = saint.unwrappedSaintDescription
-            
-            self.canons = saint.unwrappedToCanon
-            self.prayers = saint.unwrappedToPrayer
-            
-            let setImages = saint.unwrappedToImage
-            self.images = setImages.compactMap { $0.image }.compactMap { UIImage(data: $0) }
+            if let saint = self.saint {
+                self.name = saint.unwrappedShortName
+                self.fullName = saint.unwrappedFullName
+                self.description = saint.unwrappedSaintDescription
+                
+                self.canons = saint.unwrappedToCanon
+                self.prayers = saint.unwrappedToPrayer
+                
+                let setImages = saint.unwrappedToImage
+                self.images = setImages.compactMap { $0.image }.compactMap { UIImage(data: $0) }
+            }
+            print(#line, #function, "something going wrong")
         }
     }
     
@@ -38,7 +41,6 @@ final class DetailSavedSaintViewModel: ObservableObject {
     }
     
     func fetchSaint() {
-        self.saint = CoreDataManager.shared.fetchSaint(Int32(saintServerID))!
+        self.saint = CoreDataManager.shared.fetchSaint(Int32(saintServerID))
     }
-    
 }

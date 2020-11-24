@@ -102,15 +102,6 @@ class CoreDataManager {
             print(error)
         }
         
-        //        let canons = saints.first?.toCanon as! Set<CanonCDM>
-        //        print(#line, canons)
-        //
-        //        let prayers = saints.first?.toPrayer as! Set<PrayerCDM>
-        //        print(#line, prayers.first?.text)
-        
-        //        let imgData = saints.first?.toImage as! Set<ImageCDM>
-        //        print(#line, imgData.first?.image)
-        
         return saints.first
     }
     

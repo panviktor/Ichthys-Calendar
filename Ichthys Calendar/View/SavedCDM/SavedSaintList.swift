@@ -24,29 +24,39 @@ struct SavedSaintList: View {
                         }
                         .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
-                        
-                        ScrollView {
-                            LazyVStack {
-                                ForEach(self.savedSaintViewModelList.saints) { saint in
-                                    NavigationLink(
-                                        destination:
-                                            DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID))),
-                                        label: {
-                                            SaintRow(saintName: saint.unwrappedFullName,
-                                                     saintSavedImage:  saint.unwrappedFirstImage.compactMap { UIImage(data: $0) }.first )
-                                            
-                                        })
-                                        .buttonStyle(PlainButtonStyle())
-                                        .padding(.horizontal)
-                                }
+                        Text("Text")
+                        List {
+                            ForEach(self.savedSaintViewModelList.saints) { saint in
+                                NavigationLink(
+                                    destination:
+                                        DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID))),
+                                    label: {
+                                        SaintRow(saintName: saint.unwrappedFullName,
+                                                 saintSavedImage:  saint.unwrappedFirstImage.compactMap { UIImage(data: $0) }.first )
+                                            .padding()
+                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                    })
+                                    
+                                    .buttonStyle(PlainButtonStyle())
+                                
                             }
-                        }
-                        
+                            .onDelete(perform: deleteItems)
+                            .listStyle(GroupedListStyle())
+                        }.frame(width: geometry.size.width)
                     }
                 }
             }
+            .navigationBarHidden(true)
         }.onAppear {
             savedSaintViewModelList.updateScreen()
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+           _ = offsets.map {
+                savedSaintViewModelList.deleteSaint(index: $0)
+            }
         }
     }
 }

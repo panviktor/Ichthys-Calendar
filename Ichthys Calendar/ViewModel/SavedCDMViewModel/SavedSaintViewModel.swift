@@ -14,5 +14,11 @@ class SavedSaintViewModelList: ObservableObject {
     func updateScreen() {
         saints = CoreDataManager.shared.fetchAllSaintCDM()
     }
+    
+    func deleteSaint(index: Int) {
+        let serverID = saints[index].serverID
+        saints.remove(at: index)
+        CoreDataManager.shared.deleteSaint(saint: Int32(serverID))
+    }
 }
 
