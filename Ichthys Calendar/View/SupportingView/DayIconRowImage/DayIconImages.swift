@@ -19,9 +19,6 @@ struct DayIconImages: View {
                 image: { (Image(uiImage: $0).resizable()) })
                 .aspectRatio(contentMode: .fit)
                 .padding(3)
-                .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke( Constant.gradient, lineWidth: 5)
-                                .saturation(1.8))
                 .clipped()
         }
         .frame(width: 120, height: 120)
@@ -34,4 +31,3 @@ struct DayIconImages_Previews: PreviewProvider {
         DayIconImages(url: URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!)
     }
 }
-

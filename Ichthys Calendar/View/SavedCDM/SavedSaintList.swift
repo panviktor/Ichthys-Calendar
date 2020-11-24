@@ -33,7 +33,7 @@ struct SavedSaintList: View {
                                             DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID))),
                                         label: {
                                             SaintRow(saintName: saint.unwrappedFullName,
-                                                     saintSavedImage:  saint.unwrappedToImage.compactMap { $0.image }.compactMap { UIImage(data: $0) }.first )
+                                                     saintSavedImage:  saint.unwrappedFirstImage.compactMap { UIImage(data: $0) }.first )
                                             
                                         })
                                         .buttonStyle(PlainButtonStyle())

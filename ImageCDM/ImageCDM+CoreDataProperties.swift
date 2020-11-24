@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension ImageCDM {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<ImageCDM> {
@@ -19,7 +18,6 @@ extension ImageCDM {
     @NSManaged public var image: Data?
     @NSManaged public var id: UUID
     @NSManaged public var toSaint: SaintCDM?
-
 }
 
 extension ImageCDM : Identifiable {

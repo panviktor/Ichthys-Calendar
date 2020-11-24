@@ -14,7 +14,6 @@ struct MainImagePlaceholder: View {
         Image(systemName: "person.crop.square")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 125, height: 125)
             .clipped()
             .cornerRadius(5)
             .padding(5)
@@ -24,7 +23,7 @@ struct MainImagePlaceholder: View {
             Constant.gradient
                 .opacity(0.55)
         }
-        .frame(width: 125, height: 125)
+        .frame(width: 120, height: 120)
     }
 }
 

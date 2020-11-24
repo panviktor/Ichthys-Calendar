@@ -47,6 +47,10 @@ extension SaintCDM {
         return toImage?.allObjects as? [ImageCDM] ?? [ImageCDM]()
     }
     
+    public var unwrappedFirstImage: [Data] {
+        return unwrappedToImage.compactMap { $0.image }
+    }
+    
 }
 
 // MARK: Generated accessors for toCanon

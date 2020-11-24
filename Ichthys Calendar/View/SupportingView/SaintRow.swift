@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SaintRow: View {
-    
     @State var saintName: String
     @State var saintImageURL: URL?
     @State var saintSavedImage: UIImage?
@@ -26,9 +25,9 @@ struct SaintRow: View {
                             if let url = saintImageURL {
                                 DayIconImages(url: url)
                             } else if let image = saintSavedImage {
-                            Image(uiImage: image)
+                                DayIconSavedImages(image: image)
                             } else {
-                                MainImagePlaceholder()
+                              MainImagePlaceholder()
                             }
                         }
                     }

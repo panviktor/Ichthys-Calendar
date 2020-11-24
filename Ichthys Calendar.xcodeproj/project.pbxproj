@@ -61,6 +61,7 @@
 		77F070142557234B00BFDD3A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070132557234B00BFDD3A /* ImageCache.swift */; };
 		77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070162557260300BFDD3A /* TemporaryImageCache.swift */; };
 		77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701925572C0300BFDD3A /* ImageCacheKey.swift */; };
+		77F50300256D09A500CEB92D /* DayIconSavedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F502FF256D09A500CEB92D /* DayIconSavedImages.swift */; };
 		77F94F2F2566BAD50015DA7A /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */; };
 		77F94F322566BC020015DA7A /* SaintRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F312566BC020015DA7A /* SaintRow.swift */; };
 		77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AB2559637B001AE985 /* Extension+String.swift */; };
@@ -125,6 +126,7 @@
 		77F070132557234B00BFDD3A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		77F070162557260300BFDD3A /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
 		77F0701925572C0300BFDD3A /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
+		77F502FF256D09A500CEB92D /* DayIconSavedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIconSavedImages.swift; sourceTree = "<group>"; };
 		77F94F2E2566BAD50015DA7A /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		77F94F312566BC020015DA7A /* SaintRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintRow.swift; sourceTree = "<group>"; };
 		77FC05AB2559637B001AE985 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
@@ -284,12 +286,11 @@
 		7783F20925599F1600993068 /* SupportingView */ = {
 			isa = PBXGroup;
 			children = (
-				77F070002556F28900BFDD3A /* DayIconImages.swift */,
-				7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */,
+				77F94F312566BC020015DA7A /* SaintRow.swift */,
+				77F50302256D09BE00CEB92D /* DayIconRowImage */,
 				7774ACC8255C56B100FE1252 /* BigIconImage.swift */,
 				7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */,
 				773B351525650EFC00B0BFE1 /* HolidayRow.swift */,
-				77F94F312566BC020015DA7A /* SaintRow.swift */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
 			);
 			path = SupportingView;
@@ -398,6 +399,16 @@
 			path = ImageAPI;
 			sourceTree = "<group>";
 		};
+		77F50302256D09BE00CEB92D /* DayIconRowImage */ = {
+			isa = PBXGroup;
+			children = (
+				7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */,
+				77F070002556F28900BFDD3A /* DayIconImages.swift */,
+				77F502FF256D09A500CEB92D /* DayIconSavedImages.swift */,
+			);
+			path = DayIconRowImage;
+			sourceTree = "<group>";
+		};
 		77FC05B1255963C0001AE985 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */,
+				77F50300256D09A500CEB92D /* DayIconSavedImages.swift in Sources */,
 				773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */,
 				7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */,
 				77AC6A15256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift in Sources */,
