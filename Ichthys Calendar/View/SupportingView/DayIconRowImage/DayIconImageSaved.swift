@@ -12,7 +12,7 @@ struct DayIconImageSaved: View {
     
     var body: some View {
         ZStack {
-            Constant.gradient
+            Constant.gradientOrange
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)

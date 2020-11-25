@@ -12,7 +12,7 @@ struct DayIconImages: View {
     
     var body: some View {
         ZStack {
-            Constant.gradient
+            Constant.gradientOrange
             AsyncImage(
                 url: url,
                 placeholder: { MainImagePlaceholder() },

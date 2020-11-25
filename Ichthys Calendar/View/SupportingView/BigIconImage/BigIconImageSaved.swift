@@ -12,13 +12,13 @@ struct BigIconImageSaved: View {
     
     var body: some View {
         ZStack {
-            Constant.gradient
+            Constant.gradientOrange
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipped()
                 .background(RoundedRectangle(cornerRadius: 5)
-                                .stroke(Constant.gradient, lineWidth: 5)
+                                .stroke(Constant.gradientOrange, lineWidth: 5)
                                 .saturation(1.8))
                 .padding(8)
         }

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainImagePlaceholder: View {
     var body: some View {
         ZStack {
-            Constant.gradient
+            Constant.gradientOrange
         Image(systemName: "person.crop.square")
             .resizable()
             .aspectRatio(contentMode: .fit)
@@ -18,9 +18,9 @@ struct MainImagePlaceholder: View {
             .cornerRadius(5)
             .padding(5)
             .background(RoundedRectangle(cornerRadius: 5)
-                            .stroke(Constant.gradient, lineWidth: 5)
+                            .stroke(Constant.gradientOrange, lineWidth: 5)
                             .saturation(1.8))
-            Constant.gradient
+            Constant.gradientOrange
                 .opacity(0.55)
         }
         .frame(width: 120, height: 120)

@@ -24,7 +24,6 @@ struct SavedSaintList: View {
                         }
                         .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
-                        Text("Text")
                         List {
                             ForEach(self.savedSaintViewModelList.saints) { saint in
                                 NavigationLink(

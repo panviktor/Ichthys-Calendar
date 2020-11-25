@@ -16,7 +16,6 @@ struct Fasting: Codable {
         return true
     }
     
-    //FIXME: - add GUI 
     //Fasting Name
     let fasting: String?
     var unwrappedFasting: String {
@@ -30,7 +29,7 @@ struct Fasting: Codable {
     
     let voice: Int?
     var unwrappedVoice: String {
-        "\(voice ?? 1)"
+        "Voice \(voice ?? 1)"
     }
     
     enum CodingKeys: String, CodingKey {

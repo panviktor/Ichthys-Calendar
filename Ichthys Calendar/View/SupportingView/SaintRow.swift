@@ -20,7 +20,7 @@ struct SaintRow: View {
                 HStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(Constant.gradient)
+                            .fill(Constant.gradientOrange)
                         VStack {
                             if let url = saintImageURL {
                                 DayIconImages(url: url)

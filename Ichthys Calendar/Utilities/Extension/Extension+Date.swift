@@ -18,3 +18,13 @@ extension Date {
         DateFormatter.dayMonthYear.string(from: self)
     }
 }
+
+extension Date {
+    var weekday: String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: date)
+    }
+}

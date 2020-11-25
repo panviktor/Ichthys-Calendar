@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//FIXME: - Add Removing Logic
+
 struct DetailSavedSaint: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.horizontalSizeClass) var sizeClass

@@ -10,7 +10,7 @@ import SwiftUI
 struct BigIconImagePlaceholder: View {
     var body: some View  {
         ZStack {
-            Constant.gradient
+            Constant.gradientOrange
                 .opacity(0.5)
         }
     }

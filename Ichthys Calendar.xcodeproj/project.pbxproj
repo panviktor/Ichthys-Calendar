@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		770E1B43256ADDE700D3ABA9 /* DetailSavedSaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */; };
+		77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift */; };
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
 		7723BE392569064100A02847 /* SavedSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723BE382569064100A02847 /* SavedSaintViewModel.swift */; };
 		7735CF2625658EB00048BD9D /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735CF2525658EB00048BD9D /* WaveShape.swift */; };
@@ -31,6 +32,7 @@
 		7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */; };
 		7774ACC9255C56B100FE1252 /* BigIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC8255C56B100FE1252 /* BigIconImage.swift */; };
 		7774ACCD255C657E00FE1252 /* BigIconImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */; };
+		7785672D256D8DF30024EDC1 /* CurrentDayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */; };
 		7788CB3725557231000D70D8 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7788CB3625557231000D70D8 /* DayData.swift */; };
 		779724A92569119D008C03D5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779724A82569119D008C03D5 /* PersistenceManager.swift */; };
 		779724AD2569133C008C03D5 /* Extension+NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */; };
@@ -68,10 +70,12 @@
 		77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AB2559637B001AE985 /* Extension+String.swift */; };
 		77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AE2559638A001AE985 /* Extension+Data.swift */; };
 		77FD40B8256ADBB80034F8EE /* DetailSavedSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FD40B7256ADBB80034F8EE /* DetailSavedSaintViewModel.swift */; };
+		77FD6ABC256EBC8B00571D36 /* BasicNeumorphicShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedSaint.swift; sourceTree = "<group>"; };
+		77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoViewViewModel.swift; sourceTree = "<group>"; };
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7723BE382569064100A02847 /* SavedSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSaintViewModel.swift; sourceTree = "<group>"; };
 		7735CF2525658EB00048BD9D /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 		7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImagePlaceholder.swift; sourceTree = "<group>"; };
 		7774ACC8255C56B100FE1252 /* BigIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIconImage.swift; sourceTree = "<group>"; };
 		7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIconImagePlaceholder.swift; sourceTree = "<group>"; };
+		7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoView.swift; sourceTree = "<group>"; };
 		7788CB3625557231000D70D8 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
 		779724A82569119D008C03D5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSManagedObjectContext.swift"; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 		77FC05AB2559637B001AE985 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		77FC05AE2559638A001AE985 /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
 		77FD40B7256ADBB80034F8EE /* DetailSavedSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedSaintViewModel.swift; sourceTree = "<group>"; };
+		77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNeumorphicShadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,14 @@
 				77FD40B7256ADBB80034F8EE /* DetailSavedSaintViewModel.swift */,
 			);
 			path = SavedCDMViewModel;
+			sourceTree = "<group>";
+		};
+		77136B71256EBA34003AEAEA /* SupportingViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift */,
+			);
+			path = SupportingViewModel;
 			sourceTree = "<group>";
 		};
 		7735CF2425658E940048BD9D /* CustomNavigationView */ = {
@@ -275,7 +289,6 @@
 		7767E739255556F900870197 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7717BAA6255D426F002AD3A6 /* WelcomeView.swift */,
 				7767E7282555541600870197 /* CalendarView.swift */,
 				7766267125595B700009B6FA /* DetailSaintView.swift */,
 				770E1B45256ADE1200D3ABA9 /* SavedCDM */,
@@ -288,11 +301,14 @@
 		7783F20925599F1600993068 /* SupportingView */ = {
 			isa = PBXGroup;
 			children = (
+				7717BAA6255D426F002AD3A6 /* WelcomeView.swift */,
 				77F94F312566BC020015DA7A /* SaintRow.swift */,
+				7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */,
 				77F50302256D09BE00CEB92D /* DayIconRowImage */,
 				779A2533256D0DAF00440E45 /* BigIconImage */,
 				773B351525650EFC00B0BFE1 /* HolidayRow.swift */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
+				77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */,
 			);
 			path = SupportingView;
 			sourceTree = "<group>";
@@ -345,6 +361,7 @@
 				77F06FFC2556A8B500BFDD3A /* DayViewModel.swift */,
 				7766266E25595ADF0009B6FA /* DetailSaintViewModel.swift */,
 				770E1B46256ADE2300D3ABA9 /* SavedCDMViewModel */,
+				77136B71256EBA34003AEAEA /* SupportingViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -511,6 +528,7 @@
 				779B7BB72555CBE4009C6835 /* HolidayImg.swift in Sources */,
 				779B7BB42555CBD1009C6835 /* Holiday.swift in Sources */,
 				779B7BBC2555CBFE009C6835 /* Saint.swift in Sources */,
+				7785672D256D8DF30024EDC1 /* CurrentDayInfoView.swift in Sources */,
 				779B7BD12555D45D009C6835 /* Extension+URLRequest.swift in Sources */,
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
 				7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */,
@@ -521,6 +539,7 @@
 				77F06FFA2556A69F00BFDD3A /* CalendarDayService.swift in Sources */,
 				77B5A4A72563E3BC00AEE081 /* Extension+Date.swift in Sources */,
 				770E1B43256ADDE700D3ABA9 /* DetailSavedSaint.swift in Sources */,
+				77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift in Sources */,
 				77AC6A16256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift in Sources */,
 				7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
@@ -540,6 +559,7 @@
 				77AC6A1A256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift in Sources */,
 				7766267225595B700009B6FA /* DetailSaintView.swift in Sources */,
 				77F06FFD2556A8B500BFDD3A /* DayViewModel.swift in Sources */,
+				77FD6ABC256EBC8B00571D36 /* BasicNeumorphicShadow.swift in Sources */,
 				77F0701125570B2500BFDD3A /* AsyncImage.swift in Sources */,
 				7774ACC3255C125000FE1252 /* SaintService.swift in Sources */,
 				7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */,

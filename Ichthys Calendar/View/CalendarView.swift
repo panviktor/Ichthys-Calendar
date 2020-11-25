@@ -31,6 +31,7 @@ struct CalendarView: View {
                             
                             DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
                                 .padding(.horizontal)
+                     
                             HolidayView(holidays: dayViewModel.holidays)
                             ScrollView {
                                 LazyVStack {
@@ -139,7 +140,7 @@ extension CalendarView {
 extension CalendarView {
     var blurView: some View {
         ZStack {
-            Constant.gradient.opacity(0.5)
+            Constant.gradientOrange.opacity(0.5)
                 .blur(radius: 5)
             VStack(alignment: .center, spacing: 10) {
                 Text(dragGestureText)
