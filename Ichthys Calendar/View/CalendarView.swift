@@ -41,8 +41,8 @@ struct CalendarView: View {
                             .modifier(BasicNeumorphicShadow())
                             
                             VStack{
-                                CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, fating: dayViewModel.fasting))
-                                    .frame(height: 120)
+                                CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
+                                    .frame(height: 130)
                                     .padding(.vertical)
                                 HolidayView(holidays: dayViewModel.holidays)
                             }

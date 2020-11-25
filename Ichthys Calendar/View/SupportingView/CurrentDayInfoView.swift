@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct CurrentDayInfoView: View {
-    @State var fastingName: String = "a"
-    @State var isFasting: Bool = true
-    @State var roundWeek: String = "s"
-    @State var voice: String = "a"
-
     @ObservedObject var viewModel: CurrentDayInfoViewModel
     
     var body: some View {
@@ -22,12 +17,12 @@ struct CurrentDayInfoView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                if !fastingName.isEmpty {
+                if !viewModel.fastingName.isEmpty {
                     ZStack {
                         Rectangle()
                             .fill(Constant.gradientBackground)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        Text(fastingName).font(.title2).fontWeight(.bold).lineLimit(2)
+                        Text(viewModel.fastingName).font(.title2).fontWeight(.bold).lineLimit(2)
                     }
                     .cornerRadius(15)
                     .padding(10)
@@ -40,7 +35,7 @@ struct CurrentDayInfoView: View {
                     HStack {
                         Text(viewModel.weekday)
                         Spacer()
-                        Text(voice)
+                        Text(viewModel.voice)
                     }
                     .padding(.horizontal)
                 }
@@ -48,7 +43,7 @@ struct CurrentDayInfoView: View {
                 .padding(.horizontal)
                 .modifier(BasicNeumorphicShadow())
                 
-                if isFasting  {
+                if viewModel.isFasting  {
                     ZStack {
                         Rectangle()
                             .fill(Constant.gradientBackground)
@@ -76,7 +71,7 @@ struct CurrentDayInfoView: View {
                     Rectangle()
                         .fill(Constant.gradientBackground)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    Text(roundWeek)
+                    Text(viewModel.roundWeek)
                 }
                 .cornerRadius(15)
                 .padding(10)

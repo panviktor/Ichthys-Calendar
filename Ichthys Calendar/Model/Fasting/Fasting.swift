@@ -24,12 +24,12 @@ struct Fasting: Codable {
     
     let roundWeek: String?
     var unwrappedRoundWeek: String {
-        roundWeek ?? ""
+        roundWeek?.html2String ?? ""
     }
     
     let voice: Int?
     var unwrappedVoice: String {
-        "Voice \(voice ?? 1)"
+        "\(voice ?? 1)"
     }
     
     enum CodingKeys: String, CodingKey {
