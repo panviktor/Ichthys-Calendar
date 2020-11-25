@@ -25,6 +25,8 @@ struct SavedSaintList: View {
                         .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
                         List {
+                            Spacer()
+                                .frame(height: 5)
                             ForEach(self.savedSaintViewModelList.saints) { saint in
                                 NavigationLink(
                                     destination:

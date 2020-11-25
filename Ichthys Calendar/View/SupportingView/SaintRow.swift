@@ -13,14 +13,13 @@ struct SaintRow: View {
     @State var saintSavedImage: UIImage?
     
     var body: some View {
-    
             ZStack(alignment: .leading)  {
                 WaveShape()
-                    .fill(Color(#colorLiteral(red: 0.9625987411, green: 0.713997066, blue: 0.4738479257, alpha: 1)).opacity(0.3))
+                    .fill(Constant.gradientBackground)
                 HStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 25, style: .continuous)
-                            .fill(Constant.gradientOrange)
+                            .fill(Constant.gradientBackground)
                         VStack {
                             if let url = saintImageURL {
                                 DayIconImages(url: url)
@@ -30,6 +29,7 @@ struct SaintRow: View {
                               MainImagePlaceholder()
                             }
                         }
+                        .blendMode(.normal)
                     }
                     .frame(width: 135, height: 135)
                     VStack(alignment: .leading) {
@@ -41,9 +41,10 @@ struct SaintRow: View {
                     }
                     .padding(.horizontal, 5)
                 }
-                .padding(15)
+                .padding(10)
             }
-            .clipShape(RoundedRectangle(cornerRadius: 15))
+            .cornerRadius(15)
+            .modifier(BasicNeumorphicShadow())
     }
 }
 

@@ -26,14 +26,31 @@ struct CalendarView: View {
                                 WaveShape()
                                     .fill(Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)).opacity(0.3))
                             }
-                            .frame(width: geometry.size.width, height: 45)
+                            .frame(width: geometry.size.width, height: 35)
                             .edgesIgnoringSafeArea(.top)
                             
-                            DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
-                                .padding(.horizontal)
-                     
-                            HolidayView(holidays: dayViewModel.holidays)
+                            ZStack {
+                                Rectangle()
+                                    .fill(Constant.gradientBackground)
+                                    .frame(maxWidth: .infinity, maxHeight: 90)
+                                DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
+                                    .padding()
+                            }
+                            .cornerRadius(15)
+                            .padding(.horizontal)
+                            .modifier(BasicNeumorphicShadow())
+                            
+                            VStack{
+                                CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, fating: dayViewModel.fasting))
+                                    .frame(height: 120)
+                                    .padding(.vertical)
+                                HolidayView(holidays: dayViewModel.holidays)
+                            }
+                            .padding(.vertical)
                             ScrollView {
+                                Rectangle()
+                                    .fill(Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)).opacity(0))
+                                    .frame(height: 8)
                                 LazyVStack {
                                     ForEach(self.dayViewModel.saints) { saint in
                                         NavigationLink(

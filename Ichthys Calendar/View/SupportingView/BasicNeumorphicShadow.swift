@@ -12,6 +12,5 @@ struct BasicNeumorphicShadow: ViewModifier {
         return content
             .shadow(color: Color("LightShadow"), radius: 8, x: -8, y: -8)
             .shadow(color: Color("DarkShadow"), radius: 8, x: 8, y: 8)
-            .blendMode(.hue)
     }
 }

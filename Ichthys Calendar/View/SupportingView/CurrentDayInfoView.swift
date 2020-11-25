@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct CurrentDayInfoView: View {
-    @State var fastingName: String
-    @State var isFasting: FastingEnum
-    @State var roundWeek: String
-    @State var voice: String
-    @State var weekday: String
+    @State var fastingName: String = "a"
+    @State var isFasting: Bool = true
+    @State var roundWeek: String = "s"
+    @State var voice: String = "a"
+
+    @ObservedObject var viewModel: CurrentDayInfoViewModel
     
     var body: some View {
         ZStack {
@@ -37,7 +38,7 @@ struct CurrentDayInfoView: View {
                     Rectangle()
                         .fill(Constant.gradientBackground)
                     HStack {
-                        Text(weekday)
+                        Text(viewModel.weekday)
                         Spacer()
                         Text(voice)
                     }
@@ -47,12 +48,12 @@ struct CurrentDayInfoView: View {
                 .padding(.horizontal)
                 .modifier(BasicNeumorphicShadow())
                 
-                if isFasting == .fasting {
+                if isFasting  {
                     ZStack {
                         Rectangle()
                             .fill(Constant.gradientBackground)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        Text(isFasting.rawValue)
+                        Text("Fasting")
                             .font(.callout).fontWeight(.bold)
                     }
                     .cornerRadius(15)
@@ -63,7 +64,7 @@ struct CurrentDayInfoView: View {
                         Rectangle()
                             .fill(Constant.gradientBackground)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        Text(isFasting.rawValue)
+                        Text("Not Fasting")
                             .font(.callout)
                     }
                     .cornerRadius(15)
@@ -83,18 +84,17 @@ struct CurrentDayInfoView: View {
             }
         }
         .cornerRadius(15)
-        .padding(.horizontal)
+        .padding()
         .modifier(BasicNeumorphicShadow())
-        .frame(height: 70, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
 
 struct CurrentFastingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CurrentDayInfoView(fastingName: "Рождественский пост", isFasting: .fasting, roundWeek: "25 неделя", voice: "Глас 4", weekday: "Суббота")
-            CurrentDayInfoView(fastingName: "Рождественский пост", isFasting: .fasting, roundWeek: "25 неделя", voice: "Глас 4", weekday: "Суббота")
-                .preferredColorScheme(.dark)
+//            CurrentDayInfoView(fastingName: "Рождественский пост", isFasting: .fasting, roundWeek: "25 неделя", voice: "Глас 4", weekday: "Суббота")
+//            CurrentDayInfoView(fastingName: "Рождественский пост", isFasting: .fasting, roundWeek: "25 неделя", voice: "Глас 4", weekday: "Суббота")
+//                .preferredColorScheme(.dark)
         }
     }
 }

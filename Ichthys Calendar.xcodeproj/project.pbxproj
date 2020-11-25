@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		770E1B43256ADDE700D3ABA9 /* DetailSavedSaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */; };
-		77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift */; };
+		77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */; };
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
 		7723BE392569064100A02847 /* SavedSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723BE382569064100A02847 /* SavedSaintViewModel.swift */; };
 		7735CF2625658EB00048BD9D /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735CF2525658EB00048BD9D /* WaveShape.swift */; };
@@ -75,7 +75,7 @@
 
 /* Begin PBXFileReference section */
 		770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedSaint.swift; sourceTree = "<group>"; };
-		77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoViewViewModel.swift; sourceTree = "<group>"; };
+		77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoViewModel.swift; sourceTree = "<group>"; };
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7723BE382569064100A02847 /* SavedSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSaintViewModel.swift; sourceTree = "<group>"; };
 		7735CF2525658EB00048BD9D /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		77136B71256EBA34003AEAEA /* SupportingViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift */,
+				77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */,
 			);
 			path = SupportingViewModel;
 			sourceTree = "<group>";
@@ -539,7 +539,7 @@
 				77F06FFA2556A69F00BFDD3A /* CalendarDayService.swift in Sources */,
 				77B5A4A72563E3BC00AEE081 /* Extension+Date.swift in Sources */,
 				770E1B43256ADDE700D3ABA9 /* DetailSavedSaint.swift in Sources */,
-				77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewViewModel.swift in Sources */,
+				77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift in Sources */,
 				77AC6A16256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift in Sources */,
 				7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
