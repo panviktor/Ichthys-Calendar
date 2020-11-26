@@ -12,6 +12,8 @@ struct DetailSavedSaint: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @StateObject var detailSavedSaintViewModel: DetailSavedSaintViewModel
     @GestureState private var dragOffset = CGSize.zero
+    @State private var isFavorited = true
+    let onDelete: (_ saintServerID: Int) -> Void
     
     var emptyView: some View {
         ZStack {
@@ -49,6 +51,22 @@ struct DetailSavedSaint: View {
                 emptyView
             }
         }
+    }
+    
+    var saveButton : some View { Button(action: {
+    }) {
+        HStack {
+            Image(systemName: "heart.circle")
+                .accessibility(label: Text(isFavorited ? "removeFromFavorites" : "addToFavorites"))
+                .scaleEffect(isFavorited ? 1.5 : 1.0)
+                .foregroundColor(isFavorited ? Color.red : Color.gray)
+                .animation(.easeInOut(duration: 0.5))
+                .onTapGesture {
+                    self.onDelete(detailSavedSaintViewModel.saintServerID)
+                    self.isFavorited.toggle()
+                }
+        }}
+    .animation(.spring())
     }
     
     var body: some View {
@@ -106,9 +124,7 @@ struct DetailSavedSaint: View {
             }
             .padding(.horizontal)
         }
-        
         .navigationBarTitle(Text(detailSavedSaintViewModel.name), displayMode: .inline)
-        
-        //     .navigationBarItems(leading:backButton, trailing: saveButton)
+        .navigationBarItems( trailing: saveButton)
     }
 }

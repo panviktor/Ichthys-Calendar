@@ -24,22 +24,21 @@ struct SavedSaintList: View {
                         }
                         .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
-                        List {
+                        ScrollView {
                             ForEach(self.savedSaintViewModelList.saints) { saint in
                                 NavigationLink(
                                     destination:
-                                        DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID))),
+                                        DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID)), onDelete: deleteItems),
                                     label: {
                                         SaintRow(saintName: saint.unwrappedFullName,
                                                  saintSavedImage:  saint.unwrappedFirstImage.compactMap { UIImage(data: $0) }.first )
-                                            .padding(.vertical)
-                                           
+                                            .padding()
                                     })
+                                    .buttonStyle(PlainButtonStyle())
                                     .frame(width: geometry.size.width)
                                     .listRowInsets(.init())
+                                
                             }
-                            .onDelete(perform: deleteItems)
-                           
                         }.frame(width: geometry.size.width)
                     }
                 }
@@ -50,12 +49,9 @@ struct SavedSaintList: View {
         }
     }
     
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            _ = offsets.map {
-                savedSaintViewModelList.deleteSaint(index: $0)
-            }
+    private func deleteItems(saintServerID: Int) {
+        withAnimation{
+            savedSaintViewModelList.deleteSaint(serverID: saintServerID)
         }
     }
 }
-
