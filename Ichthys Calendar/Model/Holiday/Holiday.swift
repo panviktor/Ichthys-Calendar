@@ -38,9 +38,9 @@ struct Holiday: Codable {
         case imgs
     }
     
-    static  let mocHolidays: [Holiday] = [Holiday(item: "Item_1metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3", id: 1, title: "Title_1", metaDescription: "metaDescription_1metaDescription_3metaDescription_3metaDescription_3", imgs: nil),
-                                          Holiday(item: "Item_1", id: 2, title: "Title_2", metaDescription: "metaDescription_2", imgs: nil),
-                                          Holiday(item: "Item_3", id: 3, title: "Title_3", metaDescription: "metaDescription_3", imgs: nil)]
+        static  let mocHolidays: [Holiday] = [Holiday(item: "Item_1metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3", id: 1, title: "Title_1", metaDescription: "metaDescription_1metaDescription_3metaDescription_3metaDescription_3", imgs: nil),
+                                              Holiday(item: "Item_1", id: 2, title: "Title_2", metaDescription: "metaDescription_2", imgs: nil),
+                                              Holiday(item: "Item_3", id: 3, title: "Title_3", metaDescription: "metaDescription_3", imgs: nil)]
 }
 
 extension Holiday: Identifiable {}

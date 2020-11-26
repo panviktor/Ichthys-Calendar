@@ -8,26 +8,6 @@ import CoreData
 import Combine
 import SwiftUI
 
-//    @Environment(\.managedObjectContext) private var viewContext
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \SaintCDM.timestamp, ascending: true)],
-//        animation: .default)
-//
-//    private var items: FetchedResults<SaintCDM>
-
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-
-
 class CoreDataManager {
     static let shared = CoreDataManager(moc: NSManagedObjectContext.current)
     

@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct HolidayView: View {
-    var holidays: [Holiday]
+    @ObservedObject var viewModel: HolidayViewViewModel
     @State private var expanded: Bool = true
     
     var body: some View {
-        if !holidays.isEmpty {
+        if  true  {
             DisclosureGroup(
                 isExpanded: $expanded,
                 content: {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 2) {
-                            ForEach(holidays) { holiday in
+                            ForEach(viewModel.holidays) { holiday in
                                 HolidayItem(holiday: holiday)
                             }
                         }
                     }
                 },
                 label: {
-                    Text(holidays.count > 1 ? "Holidays" : "Holiday")
+                    Text(viewModel.holidays.count > 1 ? "Holidays" : "Holiday")
                         .font(.headline)
                 }).padding(.horizontal)
         }
@@ -54,8 +54,3 @@ struct HolidayItem: View {
     }
 }
 
-struct HolidayView_Previews: PreviewProvider {
-    static var previews: some View {
-        HolidayView(holidays: Holiday.mocHolidays)
-    }
-}

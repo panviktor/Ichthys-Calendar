@@ -41,9 +41,14 @@ struct CalendarView: View {
                             VStack{
                                 CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                                     .frame(height: 130)
-                                HolidayView(holidays: dayViewModel.holidays)
+                              HolidayView(viewModel: HolidayViewViewModel(holidays:  dayViewModel.holidays))
                             }
                             .padding(.vertical)
+                            
+                            .onAppear {
+                                print(#line, dayViewModel.holidays)
+                            }
+                            
                             ScrollView {
                                 Rectangle()
                                     .fill(Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)).opacity(0))

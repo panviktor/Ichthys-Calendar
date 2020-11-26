@@ -160,6 +160,7 @@ struct DetailSaintView: View {
         }))
     }
 }
+
 struct DetailSaintView_Previews: PreviewProvider {
     static var previews: some View {
         DetailSaintView(detailSaintViewModel: DetailSaintViewModel(saintID: 1))

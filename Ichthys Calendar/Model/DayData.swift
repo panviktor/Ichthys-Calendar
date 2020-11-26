@@ -17,8 +17,14 @@ struct DayData: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        saints = try container.decode([Saint].self, forKey: .saints)
         fasting = try container.decode(Fasting.self, forKey: .fasting)
+        
+        do {
+            saints = try container.decode([Saint].self, forKey: .saints)
+        } catch DecodingError.typeMismatch {
+            saints = [Saint]()
+        }
+
         do {
             holidays = try container.decode([Holiday].self, forKey: .holidays)
         } catch DecodingError.typeMismatch {

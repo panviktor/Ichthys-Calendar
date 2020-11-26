@@ -33,9 +33,5 @@ final class CurrentDayInfoViewModel: ObservableObject {
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: date)
     }
-    
-    func update() {
-        
-    }
 }
 

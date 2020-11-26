@@ -15,7 +15,7 @@
 		7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736262B256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift */; };
 		7736262E256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736262C256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift */; };
 		773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B3512256431A500B0BFE1 /* Extension+DateFormatter.swift */; };
-		773B351625650EFC00B0BFE1 /* HolidayRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B351525650EFC00B0BFE1 /* HolidayRow.swift */; };
+		773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B351525650EFC00B0BFE1 /* HolidayView.swift */; };
 		774F898D256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F898B256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift */; };
 		774F898E256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774F898C256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift */; };
 		77662664255932CD0009B6FA /* Fasting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77662663255932CD0009B6FA /* Fasting.swift */; };
@@ -52,6 +52,7 @@
 		77B5A4A72563E3BC00AEE081 /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5A4A62563E3BC00AEE081 /* Extension+Date.swift */; };
 		77CEBE8F255DC2E30018B632 /* Canon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE8E255DC2E30018B632 /* Canon.swift */; };
 		77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE91255DC2FF0018B632 /* Prayer.swift */; };
+		77D0018C256FCCE50087CBA0 /* HolidayViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */; };
 		77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEA25566E9C00BFDD3A /* APIService.swift */; };
 		77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */; };
 		77F06FF225566FA800BFDD3A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FF125566FA800BFDD3A /* APIError.swift */; };
@@ -82,7 +83,7 @@
 		7736262B256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageCDM+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7736262C256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageCDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		773B3512256431A500B0BFE1 /* Extension+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+DateFormatter.swift"; sourceTree = "<group>"; };
-		773B351525650EFC00B0BFE1 /* HolidayRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayRow.swift; sourceTree = "<group>"; };
+		773B351525650EFC00B0BFE1 /* HolidayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayView.swift; sourceTree = "<group>"; };
 		774F898B256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaintCDM+CoreDataClass.swift"; sourceTree = "<group>"; };
 		774F898C256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaintCDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77662663255932CD0009B6FA /* Fasting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fasting.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		77B5A4A62563E3BC00AEE081 /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
 		77CEBE8E255DC2E30018B632 /* Canon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canon.swift; sourceTree = "<group>"; };
 		77CEBE91255DC2FF0018B632 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
+		77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewViewModel.swift; sourceTree = "<group>"; };
 		77F06FEA25566E9C00BFDD3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		77F06FF125566FA800BFDD3A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */,
+				77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */,
 			);
 			path = SupportingViewModel;
 			sourceTree = "<group>";
@@ -304,9 +307,9 @@
 				7717BAA6255D426F002AD3A6 /* WelcomeView.swift */,
 				77F94F312566BC020015DA7A /* SaintRow.swift */,
 				7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */,
+				773B351525650EFC00B0BFE1 /* HolidayView.swift */,
 				77F50302256D09BE00CEB92D /* DayIconRowImage */,
 				779A2533256D0DAF00440E45 /* BigIconImage */,
-				773B351525650EFC00B0BFE1 /* HolidayRow.swift */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
 				77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */,
 			);
@@ -533,7 +536,7 @@
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
 				7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */,
 				776B81BB256705D60073C47E /* SavedSaintList.swift in Sources */,
-				773B351625650EFC00B0BFE1 /* HolidayRow.swift in Sources */,
+				773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */,
 				779724A92569119D008C03D5 /* PersistenceManager.swift in Sources */,
 				77FD40B8256ADBB80034F8EE /* DetailSavedSaintViewModel.swift in Sources */,
 				77F06FFA2556A69F00BFDD3A /* CalendarDayService.swift in Sources */,
@@ -555,6 +558,7 @@
 				77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */,
 				77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */,
 				77662664255932CD0009B6FA /* Fasting.swift in Sources */,
+				77D0018C256FCCE50087CBA0 /* HolidayViewViewModel.swift in Sources */,
 				77F070142557234B00BFDD3A /* ImageCache.swift in Sources */,
 				77AC6A1A256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift in Sources */,
 				7766267225595B700009B6FA /* DetailSaintView.swift in Sources */,
