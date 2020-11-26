@@ -53,6 +53,8 @@
 		77CEBE8F255DC2E30018B632 /* Canon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE8E255DC2E30018B632 /* Canon.swift */; };
 		77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE91255DC2FF0018B632 /* Prayer.swift */; };
 		77D0018C256FCCE50087CBA0 /* HolidayViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */; };
+		77D00190257034430087CBA0 /* HolidayIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0018F257034430087CBA0 /* HolidayIcon.swift */; };
+		77D00195257039560087CBA0 /* HolidayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D00194257039560087CBA0 /* HolidayItem.swift */; };
 		77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEA25566E9C00BFDD3A /* APIService.swift */; };
 		77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */; };
 		77F06FF225566FA800BFDD3A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FF125566FA800BFDD3A /* APIError.swift */; };
@@ -123,6 +125,8 @@
 		77CEBE8E255DC2E30018B632 /* Canon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canon.swift; sourceTree = "<group>"; };
 		77CEBE91255DC2FF0018B632 /* Prayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prayer.swift; sourceTree = "<group>"; };
 		77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewViewModel.swift; sourceTree = "<group>"; };
+		77D0018F257034430087CBA0 /* HolidayIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayIcon.swift; sourceTree = "<group>"; };
+		77D00194257039560087CBA0 /* HolidayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayItem.swift; sourceTree = "<group>"; };
 		77F06FEA25566E9C00BFDD3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		77F06FF125566FA800BFDD3A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -307,7 +311,7 @@
 				7717BAA6255D426F002AD3A6 /* WelcomeView.swift */,
 				77F94F312566BC020015DA7A /* SaintRow.swift */,
 				7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */,
-				773B351525650EFC00B0BFE1 /* HolidayView.swift */,
+				77D00192257035A20087CBA0 /* Holiday */,
 				77F50302256D09BE00CEB92D /* DayIconRowImage */,
 				779A2533256D0DAF00440E45 /* BigIconImage */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
@@ -400,6 +404,16 @@
 			);
 			name = CalendarCoreDataModel;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		77D00192257035A20087CBA0 /* Holiday */ = {
+			isa = PBXGroup;
+			children = (
+				773B351525650EFC00B0BFE1 /* HolidayView.swift */,
+				77D00194257039560087CBA0 /* HolidayItem.swift */,
+				77D0018F257034430087CBA0 /* HolidayIcon.swift */,
+			);
+			path = Holiday;
 			sourceTree = "<group>";
 		};
 		77F06FED25566F7600BFDD3A /* API */ = {
@@ -546,6 +560,7 @@
 				77AC6A16256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift in Sources */,
 				7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
+				77D00195257039560087CBA0 /* HolidayItem.swift in Sources */,
 				779724AD2569133C008C03D5 /* Extension+NSManagedObjectContext.swift in Sources */,
 				779A2537256D0F4600440E45 /* BigIconImageSaved.swift in Sources */,
 				774F898D256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift in Sources */,
@@ -585,6 +600,7 @@
 				779B7BD82555D4BE009C6835 /* CalendarEndpoint.swift in Sources */,
 				7767E7272555541600870197 /* Ichthys_CalendarApp.swift in Sources */,
 				77F06FF52556703C00BFDD3A /* APISession.swift in Sources */,
+				77D00190257034430087CBA0 /* HolidayIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

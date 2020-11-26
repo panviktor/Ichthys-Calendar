@@ -21,12 +21,6 @@ struct Holiday: Codable {
         return metaDescription ?? "Meta description not found"
     }
     
-    //FIXME: - Bad Strings!
-    //let description: String?
-    //var unwrappedDescription: String {
-    //        return description ?? "Description not found"
-    //}
-    
     let imgs: [HolidayImg]?
     
     enum CodingKeys: String, CodingKey {
@@ -34,8 +28,19 @@ struct Holiday: Codable {
         case id
         case title
         case metaDescription = "meta_description"
-        //case description
         case imgs
+    }
+    
+    var firstPreviewValidUrl: URL? {
+        guard let img = imgs?.first else {
+            return nil
+        }
+        
+        guard let imgImage = img.preview,
+              let url = URL(string: "https://cdn.azbyka.ru/days/assets/img/holidays/\(id)/\(imgImage)") else {
+            return nil
+        }
+        return url
     }
     
         static  let mocHolidays: [Holiday] = [Holiday(item: "Item_1metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3metaDescription_3", id: 1, title: "Title_1", metaDescription: "metaDescription_1metaDescription_3metaDescription_3metaDescription_3", imgs: nil),

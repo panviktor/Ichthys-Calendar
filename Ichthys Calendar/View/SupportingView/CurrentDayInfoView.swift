@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentDayInfoView: View {
     @ObservedObject var viewModel: CurrentDayInfoViewModel
+    @State private var expanded: Bool = true
     
     var body: some View {
         ZStack {
@@ -87,9 +88,7 @@ struct CurrentDayInfoView: View {
 struct CurrentFastingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-//            CurrentDayInfoView(fastingName: "Рождественский пост", isFasting: .fasting, roundWeek: "25 неделя", voice: "Глас 4", weekday: "Суббота")
-//            CurrentDayInfoView(fastingName: "Рождественский пост", isFasting: .fasting, roundWeek: "25 неделя", voice: "Глас 4", weekday: "Суббота")
-//                .preferredColorScheme(.dark)
+            CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: Date(), dayInfo: Fasting.init()))
         }
     }
 }
