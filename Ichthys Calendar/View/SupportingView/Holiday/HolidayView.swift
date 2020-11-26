@@ -22,12 +22,16 @@ struct HolidayView: View {
                                 HolidayItem(holiday: holiday)
                             }
                         }
-                    }.padding(.horizontal)
+                    }
+                    .cornerRadius(15)
+                    .padding(10)
+                    .modifier(BasicNeumorphicShadow())
                 },
                 label: {
                     Text(viewModel.holidays.count > 1 ? "Holidays" : "Holiday")
                         .font(.headline)
-                }).padding(.horizontal)
+                        .modifier(BasicNeumorphicShadow())
+                }).padding(.horizontal, 5)
         }
     }
 }

@@ -85,12 +85,12 @@ struct CurrentDayInfoView: View {
                     .cornerRadius(15)
                     .padding(10)
                     .modifier(BasicNeumorphicShadow())
-                    
                 },
                 label: {
                     Text("Days info")
                         .font(.headline)
-                }).padding(.horizontal, 2.5)
+                        .modifier(BasicNeumorphicShadow())
+                }).padding(.horizontal, 5)
     }
 }
 

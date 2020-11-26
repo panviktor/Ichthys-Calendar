@@ -30,14 +30,15 @@ struct CalendarView: View {
                             ZStack {
                                 Rectangle()
                                     .fill(Constant.gradientBackground)
-                                    .frame(maxWidth: .infinity, maxHeight: 90)
+                                    .frame(maxWidth: .infinity, maxHeight: 80)
                                 DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
-                                    .padding()
+                                    .padding(.horizontal, 5)
+//                                    .modifier(BasicNeumorphicShadow())
                             }
                             .cornerRadius(15)
-                            .padding(.horizontal)
                             .modifier(BasicNeumorphicShadow())
-                            
+                            .padding(.horizontal, 5)
+
                             CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                             HolidayView(viewModel: HolidayViewViewModel(holidays:  dayViewModel.holidays))
                         
@@ -151,8 +152,9 @@ extension CalendarView {
 extension CalendarView {
     var blurView: some View {
         ZStack {
-            Constant.gradientOrange.opacity(0.5)
+            Constant.gradientBackground.opacity(0.4)
                 .blur(radius: 5)
+                .modifier(BasicNeumorphicShadow())
             VStack(alignment: .center, spacing: 10) {
                 Text(dragGestureText)
                     .font(.headline)
@@ -162,8 +164,10 @@ extension CalendarView {
                     .font(Font.title.weight(.bold))
                     .foregroundColor(.secondary)
             }
+            .modifier(BasicNeumorphicShadow())
         }
         .cornerRadius(25)
         .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .modifier(BasicNeumorphicShadow())
     }
 }

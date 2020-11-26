@@ -14,7 +14,7 @@ struct HolidayItem: View {
                 .fill(Constant.gradientBackground)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             HStack(alignment: .center) {
-                VStack {
+                ScrollView(.vertical, showsIndicators: false) {
                     Text(holiday.unwrappedTitle)
                         .padding(.vertical)
                         .multilineTextAlignment(.center)
