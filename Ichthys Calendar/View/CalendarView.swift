@@ -33,7 +33,6 @@ struct CalendarView: View {
                                     .frame(maxWidth: .infinity, maxHeight: 80)
                                 DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
                                     .padding(.horizontal, 5)
-//                                    .modifier(BasicNeumorphicShadow())
                             }
                             .cornerRadius(15)
                             .modifier(BasicNeumorphicShadow())
