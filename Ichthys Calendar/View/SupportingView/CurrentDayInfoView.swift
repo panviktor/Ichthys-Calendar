@@ -12,76 +12,85 @@ struct CurrentDayInfoView: View {
     @State private var expanded: Bool = true
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(Constant.gradientBackground)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                if !viewModel.fastingName.isEmpty {
+            DisclosureGroup(
+                isExpanded: $expanded,
+                content: {
                     ZStack {
                         Rectangle()
                             .fill(Constant.gradientBackground)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        Text(viewModel.fastingName).font(.title2).fontWeight(.bold).lineLimit(2)
+                            .edgesIgnoringSafeArea(.all)
+                        VStack {
+                            if !viewModel.fastingName.isEmpty {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Constant.gradientBackground)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    Text(viewModel.fastingName).font(.title3).fontWeight(.bold).lineLimit(2)
+                                }
+                                .cornerRadius(15)
+                                .padding(6)
+                                .modifier(BasicNeumorphicShadow())
+                            }
+                            ZStack {
+                                Rectangle()
+                                    .fill(Constant.gradientBackground)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                HStack {
+                                    Text(viewModel.weekday)
+                                    Spacer()
+                                    Text(viewModel.voice)
+                                }
+                                .padding(.horizontal)
+                            }
+                            .cornerRadius(15)
+                            .padding(6)
+                            .modifier(BasicNeumorphicShadow())
+                            
+                            if viewModel.isFasting  {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Constant.gradientBackground)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    Text("Fasting")
+                                        .font(.callout).fontWeight(.bold)
+                                }
+                                .cornerRadius(15)
+                                .padding(6)
+                                .modifier(BasicNeumorphicShadow())
+                            } else {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(Constant.gradientBackground)
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    Text("Not Fasting")
+                                        .font(.callout)
+                                }
+                                .cornerRadius(15)
+                                .padding(6)
+                                .modifier(BasicNeumorphicShadow())
+                            }
+                            
+                            ZStack {
+                                Rectangle()
+                                    .fill(Constant.gradientBackground)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                Text(viewModel.roundWeek)
+                            }
+                            .cornerRadius(15)
+                            .padding(6)
+                            .modifier(BasicNeumorphicShadow())
+                        }
                     }
                     .cornerRadius(15)
                     .padding(10)
                     .modifier(BasicNeumorphicShadow())
-                }
-                
-                ZStack {
-                    Rectangle()
-                        .fill(Constant.gradientBackground)
-                    HStack {
-                        Text(viewModel.weekday)
-                        Spacer()
-                        Text(viewModel.voice)
-                    }
-                    .padding(.horizontal)
-                }
-                .cornerRadius(15)
-                .padding(.horizontal)
-                .modifier(BasicNeumorphicShadow())
-                
-                if viewModel.isFasting  {
-                    ZStack {
-                        Rectangle()
-                            .fill(Constant.gradientBackground)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        Text("Fasting")
-                            .font(.callout).fontWeight(.bold)
-                    }
-                    .cornerRadius(15)
-                    .padding(10)
-                    .modifier(BasicNeumorphicShadow())
-                } else {
-                    ZStack {
-                        Rectangle()
-                            .fill(Constant.gradientBackground)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        Text("Not Fasting")
-                            .font(.callout)
-                    }
-                    .cornerRadius(15)
-                    .padding(10)
-                    .modifier(BasicNeumorphicShadow())
-                }
-                
-                ZStack {
-                    Rectangle()
-                        .fill(Constant.gradientBackground)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    Text(viewModel.roundWeek)
-                }
-                .cornerRadius(15)
-                .padding(10)
-                .modifier(BasicNeumorphicShadow())
-            }
-        }
-        .cornerRadius(15)
-        .padding()
-        .modifier(BasicNeumorphicShadow())
+                    
+                },
+                label: {
+                    Text("Days info")
+                        .font(.headline)
+                }).padding(.horizontal, 2.5)
     }
 }
 

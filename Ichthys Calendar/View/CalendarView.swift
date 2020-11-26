@@ -38,14 +38,9 @@ struct CalendarView: View {
                             .padding(.horizontal)
                             .modifier(BasicNeumorphicShadow())
                             
-                            
-                            
-                            VStack {
                             CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                             HolidayView(viewModel: HolidayViewViewModel(holidays:  dayViewModel.holidays))
-                            }
-                            
-                            
+                        
                             ScrollView {
                                 Rectangle()
                                     .fill(Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)).opacity(0))
