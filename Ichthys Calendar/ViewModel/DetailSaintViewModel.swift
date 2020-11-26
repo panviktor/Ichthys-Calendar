@@ -16,8 +16,10 @@ final class DetailSaintViewModel: ObservableObject, SaintService {
         didSet {
             self.name = saint.unwrappedName
             self.fullName = saint.unwrappedTitle
-            self.description = saint.unwrappedDescription
-            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.description = self.saint.unwrappedDescription
+            }
             self.imageURL = saint.firstValidImgUrl
             self.imageURLArray = saint.validImageArray
         }

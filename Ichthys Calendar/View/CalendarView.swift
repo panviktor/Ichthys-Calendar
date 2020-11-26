@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @Environment(\.colorScheme) var colorScheme
     @StateObject var dayViewModel: DayViewModel
     @State private var dragOffset = CGSize.zero
     @State private var dragGestureText = ""
@@ -19,7 +18,6 @@ struct CalendarView: View {
         TabView {
             NavigationView {
                 GeometryReader { geometry in
-                    colorScheme == .dark ?  Color.black : Color.white
                     ZStack {
                         VStack {
                             ZStack {
@@ -43,7 +41,6 @@ struct CalendarView: View {
                             VStack{
                                 CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                                     .frame(height: 130)
-                                    .padding(.vertical)
                                 HolidayView(holidays: dayViewModel.holidays)
                             }
                             .padding(.vertical)

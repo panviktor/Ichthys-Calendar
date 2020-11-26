@@ -34,7 +34,7 @@ struct SaintRow: View {
                     .frame(width: 135, height: 135)
                     VStack(alignment: .leading) {
                         Text(saintName)
-                            .font(.headline)
+                            .font(.subheadline)
                             .fontWeight(.bold)
                             .lineLimit(4)
                             .layoutPriority(1)

@@ -25,8 +25,6 @@ struct SavedSaintList: View {
                         .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
                         List {
-                            Spacer()
-                                .frame(height: 5)
                             ForEach(self.savedSaintViewModelList.saints) { saint in
                                 NavigationLink(
                                     destination:
@@ -34,15 +32,14 @@ struct SavedSaintList: View {
                                     label: {
                                         SaintRow(saintName: saint.unwrappedFullName,
                                                  saintSavedImage:  saint.unwrappedFirstImage.compactMap { UIImage(data: $0) }.first )
-                                            .padding()
-                                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                            .padding(.vertical)
+                                           
                                     })
-                                    
-                                    .buttonStyle(PlainButtonStyle())
-                                
+                                    .frame(width: geometry.size.width)
+                                    .listRowInsets(.init())
                             }
                             .onDelete(perform: deleteItems)
-                            .listStyle(GroupedListStyle())
+                           
                         }.frame(width: geometry.size.width)
                     }
                 }
@@ -55,7 +52,7 @@ struct SavedSaintList: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-           _ = offsets.map {
+            _ = offsets.map {
                 savedSaintViewModelList.deleteSaint(index: $0)
             }
         }

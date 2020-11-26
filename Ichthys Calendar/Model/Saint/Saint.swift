@@ -89,11 +89,6 @@ struct Saint: Codable {
         description?.html2String ?? "Description"
     }
     
-    let metaDescription: String?
-    var unwrappedMetaDescription: String {
-        metaDescription?.html2String ?? "Description"
-    }
-    
     let imgs: [SaintImg]?
     
     let prayers: [Prayer]?
@@ -123,7 +118,6 @@ struct Saint: Codable {
         case saintPrefix = "prefix"
         case suffix
         case description
-        case metaDescription = "meta_description"
         case imgs
         case prayers = "taks"
         case canons = "caa"
