@@ -10,14 +10,9 @@ import SwiftUI
 final class HolidayViewViewModel: ObservableObject {
 
     //MARK: - VM
-    @Published private(set) var holidays: [Holiday] {
-        didSet {
-            print(#line)
-        }
-    }
+    @Published private(set) var holidays: [Holiday]
     
     init(holidays: [Holiday]) {
-        print(#line, #function, holidays)
         self.holidays = holidays
     }
 }

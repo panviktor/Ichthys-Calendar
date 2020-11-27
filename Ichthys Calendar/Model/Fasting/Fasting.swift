@@ -9,11 +9,15 @@ import Foundation
 
 struct Fasting: Codable {
     let type: Int?
-    var isFasting: Bool {
-        guard let type = type, type == 0 else {
-            return false
+    private var unwrappedType: Int {
+        guard let type = type else {
+            return 0
         }
-        return true
+        return type
+    }
+    
+    var isFasting: Bool {
+        unwrappedType != 1 ? false : true
     }
     
     //Fasting Name

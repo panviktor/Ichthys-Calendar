@@ -20,6 +20,7 @@ final class CurrentDayInfoViewModel: ObservableObject {
         self.weekday = weekday(date: date)
         self.fastingName = dayInfo.unwrappedFasting
         self.isFasting = dayInfo.isFasting
+
         DispatchQueue.main.async {
             self.roundWeek = dayInfo.unwrappedRoundWeek
         }
