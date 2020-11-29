@@ -34,6 +34,8 @@
 		7774ACCD255C657E00FE1252 /* BigIconImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */; };
 		7785672D256D8DF30024EDC1 /* CurrentDayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */; };
 		7788CB3725557231000D70D8 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7788CB3625557231000D70D8 /* DayData.swift */; };
+		779331B32573FCB700410C2E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776B81B32566BD300073C47E /* Constant.swift */; };
+		779331B62573FE1300410C2E /* BasicNeumorphicShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */; };
 		779724A92569119D008C03D5 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779724A82569119D008C03D5 /* PersistenceManager.swift */; };
 		779724AD2569133C008C03D5 /* Extension+NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */; };
 		779A2537256D0F4600440E45 /* BigIconImageSaved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779A2536256D0F4600440E45 /* BigIconImageSaved.swift */; };
@@ -45,6 +47,7 @@
 		779B7BD82555D4BE009C6835 /* CalendarEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BD72555D4BE009C6835 /* CalendarEndpoint.swift */; };
 		779D729A25684F030090E948 /* CalendarCDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 779D729825684F030090E948 /* CalendarCDM.xcdatamodeld */; };
 		779D729D25684F390090E948 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D729C25684F390090E948 /* CoreDataManager.swift */; };
+		77A44BAD2573FEDD00362830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7767E72A2555541800870197 /* Assets.xcassets */; };
 		77AC6A15256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC6A0F256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift */; };
 		77AC6A16256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC6A10256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift */; };
 		77AC6A19256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC6A13256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift */; };
@@ -639,6 +642,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A44BAD2573FEDD00362830 /* Assets.xcassets in Resources */,
 				77D0024625727EAC0087CBA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +731,7 @@
 				77D202092572B4550053532F /* Extension+URLRequest.swift in Sources */,
 				77D2020C2572B82C0053532F /* Saint.swift in Sources */,
 				77D201FF2572B42E0053532F /* Extension+DateFormatter.swift in Sources */,
+				779331B62573FE1300410C2E /* BasicNeumorphicShadow.swift in Sources */,
 				77D202212572B8A60053532F /* Canon.swift in Sources */,
 				77D2021E2572B8A30053532F /* Prayer.swift in Sources */,
 				77D202182572B8920053532F /* HolidayImg.swift in Sources */,
@@ -740,6 +745,7 @@
 				77D202032572B4550053532F /* SaintService.swift in Sources */,
 				77D202082572B4550053532F /* CalendarEndpoint.swift in Sources */,
 				77D0024425727EAC0087CBA0 /* Ichthys_Calendar_Widget.swift in Sources */,
+				779331B32573FCB700410C2E /* Constant.swift in Sources */,
 				77D202022572B4550053532F /* APIError.swift in Sources */,
 				77D202052572B4550053532F /* CalendarDayService.swift in Sources */,
 			);
@@ -879,7 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
@@ -903,7 +909,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;

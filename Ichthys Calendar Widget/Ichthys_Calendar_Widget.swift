@@ -14,7 +14,6 @@ struct DayInfoProvider: TimelineProvider {
     
     func placeholder(in context: Context) -> DayInfoEntry {
         DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo)
-            
     }
     
     func getSnapshot(in context: Context, completion: @escaping (DayInfoEntry) -> ()) {
@@ -24,19 +23,20 @@ struct DayInfoProvider: TimelineProvider {
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let currentDate = Date()
-        let refreshDate = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
+        let truncated = Calendar.current.startOfDay(for: Date())
+        let nextUpdate = Calendar.autoupdatingCurrent.date(byAdding: .day, value: 1,
+                                                           to: Calendar.autoupdatingCurrent.startOfDay(for: truncated))!
         
         DayInfoLoader.fetch { result in
             let dayInfo: DayInfo
-            
             if case .success(let fetchedDay) = result {
                 dayInfo = fetchedDay
             } else {
-                dayInfo = DayInfo(weekday: "", dayNumber: "", isFasting: true, fastingName: "Failed to load day info", holiday: "")
+                dayInfo = DayInfo(weekday: "", dayNumber: "", isFasting: true,
+                                  fastingName: "Failed to load day info", holiday: "")
             }
             let entry = DayInfoEntry(date: currentDate, dayInfo: dayInfo)
-            //FIXME: - fix reloading
-            let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
+            let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
             completion(timeline)
         }
     }
@@ -45,9 +45,8 @@ struct DayInfoProvider: TimelineProvider {
 struct DayInfoEntry: TimelineEntry {
     let date: Date
     let dayInfo: DayInfo
-    
     var relevance: TimelineEntryRelevance? {
-        return TimelineEntryRelevance(score: 10) // 0 - not important | 100 - very important
+        return TimelineEntryRelevance(score: 10)
     }
 }
 
@@ -61,9 +60,9 @@ struct Ichthys_Calendar_Widget: Widget {
         }
         .configurationDisplayName("Ichthys Calendar Widget")
         .description("Shows the fast day and holiday.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
-
 
 struct DayInfo {
     let weekday: String
@@ -75,7 +74,6 @@ struct DayInfo {
     static var mocDayInfo = DayInfo(weekday: "Среда", dayNumber: "31", isFasting: true,
                                     fastingName: "Рождественский пост", holiday: "Рождественские святки")
 }
-
 
 struct DayInfoLoader {
     static func weekday() -> String {
@@ -114,6 +112,7 @@ struct DayInfoLoader {
             let isFasting = dayData.fasting.isFasting
             let fastingName = dayData.fasting.unwrappedFasting
             let holiday = dayData.holidays.first?.unwrappedTitle ?? ""
+            
             return DayInfo(weekday: weekday, dayNumber: dayNumber, isFasting: isFasting, fastingName: fastingName, holiday: holiday)
         } catch let jsonError {
             print(jsonError)
@@ -131,6 +130,7 @@ struct Ichthys_Calendar_WidgetEntryView : View {
     var body: some View {
         if widgetFamily == .systemSmall {
             ZStack {
+                Constant.gradientBackground
                 VStack {
                     VStack(alignment: .leading) {
                         HStack {
@@ -143,7 +143,7 @@ struct Ichthys_Calendar_WidgetEntryView : View {
                         }
                         if entry.dayInfo.isFasting {
                             Text("Fasting")
-                                .font(.subheadline).fontWeight(.bold)
+                                .font(.headline).fontWeight(.bold).foregroundColor(.red)
                         } else {
                             Text("No fasting")
                                 .font(.subheadline).fontWeight(.bold)
@@ -161,19 +161,43 @@ struct Ichthys_Calendar_WidgetEntryView : View {
                 .padding()
             }
         } else {
-            VStack {
-                Text("This is a medium or large widget")
+            ZStack {
+                Rectangle()
+                    .fill(Constant.gradientBackground)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                VStack {
+                    ContainerRelativeShape()
+                        .inset(by: 4)
+                        .fill(Constant.gradientBackground)
+                    Text("Hello, World!")
+                        .font(.headline)
+                }
+                .padding(.horizontal)
             }
+            .cornerRadius(15)
+            .padding(6)
+            .modifier(BasicNeumorphicShadow())
         }
     }
 }
-
 
 struct Ichthys_Calendar_Widget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             Ichthys_Calendar_WidgetEntryView(entry: DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
+            
+            
+            Ichthys_Calendar_WidgetEntryView(entry: DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            
+            Ichthys_Calendar_WidgetEntryView(entry: DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .environment(\.colorScheme, .dark)
+            
+            Ichthys_Calendar_WidgetEntryView(entry: DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+                .environment(\.colorScheme, .dark)
         }
     }
 }
