@@ -71,8 +71,8 @@ struct DayInfo {
     let fastingName: String
     let holiday: String
     
-    static var mocDayInfo = DayInfo(weekday: "Среда", dayNumber: "31", isFasting: true,
-                                    fastingName: "Рождественский пост", holiday: "Рождественские святки")
+    static var mocDayInfo = DayInfo(weekday: "Thursday", dayNumber: "10", isFasting: true,
+                                    fastingName: "Christmas fast", holiday: "Icons of the Mother of God called \"Sign\"")
 }
 
 struct DayInfoLoader {
@@ -129,37 +129,48 @@ struct Ichthys_Calendar_WidgetEntryView : View {
     
     var body: some View {
         if widgetFamily == .systemSmall {
-            ZStack {
+            ZStack(alignment: .topLeading) {
                 Constant.gradientBackground
-                VStack {
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(entry.dayInfo.weekday)
-                                .padding(.bottom, 5)
-                            Spacer()
-                            Text(entry.dayInfo.dayNumber)
-                                .bold()
-                                .padding(.bottom, 5)
-                        }
-                        if entry.dayInfo.isFasting {
-                            Text("Fasting")
-                                .font(.headline).fontWeight(.bold).foregroundColor(.red)
-                        } else {
-                            Text("No fasting")
-                                .font(.subheadline).fontWeight(.bold)
-                        }
+                ContainerRelativeShape()
+                    .inset(by: 8)
+                    .fill(Constant.gradientBackground)
+                    .modifier(BasicNeumorphicShadow())
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(entry.dayInfo.weekday)
+                            .font(.headline)
+                        Spacer()
+                        Text(entry.dayInfo.dayNumber)
+                            .bold()
+                    }.padding(.bottom, 0.5)
+                    
+                    if entry.dayInfo.isFasting {
+                        Text("Fasting")
+                            .font(.headline).fontWeight(.bold).foregroundColor(.red)
+                            .padding(.top, 0.5)
+                    } else {
+                        Text("No fasting")
+                            .font(.subheadline).fontWeight(.bold)
+                            .padding(.top, 0.5)
                     }
-                    Spacer()
-                    Text(entry.dayInfo.fastingName)
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                    Spacer()
-                    Text(entry.dayInfo.holiday)
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
+                    
+                    VStack(alignment: .center) {
+                        Text(entry.dayInfo.fastingName)
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, 0.5)
+                            .layoutPriority(10)
+                        Divider()
+                        Text(entry.dayInfo.holiday)
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                    }
                 }
                 .padding()
             }
+            .cornerRadius(15)
+            .padding(.vertical, 1)
+            .modifier(BasicNeumorphicShadow())
         } else {
             ZStack {
                 Rectangle()
@@ -186,7 +197,6 @@ struct Ichthys_Calendar_Widget_Previews: PreviewProvider {
         Group {
             Ichthys_Calendar_WidgetEntryView(entry: DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-            
             
             Ichthys_Calendar_WidgetEntryView(entry: DayInfoEntry(date: Date(), dayInfo: DayInfo.mocDayInfo))
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
