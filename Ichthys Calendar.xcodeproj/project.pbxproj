@@ -48,6 +48,11 @@
 		779D729A25684F030090E948 /* CalendarCDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 779D729825684F030090E948 /* CalendarCDM.xcdatamodeld */; };
 		779D729D25684F390090E948 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779D729C25684F390090E948 /* CoreDataManager.swift */; };
 		77A44BAD2573FEDD00362830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7767E72A2555541800870197 /* Assets.xcassets */; };
+		77A44BB725740F5600362830 /* DayInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A44BB625740F5600362830 /* DayInfoProvider.swift */; };
+		77A44BBB25740F8E00362830 /* DayInfoLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A44BBA25740F8E00362830 /* DayInfoLoader.swift */; };
+		77A44BBF25740FB700362830 /* DayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A44BBE25740FB700362830 /* DayInfo.swift */; };
+		77A44BC325740FF200362830 /* DayInfoEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A44BC225740FF200362830 /* DayInfoEntry.swift */; };
+		77A44BC72574104A00362830 /* Ichthys_Calendar_WidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A44BC62574104A00362830 /* Ichthys_Calendar_WidgetEntryView.swift */; };
 		77AC6A15256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC6A0F256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift */; };
 		77AC6A16256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC6A10256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift */; };
 		77AC6A19256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC6A13256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift */; };
@@ -168,6 +173,11 @@
 		779B7BD72555D4BE009C6835 /* CalendarEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEndpoint.swift; sourceTree = "<group>"; };
 		779D729925684F030090E948 /* CalendarCDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CalendarCDM.xcdatamodel; sourceTree = "<group>"; };
 		779D729C25684F390090E948 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		77A44BB625740F5600362830 /* DayInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoProvider.swift; sourceTree = "<group>"; };
+		77A44BBA25740F8E00362830 /* DayInfoLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoLoader.swift; sourceTree = "<group>"; };
+		77A44BBE25740FB700362830 /* DayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfo.swift; sourceTree = "<group>"; };
+		77A44BC225740FF200362830 /* DayInfoEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfoEntry.swift; sourceTree = "<group>"; };
+		77A44BC62574104A00362830 /* Ichthys_Calendar_WidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ichthys_Calendar_WidgetEntryView.swift; sourceTree = "<group>"; };
 		77AC6A0F256ACC33004BAEE9 /* PrayerCDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrayerCDM+CoreDataClass.swift"; sourceTree = "<group>"; };
 		77AC6A10256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrayerCDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		77AC6A13256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CanonCDM+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -293,6 +303,32 @@
 				77AC6A14256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift */,
 			);
 			path = CanonCDM;
+			sourceTree = "<group>";
+		};
+		775272C02574110200FE8FFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77A44BBE25740FB700362830 /* DayInfo.swift */,
+				77A44BBA25740F8E00362830 /* DayInfoLoader.swift */,
+				77A44BC225740FF200362830 /* DayInfoEntry.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		775272C32574113200FE8FFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77D0024525727EAC0087CBA0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		775272C42574113B00FE8FFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				77A44BC62574104A00362830 /* Ichthys_Calendar_WidgetEntryView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		77662666255932D40009B6FA /* Fasting */ = {
@@ -452,6 +488,16 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		77A44BCA2574109A00362830 /* WidgetCore */ = {
+			isa = PBXGroup;
+			children = (
+				77A44BB625740F5600362830 /* DayInfoProvider.swift */,
+				77D0024725727EAC0087CBA0 /* Info.plist */,
+				77D0024325727EAC0087CBA0 /* Ichthys_Calendar_Widget.swift */,
+			);
+			path = WidgetCore;
+			sourceTree = "<group>";
+		};
 		77AC69F72569234B004BAEE9 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,9 +542,10 @@
 		77D0024225727EAC0087CBA0 /* Ichthys Calendar Widget */ = {
 			isa = PBXGroup;
 			children = (
-				77D0024325727EAC0087CBA0 /* Ichthys_Calendar_Widget.swift */,
-				77D0024525727EAC0087CBA0 /* Assets.xcassets */,
-				77D0024725727EAC0087CBA0 /* Info.plist */,
+				77A44BCA2574109A00362830 /* WidgetCore */,
+				775272C02574110200FE8FFF /* Model */,
+				775272C42574113B00FE8FFF /* View */,
+				775272C32574113200FE8FFF /* Resources */,
 			);
 			path = "Ichthys Calendar Widget";
 			sourceTree = "<group>";
@@ -727,13 +774,16 @@
 			files = (
 				77D201F62572B41F0053532F /* Extension+String.swift in Sources */,
 				77D202042572B4550053532F /* APISession.swift in Sources */,
+				77A44BC72574104A00362830 /* Ichthys_Calendar_WidgetEntryView.swift in Sources */,
 				77D202122572B83E0053532F /* Holiday.swift in Sources */,
 				77D202092572B4550053532F /* Extension+URLRequest.swift in Sources */,
 				77D2020C2572B82C0053532F /* Saint.swift in Sources */,
+				77A44BB725740F5600362830 /* DayInfoProvider.swift in Sources */,
 				77D201FF2572B42E0053532F /* Extension+DateFormatter.swift in Sources */,
 				779331B62573FE1300410C2E /* BasicNeumorphicShadow.swift in Sources */,
 				77D202212572B8A60053532F /* Canon.swift in Sources */,
 				77D2021E2572B8A30053532F /* Prayer.swift in Sources */,
+				77A44BBF25740FB700362830 /* DayInfo.swift in Sources */,
 				77D202182572B8920053532F /* HolidayImg.swift in Sources */,
 				77D201FC2572B42A0053532F /* Extension+Date.swift in Sources */,
 				77D202152572B84E0053532F /* Fasting.swift in Sources */,
@@ -741,9 +791,11 @@
 				77D202072572B4550053532F /* APIService.swift in Sources */,
 				77D2021B2572B89C0053532F /* SaintImg.swift in Sources */,
 				77D201F92572B4250053532F /* Extension+Data.swift in Sources */,
+				77A44BBB25740F8E00362830 /* DayInfoLoader.swift in Sources */,
 				77D202062572B4550053532F /* RequestBuilder.swift in Sources */,
 				77D202032572B4550053532F /* SaintService.swift in Sources */,
 				77D202082572B4550053532F /* CalendarEndpoint.swift in Sources */,
+				77A44BC325740FF200362830 /* DayInfoEntry.swift in Sources */,
 				77D0024425727EAC0087CBA0 /* Ichthys_Calendar_Widget.swift in Sources */,
 				779331B32573FCB700410C2E /* Constant.swift in Sources */,
 				77D202022572B4550053532F /* APIError.swift in Sources */,
@@ -934,7 +986,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = PFT2629W4Z;
-				INFOPLIST_FILE = "Ichthys Calendar Widget/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar Widget/WidgetCore/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -957,7 +1009,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = PFT2629W4Z;
-				INFOPLIST_FILE = "Ichthys Calendar Widget/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar Widget/WidgetCore/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
