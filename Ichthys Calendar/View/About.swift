@@ -45,9 +45,20 @@ struct About: View {
                                 openURL(URL(string: "https://azbyka.ru")!)
                             }
                             Spacer()
-                            Button("You will greatly help the project if you leave a review.") {
-                                StoreReviewHelper.shared.requestFullReview()
-                            }
+                            
+                            HStack(alignment: .center) {
+                                Text("You will greatly help the project if you leave a review.")
+                                    .padding()
+                                Button(action: {
+                                    StoreReviewHelper.shared.requestFullReview()
+                                }) {
+                                    Image(systemName: "pencil.and.outline")
+                                        .foregroundColor(.red)
+                                        .font(.title)
+                                }
+                                .buttonStyle(SimpleButtonStyle())
+                            }.padding()
+                            
                             Spacer()
                             
                             HStack {
@@ -55,6 +66,7 @@ struct About: View {
                                     self.isShowingMailView.toggle()
                                 }) {
                                     Image(systemName: "envelope")
+                                        .foregroundColor(.black)
                                         .font(.title)
                                 }
                                 .disabled(!MFMailComposeViewController.canSendMail())
@@ -80,6 +92,7 @@ struct About: View {
                                     shareApp()
                                 }) {
                                     Image(systemName: "square.and.arrow.up")
+                                        .foregroundColor(.black)
                                         .font(.title)
                                 }
                                 .buttonStyle(SimpleButtonStyle())
