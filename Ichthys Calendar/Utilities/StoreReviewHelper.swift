@@ -32,8 +32,21 @@ struct StoreReviewHelper {
     
     func requestReview() {
         if let scene = UIApplication.shared.currentScene {
-            print(#line)
             SKStoreReviewController.requestReview(in: scene)
         }
     }
+    
+    func requestFullReview() {
+        let appURL = URL(string: Constant.appURL)!
+        var components = URLComponents(url: appURL, resolvingAgainstBaseURL: false)
+        components?.queryItems = [
+          URLQueryItem(name: "action", value: "write-review")
+        ]
+        guard let writeReviewURL = components?.url else {
+          return
+        }
+        UIApplication.shared.open(writeReviewURL)
+    }
+    
+    
 }

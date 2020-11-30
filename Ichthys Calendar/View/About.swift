@@ -46,7 +46,7 @@ struct About: View {
                             }
                             Spacer()
                             Button("You will greatly help the project if you leave a review.") {
-                                StoreReviewHelper.shared.requestReview()
+                                StoreReviewHelper.shared.requestFullReview()
                             }
                             Spacer()
                             Button(action: {
