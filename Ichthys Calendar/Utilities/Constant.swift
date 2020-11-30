@@ -16,4 +16,6 @@ struct Constant {
         endPoint: .bottomTrailing)
     
     static let appURL = "https://apps.apple.com/app/id1539134594"
+    
+    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
 }

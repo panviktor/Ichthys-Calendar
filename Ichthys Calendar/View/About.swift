@@ -59,9 +59,10 @@ struct About: View {
                                 .buttonStyle(SimpleButtonStyle())
                             }.padding()
                             
-                            Spacer()
                             
-                            HStack {
+                            HStack(alignment: .center) {
+                                Text("Mail for communication and suggestions.")
+                                    .padding()
                                 Button(action: {
                                     self.isShowingMailView.toggle()
                                 }) {
@@ -74,19 +75,11 @@ struct About: View {
                                     MailView(result: self.$result)
                                 }
                                 .buttonStyle(SimpleButtonStyle())
-                                
-                                Spacer()
-                                
-                                Button(action: {
-                                    shareApp()
-                                }) {
-                                    Image(systemName: "star.fill")
-                                        .foregroundColor(.orange)
-                                        .font(.title)
-                                }
-                                .buttonStyle(SimpleButtonStyle())
-                                
-                                Spacer()
+                            }.padding()
+                            
+                            HStack {
+                                Text("You can share the link to the app with your friends.")
+                                    .padding()
                                 
                                 Button(action: {
                                     shareApp()
@@ -123,38 +116,5 @@ struct About_Previews: PreviewProvider {
             About()
                 .environment(\.colorScheme, .dark)
         }
-       
-    }
-}
-
-
-struct SimpleButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .padding(30)
-            .background(
-                Group {
-                    if configuration.isPressed {
-                        Circle()
-                            .fill(Color.offWhite)
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: -5, y: -5)
-                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: 10, y: 10)
-                    } else {
-                        Circle()
-                            .fill(Color.offWhite)
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-                    }
-                })
-    }
-}
-
-extension Color {
-    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
-}
-
-extension LinearGradient {
-    init(_ colors: Color...) {
-        self.init(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 }

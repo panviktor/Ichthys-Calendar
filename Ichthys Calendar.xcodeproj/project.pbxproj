@@ -36,6 +36,9 @@
 		7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */; };
 		7774ACC9255C56B100FE1252 /* BigIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACC8255C56B100FE1252 /* BigIconImage.swift */; };
 		7774ACCD255C657E00FE1252 /* BigIconImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */; };
+		777EF1452575A35200E4016E /* SimpleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EF1442575A35200E4016E /* SimpleButtonStyle.swift */; };
+		777EF14B2575A69100E4016E /* Extension+LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EF14A2575A69100E4016E /* Extension+LinearGradient.swift */; };
+		777EF14F2575A71200E4016E /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777EF14E2575A71200E4016E /* Extension+Color.swift */; };
 		7785672D256D8DF30024EDC1 /* CurrentDayInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */; };
 		7788CB3725557231000D70D8 /* DayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7788CB3625557231000D70D8 /* DayData.swift */; };
 		779331B62573FE1300410C2E /* BasicNeumorphicShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */; };
@@ -166,6 +169,9 @@
 		7774ACC5255C421100FE1252 /* MainImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImagePlaceholder.swift; sourceTree = "<group>"; };
 		7774ACC8255C56B100FE1252 /* BigIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIconImage.swift; sourceTree = "<group>"; };
 		7774ACCC255C657E00FE1252 /* BigIconImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigIconImagePlaceholder.swift; sourceTree = "<group>"; };
+		777EF1442575A35200E4016E /* SimpleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimpleButtonStyle.swift; path = "Ichthys Calendar/View/SimpleButtonStyle.swift"; sourceTree = SOURCE_ROOT; };
+		777EF14A2575A69100E4016E /* Extension+LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LinearGradient.swift"; sourceTree = "<group>"; };
+		777EF14E2575A71200E4016E /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		7785672C256D8DF30024EDC1 /* CurrentDayInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoView.swift; sourceTree = "<group>"; };
 		7788CB3625557231000D70D8 /* DayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayData.swift; sourceTree = "<group>"; };
 		779724A82569119D008C03D5 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -426,6 +432,7 @@
 				779A2533256D0DAF00440E45 /* BigIconImage */,
 				7735CF2425658E940048BD9D /* CustomNavigationView */,
 				77FD6ABB256EBC8B00571D36 /* BasicNeumorphicShadow.swift */,
+				777EF1442575A35200E4016E /* SimpleButtonStyle.swift */,
 				775272D125753A9D00FE8FFF /* MailView.swift */,
 			);
 			path = SupportingView;
@@ -605,6 +612,8 @@
 				77B5A4A62563E3BC00AEE081 /* Extension+Date.swift */,
 				773B3512256431A500B0BFE1 /* Extension+DateFormatter.swift */,
 				779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */,
+				777EF14A2575A69100E4016E /* Extension+LinearGradient.swift */,
+				777EF14E2575A71200E4016E /* Extension+Color.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -747,12 +756,14 @@
 				77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */,
 				77662664255932CD0009B6FA /* Fasting.swift in Sources */,
 				77D0018C256FCCE50087CBA0 /* HolidayViewViewModel.swift in Sources */,
+				777EF14F2575A71200E4016E /* Extension+Color.swift in Sources */,
 				77F070142557234B00BFDD3A /* ImageCache.swift in Sources */,
 				77AC6A1A256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift in Sources */,
 				7766267225595B700009B6FA /* DetailSaintView.swift in Sources */,
 				77F06FFD2556A8B500BFDD3A /* DayViewModel.swift in Sources */,
 				77FD6ABC256EBC8B00571D36 /* BasicNeumorphicShadow.swift in Sources */,
 				77F0701125570B2500BFDD3A /* AsyncImage.swift in Sources */,
+				777EF14B2575A69100E4016E /* Extension+LinearGradient.swift in Sources */,
 				7774ACC3255C125000FE1252 /* SaintService.swift in Sources */,
 				7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */,
 				7774ACC9255C56B100FE1252 /* BigIconImage.swift in Sources */,
@@ -763,6 +774,7 @@
 				77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */,
 				77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */,
 				775272CE25752FCC00FE8FFF /* Extension+UIApplication.swift in Sources */,
+				777EF1452575A35200E4016E /* SimpleButtonStyle.swift in Sources */,
 				77F0700B25570A9500BFDD3A /* ImageLoader.swift in Sources */,
 				774F898E256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift in Sources */,
 				7774ACCD255C657E00FE1252 /* BigIconImagePlaceholder.swift in Sources */,
@@ -949,7 +961,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
@@ -973,7 +985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
@@ -996,7 +1008,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar Widget/WidgetCore/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
@@ -1019,7 +1031,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar Widget/WidgetCore/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
