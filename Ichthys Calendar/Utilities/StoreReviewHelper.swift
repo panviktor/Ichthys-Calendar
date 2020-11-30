@@ -30,7 +30,7 @@ struct StoreReviewHelper {
         }
     }
     
-    func requestReview() {
+    private func requestReview() {
         if let scene = UIApplication.shared.currentScene {
             SKStoreReviewController.requestReview(in: scene)
         }
@@ -40,13 +40,11 @@ struct StoreReviewHelper {
         guard let appURL = URL(string: Constant.appURL) else { return }
         var components = URLComponents(url: appURL, resolvingAgainstBaseURL: false)
         components?.queryItems = [
-          URLQueryItem(name: "action", value: "write-review")
+            URLQueryItem(name: "action", value: "write-review")
         ]
         guard let writeReviewURL = components?.url else {
-          return
+            return
         }
         UIApplication.shared.open(writeReviewURL)
     }
-    
-    
 }

@@ -35,9 +35,9 @@ struct About: View {
                         VStack {
                             Spacer()
                             Text("Ichthys Calendar")
-                                .font(.title)
+                                .font(.title).fontWeight(.heavy)
                                 .padding()
-                            Text("Thank you for the data provided by the site azbyka.ru")
+                            Text("Many thanks to the site azbuka.ru for the data provided.")
                                 .font(.subheadline)
                                 .multilineTextAlignment(.center)
                                 .padding()
@@ -49,19 +49,43 @@ struct About: View {
                                 StoreReviewHelper.shared.requestFullReview()
                             }
                             Spacer()
-                            Button(action: {
-                                self.isShowingMailView.toggle()
-                            }) {
-                                Text("Send Mail")
+                            
+                            HStack {
+                                Button(action: {
+                                    self.isShowingMailView.toggle()
+                                }) {
+                                    Image(systemName: "envelope")
+                                        .font(.title)
+                                }
+                                .disabled(!MFMailComposeViewController.canSendMail())
+                                .sheet(isPresented: $isShowingMailView) {
+                                    MailView(result: self.$result)
+                                }
+                                .buttonStyle(SimpleButtonStyle())
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    shareApp()
+                                }) {
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(.orange)
+                                        .font(.title)
+                                }
+                                .buttonStyle(SimpleButtonStyle())
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    shareApp()
+                                }) {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .font(.title)
+                                }
+                                .buttonStyle(SimpleButtonStyle())
                             }
-                            .disabled(!MFMailComposeViewController.canSendMail())
-                            .sheet(isPresented: $isShowingMailView) {
-                                MailView(result: self.$result)
-                            }
+                            .padding()
                             Spacer()
-                            Button("Share app with your friends") {
-                                shareApp()
-                            }
                         }
                     }
                     .cornerRadius(15)
@@ -81,6 +105,43 @@ struct About: View {
 
 struct About_Previews: PreviewProvider {
     static var previews: some View {
-        About()
+        Group {
+            About()
+            About()
+                .environment(\.colorScheme, .dark)
+        }
+       
+    }
+}
+
+
+struct SimpleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(30)
+            .background(
+                Group {
+                    if configuration.isPressed {
+                        Circle()
+                            .fill(Color.offWhite)
+                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: -5, y: -5)
+                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: 10, y: 10)
+                    } else {
+                        Circle()
+                            .fill(Color.offWhite)
+                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                    }
+                })
+    }
+}
+
+extension Color {
+    static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+}
+
+extension LinearGradient {
+    init(_ colors: Color...) {
+        self.init(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 }
