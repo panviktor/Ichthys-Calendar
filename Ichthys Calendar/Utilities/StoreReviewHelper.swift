@@ -37,7 +37,7 @@ struct StoreReviewHelper {
     }
     
     func requestFullReview() {
-        let appURL = URL(string: Constant.appURL)!
+        guard let appURL = URL(string: Constant.appURL) else { return }
         var components = URLComponents(url: appURL, resolvingAgainstBaseURL: false)
         components?.queryItems = [
           URLQueryItem(name: "action", value: "write-review")

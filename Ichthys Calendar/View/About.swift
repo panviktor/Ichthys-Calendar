@@ -52,11 +52,15 @@ struct About: View {
                             Button(action: {
                                 self.isShowingMailView.toggle()
                             }) {
-                                Text("Tap Me")
+                                Text("Send Mail")
                             }
                             .disabled(!MFMailComposeViewController.canSendMail())
                             .sheet(isPresented: $isShowingMailView) {
                                 MailView(result: self.$result)
+                            }
+                            Spacer()
+                            Button("Share app with your friends") {
+                                shareApp()
                             }
                         }
                     }
@@ -66,6 +70,12 @@ struct About: View {
                 }
             }
         }
+    }
+    
+    private func shareApp() {
+        guard let appURL = URL(string: Constant.appURL) else { return }
+        let av = UIActivityViewController(activityItems: [appURL], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
     }
 }
 
