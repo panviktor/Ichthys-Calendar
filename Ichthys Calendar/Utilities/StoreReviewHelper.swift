@@ -1,0 +1,39 @@
+//
+//  StoreReviewHelper.swift
+//  Ichthys Calendar
+//
+//  Created by Viktor on 30.11.2020.
+//
+
+import SwiftUI
+import StoreKit
+
+struct StoreReviewHelper {
+    @AppStorage("AppOpenedCount") var appOpenedCount = 0
+    
+    static let shared = StoreReviewHelper()
+    
+    fileprivate init() {}
+    
+    func incrementAppOpenedCount() {
+        appOpenedCount += 1
+    }
+    
+    func checkAndAskForReview() {
+        switch appOpenedCount {
+        case 25, 50:
+            StoreReviewHelper().requestReview()
+        case _ where appOpenedCount % 100 == 0 :
+            StoreReviewHelper().requestReview()
+        default:
+            break
+        }
+    }
+    
+    func requestReview() {
+        if let scene = UIApplication.shared.currentScene {
+            print(#line)
+            SKStoreReviewController.requestReview(in: scene)
+        }
+    }
+}

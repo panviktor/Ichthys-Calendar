@@ -94,6 +94,7 @@ struct Ichthys_Calendar_WidgetEntryView: View {
                 }
                 
                 VStack(alignment: .center) {
+                    Divider()
                     Text(entry.dayInfo.fastingName)
                         .font(.body)
                         .multilineTextAlignment(.center)

@@ -10,7 +10,9 @@ import SwiftUI
 @main
 struct Ichthys_CalendarApp: App {
     @Environment(\.scenePhase) private var scenePhase
+    
     let calendarCoreDataManager = PersistenceManager.shared
+    let storeReviewHelper = StoreReviewHelper.shared
     
     var body: some Scene {
         WindowGroup {
@@ -20,6 +22,8 @@ struct Ichthys_CalendarApp: App {
         .onChange(of: scenePhase) { phase in
             switch phase {
             case .active:
+                storeReviewHelper.incrementAppOpenedCount()
+                storeReviewHelper.checkAndAskForReview()
                 print("active")
             case .inactive:
                 print("inactive")

@@ -15,6 +15,5 @@ struct Constant {
       startPoint: UnitPoint(x: 0.2, y: 0.2),
       endPoint: .bottomTrailing)
 
-
     static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
 }
