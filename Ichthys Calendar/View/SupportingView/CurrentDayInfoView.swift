@@ -87,7 +87,7 @@ struct CurrentDayInfoView: View {
                     .modifier(BasicNeumorphicShadow())
                 },
                 label: {
-                    Text(NSLocalizedString("Days info", comment: ""))
+                    Text(NSLocalizedString("Day info", comment: ""))
                         .font(.headline)
                         .padding(.leading, 5)
                         .modifier(BasicNeumorphicShadow())

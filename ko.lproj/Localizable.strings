@@ -41,7 +41,7 @@
 //CurrentDayInfoView
 "Fasting" = "금식";
 "Not Fasting" = "금식하지 않음";
-"Days info" = "요일 정보";
+"Day info" = "요일 정보";
 
 //HolidayView
 "Holidays" = "휴가";

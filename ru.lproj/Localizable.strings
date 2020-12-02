@@ -41,7 +41,7 @@
 //CurrentDayInfoView
 "Fasting" = "Постный день";
 "Not Fasting" = "Непостный";
-"Days info" = "Информация про день";
+"Day info" = "Информация про день";
 
 //HolidayView
 "Holidays" = "Праздники";

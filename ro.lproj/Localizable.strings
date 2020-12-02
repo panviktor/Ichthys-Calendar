@@ -41,7 +41,7 @@
 //CurrentDayInfoView
 "Fasting" = "Ziua de post";
 "Not Fasting" = "Unpostate";
-"Days info" = "Informații despre zi";
+"Day info" = "Informații despre zi";
 
 //HolidayView
 "Holidays" = "Sărbători";

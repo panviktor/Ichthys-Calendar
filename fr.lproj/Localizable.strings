@@ -41,7 +41,7 @@
 //CurrentDayInfoView
 "Fasting" = "Jour rapide";
 "Not Fasting" = "Jour rapide";
-"Days info" = "Infos sur les jours";
+"Day info" = "Info jour";
 
 //HolidayView
 "Holidays" = "Vacances";

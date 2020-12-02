@@ -8,54 +8,54 @@
 
 //MARK: - Main View
 //Calendar View
-"Choose a day" = "Choose a day";
-"Will be loaded the next day" = "Will be loaded the next day";
-"The previous day will be loaded" = "The previous day will be loaded";
-"Today" = "Today";
-"Saved" = "Saved";
-"About" = "About";
+"Choose a day" = "Выберы дзень";
+"Will be loaded the next day" = "Загрузіцца на наступны дзень";
+"The previous day will be loaded" = "Папярэдні дзень будзе загружаны";
+"Today" = "Сёння";
+"Saved" = "Захавана";
+"About" = "Пра";
 
 //DetailSaintView
-"Go back" = "Go back";
-"Remove from Favorites" = "Remove from Favorites";
-"Add to Favorites" = "Add to Favorites";
-"No Image" = "No Image";
-"History" = "History";
-"Canon" = "Canon";
-"Prayers" = "Prayers";
+"Go back" = "Вяртацца";
+"Remove from Favorites" = "Выдаліць з абранага";
+"Add to Favorites" = "Дадаць у абранае";
+"No Image" = "Няма выявы";
+"History" = "Гісторыя";
+"Canon" = "Канон";
+"Prayers" = "Малітвы";
 
 //About
 "Ichthys Calendar" = "Ichthys Calendar";
-"Many thanks to the site azbuka.ru for the data provided." = "Many thanks to the site azbuka.ru for the data provided.";
-"Visit azbyka.ru" = "Visit azbyka.ru";
-"You will greatly help the project if you leave a review." = "You will greatly help the project if you leave a review.";
-"Mail for communication and suggestions." = "Mail for communication and suggestions.";
-"You can share the link to the app with your friends." = "You can share the link to the app with your friends.";
+"Many thanks to the site azbuka.ru for the data provided." = "Вялікі дзякуй сайту azbuka.ru за прадастаўленыя дадзеныя.";
+"Visit azbyka.ru" = "Наведайце azbyka.ru";
+"You will greatly help the project if you leave a review." = "Вы вельмі дапаможаце праекту, калі пакінеце водгук.";
+"Mail for communication and suggestions." = "Пошта для сувязі і прапаноў.";
+"You can share the link to the app with your friends." = "Вы можаце падзяліцца спасылкай на прыкладанне са сваімі сябрамі.";
 
 //DetailSavedSaint = DetailSaintView
 
 //MARK: - Supporting View
 //WelcomeView
-"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Please select a day from the left-hand menu; swipe from the left edge to show it.";
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Калі ласка, абярыце дзень з меню злева; правядзіце пальцам ад левага краю, каб паказаць яго.";
 
 //CurrentDayInfoView
-"Fasting" = "Fasting";
-"Not Fasting" = "Not Fasting";
-"Days info" = "Days info";
+"Fasting" = "Пост";
+"Not Fasting" = "Не нашча";
+"Day info" = "Інфармацыя пра дзень";
 
 //HolidayView
-"Holidays" = "Holidays";
-"Holiday" = "Holiday";
+"Holidays" = "Святы";
+"Holiday" = "Свята";
 
 //MARK: - Widget
 //DayInfoProvider
-"Failed to load day info" = "Failed to load day info";
+"Failed to load day info" = "Не атрымалася загрузіць інфармацыю пра дзень";
 
 //Ichthys Calendar Widget
 "Ichthys Calendar Widget" = "Ichthys Calendar Widget";
-"Shows the fast day and holiday." = "Shows the fast day and holiday";
+"Shows the fast day and holiday." = "Паказвае хуткі дзень і свята";
 
 //DayInfo
-"Thursday" = "Thursday";
-"Christmas fast" = "Christmas fast";
-"Icons of the Mother of God called \"Sign\"" = "Icons of the Mother of God called \"Sign\"";
+"Thursday" = "Чацвер";
+"Christmas fast" = "Калядны пост";
+"Icons of the Mother of God called \"Sign\"" = "Іконы Божай Маці пад назвай \"Знак \"";

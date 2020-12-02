@@ -8,54 +8,54 @@
 
 //MARK: - Main View
 //Calendar View
-"Choose a day" = "Choose a day";
-"Will be loaded the next day" = "Will be loaded the next day";
-"The previous day will be loaded" = "The previous day will be loaded";
-"Today" = "Today";
-"Saved" = "Saved";
-"About" = "About";
+"Choose a day" = "Elige un día";
+"Will be loaded the next day" = "Se cargará al día siguiente";
+"The previous day will be loaded" = "Se cargará el día anterior";
+"Today" = "Hoy";
+"Saved" = "Salvado";
+"About" = "Acerca de";
 
 //DetailSaintView
-"Go back" = "Go back";
-"Remove from Favorites" = "Remove from Favorites";
-"Add to Favorites" = "Add to Favorites";
-"No Image" = "No Image";
-"History" = "History";
+"Go back" = "Regresa";
+"Remove from Favorites" = "Quitar de favoritos";
+"Add to Favorites" = "Agregar a los favoritos";
+"No Image" = "Sin imágen";
+"History" = "Historia";
 "Canon" = "Canon";
-"Prayers" = "Prayers";
+"Prayers" = "Oraciones";
 
 //About
 "Ichthys Calendar" = "Ichthys Calendar";
-"Many thanks to the site azbuka.ru for the data provided." = "Many thanks to the site azbuka.ru for the data provided.";
-"Visit azbyka.ru" = "Visit azbyka.ru";
-"You will greatly help the project if you leave a review." = "You will greatly help the project if you leave a review.";
-"Mail for communication and suggestions." = "Mail for communication and suggestions.";
-"You can share the link to the app with your friends." = "You can share the link to the app with your friends.";
+"Many thanks to the site azbuka.ru for the data provided." = "Muchas gracias al sitio azbuka.ru por los datos proporcionados.";
+"Visit azbyka.ru" = "Visite azbyka.ru";
+"You will greatly help the project if you leave a review." = "Ayudarás enormemente al proyecto si dejas una reseña.";
+"Mail for communication and suggestions." = "Correo para comunicaciones y sugerencias.";
+"You can share the link to the app with your friends." = "Puedes compartir el enlace a la aplicación con tus amigos.";
 
 //DetailSavedSaint = DetailSaintView
 
 //MARK: - Supporting View
 //WelcomeView
-"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Please select a day from the left-hand menu; swipe from the left edge to show it.";
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Seleccione un día del menú de la izquierda; deslice desde el borde izquierdo para mostrarlo.";
 
 //CurrentDayInfoView
-"Fasting" = "Fasting";
-"Not Fasting" = "Not Fasting";
-"Days info" = "Days info";
+"Fasting" = "Rápido";
+"Not Fasting" = "No ayunar";
+"Day info" = "Información del día";
 
 //HolidayView
-"Holidays" = "Holidays";
-"Holiday" = "Holiday";
+"Holidays" = "Días festivos";
+"Holiday" = "Vacaciones";
 
 //MARK: - Widget
 //DayInfoProvider
-"Failed to load day info" = "Failed to load day info";
+"Failed to load day info" = "No se pudo cargar la información del día";
 
 //Ichthys Calendar Widget
 "Ichthys Calendar Widget" = "Ichthys Calendar Widget";
-"Shows the fast day and holiday." = "Shows the fast day and holiday";
+"Shows the fast day and holiday." = "Muestra el día de ayuno y las vacaciones.";
 
 //DayInfo
 "Thursday" = "Thursday";
 "Christmas fast" = "Christmas fast";
-"Icons of the Mother of God called \"Sign\"" = "Icons of the Mother of God called \"Sign\"";
+"Icons of the Mother of God called \"Sign\"" = "Iconos de la Madre de Dios llamados \"Signo \"";

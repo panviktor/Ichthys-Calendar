@@ -41,7 +41,7 @@
 //CurrentDayInfoView
 "Fasting" = "Post";
 "Not Fasting" = "Nie post";
-"Days info" = "Informacje o dniach";
+"Day info" = "Informacje o dniu";
 
 //HolidayView
 "Holidays" = "Wakacje";

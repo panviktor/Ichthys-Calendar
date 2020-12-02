@@ -41,7 +41,7 @@
 //CurrentDayInfoView
 "Fasting" = "Νηστεία";
 "Not Fasting" = "Όχι νηστεία";
-"Days info" = "Πληροφορίες ημερών";
+"Day info" = "Πληροφορίες ημέρας";
 
 //HolidayView
 "Holidays" = "Διακοπές";
