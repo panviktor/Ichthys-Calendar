@@ -367,7 +367,6 @@
 		7767E71A2555541600870197 = {
 			isa = PBXGroup;
 			children = (
-				77797962257797590090AE50 /* Localizable.strings */,
 				7767E7252555541600870197 /* Ichthys Calendar */,
 				77D0024225727EAC0087CBA0 /* Ichthys Calendar Widget */,
 				77D0023D25727EAC0087CBA0 /* Frameworks */,
@@ -387,6 +386,7 @@
 		7767E7252555541600870197 /* Ichthys Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				77797962257797590090AE50 /* Localizable.strings */,
 				7767E738255556F000870197 /* App */,
 				779B7BD52555D47A009C6835 /* Utilities */,
 				7788CB3925557238000D70D8 /* Model */,
