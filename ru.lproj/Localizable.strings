@@ -1,0 +1,64 @@
+/* 
+  Localizable.strings
+  Ichthys Calendar
+
+  Created by Viktor on 01.12.2020.
+  
+*/
+
+//MARK: - Main View
+
+//Calendar View
+"Choose a day" = "Выберите день";
+"Will be loaded the next day" = "Будет загружен следующий день";
+"The previous day will be loaded" = "Будет загружен предыдущий день";
+"Today" = "Сегодня";
+"Saved" = "Сохраненные";
+"About" = "Про программу";
+
+//DetailSaintView
+"Go back" = "Назад";
+"Remove from Favorites" = "Удалить из избранного";
+"Add to Favorites" = "Добавить в избранное";
+"No Image" = "Нет изображения";
+"History" = "История";
+"Canon" = "Канон";
+"Prayers" = "Молитвы";
+
+//About
+"Ichthys Calendar" = "Ихтис Календарь";
+"Many thanks to the site azbuka.ru for the data provided." = "Большое спасибо сайту azbuka.ru за предоставленные данные.";
+"Visit azbyka.ru" = "Посетить azbyka.ru";
+"You will greatly help the project if you leave a review." = "Вы очень поможете проекту, если оставите отзыв.";
+"Mail for communication and suggestions." = "Почта для связи и предложений.";
+"You can share the link to the app with your friends." = "Вы можете поделиться ссылкой на приложение с друзьями.";
+
+//DetailSavedSaint = DetailSaintView
+
+//MARK: - Supporting View
+
+//WelcomeView
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Пожалуйста, выберите день в левом меню; проведите пальцем от левого края, чтобы показать его.";
+
+//CurrentDayInfoView
+"Fasting" = "Постный день";
+"Not Fasting" = "Непостный";
+"Days info" = "Информация про день";
+
+//HolidayView
+"Holidays" = "Праздники";
+"Holiday" = "Праздник";
+
+//MARK: - Widget
+//DayInfoProvider
+"Failed to load day info" = "Ошибка загрузки информации про день";
+
+//Ichthys Calendar Widget
+"Ichthys Calendar Widget" = "Ихтис Календар Виджет";
+"Shows the fast day and holiday." = "Показывает постные дни и праздники.";
+
+//DayInfo
+"Thursday" = "Четверг";
+"Christmas fast" = "Рождественский пост";
+"Icons of the Mother of God called \"Sign\"" = "Иконы Богородицы под названием \"Знамение\"";
+

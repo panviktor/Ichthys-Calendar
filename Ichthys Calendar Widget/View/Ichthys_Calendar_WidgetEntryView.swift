@@ -37,11 +37,11 @@ struct Ichthys_Calendar_WidgetEntryView: View {
                 }.padding(.bottom, 0.5)
                 
                 if entry.dayInfo.isFasting {
-                    Text("Fasting")
+                    Text(NSLocalizedString("Fasting", comment: ""))
                         .font(.headline).fontWeight(.bold).foregroundColor(.red)
                         .padding(.top, 0.5)
                 } else {
-                    Text("No fasting")
+                    Text(NSLocalizedString("No fasting", comment: ""))
                         .font(.subheadline).fontWeight(.bold)
                         .padding(.top, 0.5)
                 }
@@ -74,7 +74,7 @@ struct Ichthys_Calendar_WidgetEntryView: View {
                 .modifier(BasicNeumorphicShadow())
             VStack(alignment: .leading) {
                 HStack {
-                    Text(entry.dayInfo.weekday)
+                    Text(entry.dayInfo.weekday.localizedCapitalized)
                         .fontWeight(.heavy)
                         .font(.headline)
                     Spacer()
@@ -84,11 +84,11 @@ struct Ichthys_Calendar_WidgetEntryView: View {
                 }.padding(.bottom, 0.5)
                 
                 if entry.dayInfo.isFasting {
-                    Text("Fasting")
+                    Text(NSLocalizedString("Fasting", comment: ""))
                         .font(.headline).fontWeight(.heavy).foregroundColor(.red)
                         .padding(.top, 0.5)
                 } else {
-                    Text("No fasting")
+                    Text(NSLocalizedString("No fasting", comment: ""))
                         .font(.subheadline).fontWeight(.bold)
                         .padding(.top, 0.5)
                 }

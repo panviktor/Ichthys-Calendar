@@ -11,6 +11,7 @@
 		77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */; };
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
 		7723BE392569064100A02847 /* SavedSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723BE382569064100A02847 /* SavedSaintViewModel.swift */; };
+		772E418A2577B7AC00E11AC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77797962257797590090AE50 /* Localizable.strings */; };
 		7735CF2625658EB00048BD9D /* WaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7735CF2525658EB00048BD9D /* WaveShape.swift */; };
 		7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736262B256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift */; };
 		7736262E256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736262C256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift */; };
@@ -365,6 +366,7 @@
 		7767E71A2555541600870197 = {
 			isa = PBXGroup;
 			children = (
+				77797962257797590090AE50 /* Localizable.strings */,
 				7767E7252555541600870197 /* Ichthys Calendar */,
 				77D0024225727EAC0087CBA0 /* Ichthys Calendar Widget */,
 				77D0023D25727EAC0087CBA0 /* Frameworks */,
@@ -384,7 +386,6 @@
 		7767E7252555541600870197 /* Ichthys Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				77797962257797590090AE50 /* Localizable.strings */,
 				7767E738255556F000870197 /* App */,
 				779B7BD52555D47A009C6835 /* Utilities */,
 				7788CB3925557238000D70D8 /* Model */,
@@ -730,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A44BAD2573FEDD00362830 /* Assets.xcassets in Resources */,
+				772E418A2577B7AC00E11AC4 /* Localizable.strings in Resources */,
 				77D0024625727EAC0087CBA0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

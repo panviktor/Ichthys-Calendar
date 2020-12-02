@@ -11,9 +11,7 @@
 //Calendar View
 "Choose a day" = "Choose a day";
 "Will be loaded the next day" = "Will be loaded the next day";
-"forward" = "forward";
 "The previous day will be loaded" = "The previous day will be loaded";
-"backward" = "backward";
 "Today" = "Today";
 "Saved" = "Saved";
 "About" = "About";
@@ -32,7 +30,7 @@
 "Many thanks to the site azbuka.ru for the data provided." = "Many thanks to the site azbuka.ru for the data provided.";
 "Visit azbyka.ru" = "Visit azbyka.ru";
 "You will greatly help the project if you leave a review." = "You will greatly help the project if you leave a review.";
-"Mail for communication and suggestions" = "Mail for communication and suggestions";
+"Mail for communication and suggestions." = "Mail for communication and suggestions.";
 "You can share the link to the app with your friends." = "You can share the link to the app with your friends.";
 
 //DetailSavedSaint = DetailSaintView
@@ -50,3 +48,18 @@
 //HolidayView
 "Holidays" = "Holidays";
 "Holiday" = "Holiday";
+
+//MARK: - Widget
+
+//DayInfoProvider
+"Failed to load day info" = "Failed to load day info";
+
+//Ichthys Calendar Widget
+
+"Ichthys Calendar Widget" = "Ichthys Calendar Widget";
+"Shows the fast day and holiday." = "Shows the fast day and holiday";
+
+//DayInfo
+"Thursday" = "Thursday";
+"Christmas fast" = "Christmas fast";
+"Icons of the Mother of God called \"Sign\"" = "Icons of the Mother of God called \"Sign\"";
