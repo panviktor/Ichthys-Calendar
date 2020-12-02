@@ -31,12 +31,13 @@ struct CalendarView: View {
                                 Rectangle()
                                     .fill(Constant.gradientBackground)
                                     .frame(maxWidth: .infinity, maxHeight: 80)
-                                DatePicker("Choose a day", selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
+                                DatePicker(NSLocalizedString("Choose a day", comment: ""), selection: $dayViewModel.date, in: dayViewModel.interval, displayedComponents: [.date])
                                     .padding(.horizontal, 5)
                             }
                             .cornerRadius(15)
-                            .modifier(BasicNeumorphicShadow())
                             .padding(.horizontal, 5)
+                            .modifier(BasicNeumorphicShadow())
+                           
 
                             CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                             HolidayView(viewModel: HolidayViewViewModel(holidays:  dayViewModel.holidays))

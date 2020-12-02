@@ -32,7 +32,8 @@ struct About: View {
                             .fill(Constant.gradientBackground)
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .edgesIgnoringSafeArea(.all)
-                        VStack {
+                        ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
+                        VStack(alignment: .center) {
                             Spacer()
                             Text("Ichthys Calendar")
                                 .font(.title).fontWeight(.heavy)
@@ -46,52 +47,54 @@ struct About: View {
                             }
                             Spacer()
                             
-                            HStack(alignment: .center) {
-                                Text("You will greatly help the project if you leave a review.")
-                                    .padding()
-                                Button(action: {
-                                    StoreReviewHelper.shared.requestFullReview()
-                                }) {
-                                    Image(systemName: "pencil.and.outline")
-                                        .foregroundColor(.red)
-                                        .font(.title)
-                                }
-                                .buttonStyle(SimpleButtonStyle())
-                            }.padding()
-                            
-                            
-                            HStack(alignment: .center) {
-                                Text("Mail for communication and suggestions.")
-                                    .padding()
-                                Button(action: {
-                                    self.isShowingMailView.toggle()
-                                }) {
-                                    Image(systemName: "envelope")
-                                        .foregroundColor(.black)
-                                        .font(.title)
-                                }
-                                .disabled(!MFMailComposeViewController.canSendMail())
-                                .sheet(isPresented: $isShowingMailView) {
-                                    MailView(result: self.$result)
-                                }
-                                .buttonStyle(SimpleButtonStyle())
-                            }.padding()
-                            
-                            HStack {
-                                Text("You can share the link to the app with your friends.")
-                                    .padding()
+                          
+                            VStack(alignment: .trailing) {
+                                HStack(alignment: .center) {
+                                    Text("You will greatly help the project if you leave a review.")
+                                        .padding()
+                                    Button(action: {
+                                        StoreReviewHelper.shared.requestFullReview()
+                                    }) {
+                                        Image(systemName: "pencil.and.outline")
+                                            .foregroundColor(.red)
+                                            .font(.title)
+                                    }
+                                    .buttonStyle(SimpleButtonStyle())
+                                }.padding()
                                 
-                                Button(action: {
-                                    shareApp()
-                                }) {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .foregroundColor(.black)
-                                        .font(.title)
-                                }
-                                .buttonStyle(SimpleButtonStyle())
+                                HStack(alignment: .center) {
+                                    Text("Mail for communication and suggestions.")
+                                        .padding()
+                                    Button(action: {
+                                        self.isShowingMailView.toggle()
+                                    }) {
+                                        Image(systemName: "envelope")
+                                            .foregroundColor(.black)
+                                            .font(.title)
+                                    }
+                                    .disabled(!MFMailComposeViewController.canSendMail())
+                                    .sheet(isPresented: $isShowingMailView) {
+                                        MailView(result: self.$result)
+                                    }
+                                    .buttonStyle(SimpleButtonStyle())
+                                }.padding()
+                                
+                                HStack(alignment: .center) {
+                                    Text("You can share the link to the app with your friends.")
+                                        .padding()
+                                    
+                                    Button(action: {
+                                        shareApp()
+                                    }) {
+                                        Image(systemName: "square.and.arrow.up")
+                                            .foregroundColor(.black)
+                                            .font(.title)
+                                    }
+                                    .buttonStyle(SimpleButtonStyle())
+                                }.padding()
+                                Spacer()
                             }
-                            .padding()
-                            Spacer()
+                            }
                         }
                     }
                     .cornerRadius(15)

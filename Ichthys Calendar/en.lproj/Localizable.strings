@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Ichthys Calendar
+
+  Created by Viktor on 01.12.2020.
+  
+*/
+
+//Calendar View
+"Choose a day" = "Choose a day";
+"Will be loaded the next day" = "Will be loaded the next day";
+"forward" = "forward";
+"The previous day will be loaded" = "The previous day will be loaded";
+"backward" = "backward";
+"Today" = "Today";
+"Saved" = "Saved";
+"About" = "About";
+
+//DetailSaintView
+"Go back" = "Go back";
+"Remove from Favorites" = "Remove from Favorites";
+"Add to Favorites" = "Add to Favorites";
+"No Image" = "No Image";
+"History" = "History";
+"Canon" = "Canon";
+"Prayers" = "Prayers";
+
+//About
+"Ichthys Calendar" = "Ichthys Calendar";
+"Many thanks to the site azbuka.ru for the data provided." = "Many thanks to the site azbuka.ru for the data provided.";
+"Visit azbyka.ru" = "Visit azbyka.ru";
+"You will greatly help the project if you leave a review." = "You will greatly help the project if you leave a review.";
+"Mail for communication and suggestions" = "Mail for communication and suggestions";
+"You can share the link to the app with your friends." = "You can share the link to the app with your friends.";
