@@ -11,10 +11,10 @@ struct WelcomeView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("Ichthys Calendar")
+                Text(NSLocalizedString("Ichthys Calendar", comment: ""))
                     .font(.largeTitle)
                 
-                Text("Please select a day from the left-hand menu; swipe from the left edge to show it.")
+                Text(NSLocalizedString("Please select a day from the left-hand menu; swipe from the left edge to show it.", comment: ""))
                     .foregroundColor(.secondary)
             }
         }

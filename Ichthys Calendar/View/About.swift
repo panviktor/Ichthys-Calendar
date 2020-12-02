@@ -33,67 +33,65 @@ struct About: View {
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                             .edgesIgnoringSafeArea(.all)
                         ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
-                        VStack(alignment: .center) {
-                            Spacer()
-                            Text("Ichthys Calendar")
-                                .font(.title).fontWeight(.heavy)
-                                .padding()
-                            Text("Many thanks to the site azbuka.ru for the data provided.")
-                                .font(.subheadline)
-                                .multilineTextAlignment(.center)
-                                .padding()
-                            Button("Visit azbyka.ru") {
-                                openURL(URL(string: "https://azbyka.ru")!)
-                            }
-                            Spacer()
-                            
-                          
-                            VStack(alignment: .trailing) {
-                                HStack(alignment: .center) {
-                                    Text("You will greatly help the project if you leave a review.")
-                                        .padding()
-                                    Button(action: {
-                                        StoreReviewHelper.shared.requestFullReview()
-                                    }) {
-                                        Image(systemName: "pencil.and.outline")
-                                            .foregroundColor(.red)
-                                            .font(.title)
-                                    }
-                                    .buttonStyle(SimpleButtonStyle())
-                                }.padding()
-                                
-                                HStack(alignment: .center) {
-                                    Text("Mail for communication and suggestions.")
-                                        .padding()
-                                    Button(action: {
-                                        self.isShowingMailView.toggle()
-                                    }) {
-                                        Image(systemName: "envelope")
-                                            .foregroundColor(.black)
-                                            .font(.title)
-                                    }
-                                    .disabled(!MFMailComposeViewController.canSendMail())
-                                    .sheet(isPresented: $isShowingMailView) {
-                                        MailView(result: self.$result)
-                                    }
-                                    .buttonStyle(SimpleButtonStyle())
-                                }.padding()
-                                
-                                HStack(alignment: .center) {
-                                    Text("You can share the link to the app with your friends.")
-                                        .padding()
-                                    
-                                    Button(action: {
-                                        shareApp()
-                                    }) {
-                                        Image(systemName: "square.and.arrow.up")
-                                            .foregroundColor(.black)
-                                            .font(.title)
-                                    }
-                                    .buttonStyle(SimpleButtonStyle())
-                                }.padding()
+                            VStack(alignment: .center) {
                                 Spacer()
-                            }
+                                Text(NSLocalizedString("Ichthys Calendar", comment: ""))
+                                    .font(.title).fontWeight(.heavy)
+                                    .padding()
+                                Text(NSLocalizedString("Many thanks to the site azbuka.ru for the data provided.", comment: ""))
+                                    .font(.subheadline)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                Button(NSLocalizedString("Visit azbyka.ru", comment: "")) {
+                                    openURL(URL(string: "https://azbyka.ru")!)
+                                }
+                                Spacer()
+                                VStack(alignment: .trailing) {
+                                    HStack(alignment: .center) {
+                                        Text(NSLocalizedString("You will greatly help the project if you leave a review.", comment: ""))
+                                            .padding()
+                                        Button(action: {
+                                            StoreReviewHelper.shared.requestFullReview()
+                                        }) {
+                                            Image(systemName: "pencil.and.outline")
+                                                .foregroundColor(.red)
+                                                .font(.title)
+                                        }
+                                        .buttonStyle(SimpleButtonStyle())
+                                    }.padding()
+                                    
+                                    HStack(alignment: .center) {
+                                        Text(NSLocalizedString("Mail for communication and suggestions.", comment: ""))
+                                            .padding()
+                                        Button(action: {
+                                            self.isShowingMailView.toggle()
+                                        }) {
+                                            Image(systemName: "envelope")
+                                                .foregroundColor(.black)
+                                                .font(.title)
+                                        }
+                                        .disabled(!MFMailComposeViewController.canSendMail())
+                                        .sheet(isPresented: $isShowingMailView) {
+                                            MailView(result: self.$result)
+                                        }
+                                        .buttonStyle(SimpleButtonStyle())
+                                    }.padding()
+                                    
+                                    HStack(alignment: .center) {
+                                        Text(NSLocalizedString("You can share the link to the app with your friends.", comment: ""))
+                                            .padding()
+                                        
+                                        Button(action: {
+                                            shareApp()
+                                        }) {
+                                            Image(systemName: "square.and.arrow.up")
+                                                .foregroundColor(.black)
+                                                .font(.title)
+                                        }
+                                        .buttonStyle(SimpleButtonStyle())
+                                    }.padding()
+                                    Spacer()
+                                }
                             }
                         }
                     }

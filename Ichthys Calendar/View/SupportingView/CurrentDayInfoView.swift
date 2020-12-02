@@ -37,7 +37,7 @@ struct CurrentDayInfoView: View {
                                     .fill(Constant.gradientBackground)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 HStack {
-                                    Text(viewModel.weekday)
+                                    Text(viewModel.weekday.localizedCapitalized)
                                     Spacer()
                                     Text(viewModel.voice)
                                 }
@@ -52,7 +52,7 @@ struct CurrentDayInfoView: View {
                                     Rectangle()
                                         .fill(Constant.gradientBackground)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    Text("Fasting")
+                                    Text(NSLocalizedString("Fasting", comment: ""))
                                         .font(.callout).fontWeight(.bold)
                                 }
                                 .cornerRadius(15)
@@ -63,7 +63,7 @@ struct CurrentDayInfoView: View {
                                     Rectangle()
                                         .fill(Constant.gradientBackground)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    Text("Not Fasting")
+                                    Text(NSLocalizedString("Not Fasting", comment: ""))
                                         .font(.callout)
                                 }
                                 .cornerRadius(15)
@@ -87,8 +87,9 @@ struct CurrentDayInfoView: View {
                     .modifier(BasicNeumorphicShadow())
                 },
                 label: {
-                    Text("Days info")
+                    Text(NSLocalizedString("Days info", comment: ""))
                         .font(.headline)
+                        .padding(.leading, 5)
                         .modifier(BasicNeumorphicShadow())
                 }).padding(.horizontal, 5)
     }

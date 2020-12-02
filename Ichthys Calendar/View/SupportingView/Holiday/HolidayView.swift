@@ -28,7 +28,7 @@ struct HolidayView: View {
                     .modifier(BasicNeumorphicShadow())
                 },
                 label: {
-                    Text(viewModel.holidays.count > 1 ? "Holidays" : "Holiday")
+                    Text(viewModel.holidays.count > 1 ? (NSLocalizedString("Holidays", comment: "")) : (NSLocalizedString("Holiday", comment: "")))
                         .font(.headline)
                         .modifier(BasicNeumorphicShadow())
                 }).padding(.horizontal, 5)

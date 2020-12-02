@@ -18,7 +18,7 @@ struct DetailSavedSaint: View {
     var emptyView: some View {
         ZStack {
             BigIconImagePlaceholder()
-            Text("No Image")
+            Text(NSLocalizedString("No Image", comment: ""))
                 .font(.system(size: 45, weight: .bold, design: .default))
         }
     }
@@ -57,7 +57,7 @@ struct DetailSavedSaint: View {
     }) {
         HStack {
             Image(systemName: "heart.circle")
-                .accessibility(label: Text(isFavorited ? "removeFromFavorites" : "addToFavorites"))
+                .accessibility(label: Text(isFavorited ? NSLocalizedString("Remove from Favorites", comment: "") : NSLocalizedString("Add to Favorites", comment: "")))
                 .scaleEffect(isFavorited ? 1.5 : 1.0)
                 .foregroundColor(isFavorited ? Color.red : Color.gray)
                 .animation(.easeInOut(duration: 0.5))
@@ -82,7 +82,7 @@ struct DetailSavedSaint: View {
                             .fontWeight(.light)
                     },
                     label: {
-                        Text("History")
+                        Text(NSLocalizedString("History", comment: ""))
                             .font(.body)
                             .bold()
                     }).onAppear {
@@ -100,7 +100,7 @@ struct DetailSavedSaint: View {
                         }
                     },
                     label: {
-                        Text("Canon")
+                        Text(NSLocalizedString("Canon", comment: ""))
                             .font(.body)
                             .bold()
                     })
@@ -117,7 +117,7 @@ struct DetailSavedSaint: View {
                         }
                     },
                     label: {
-                        Text("Prayers")
+                        Text(NSLocalizedString("Prayers", comment: ""))
                             .font(.body)
                             .bold()
                     })
