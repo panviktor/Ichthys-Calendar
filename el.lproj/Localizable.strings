@@ -5,3 +5,57 @@
   Created by Viktor on 01.12.2020.
   
 */
+
+//MARK: - Main View
+//Calendar View
+"Choose a day" = "Επιλέξτε μια μέρα";
+"Will be loaded the next day" = "Θα φορτωθεί την επόμενη μέρα";
+"The previous day will be loaded" = "Η προηγούμενη ημέρα θα φορτωθεί";
+"Today" = "Σήμερα";
+"Saved" = "Αποθηκεύτηκε";
+"About" = "Σχετικά με";
+
+//DetailSaintView
+"Go back" = "Πήγαινε πίσω";
+"Remove from Favorites" = "Κατάργηση από τα Αγαπημένα";
+"Add to Favorites" = "Προσθήκη στα αγαπημένα";
+"No Image" = "Χωρίς εικόνα";
+"History" = "Ιστορία";
+"Canon" = "Κανόνας";
+"Prayers" = "Προσευχές";
+
+//About
+"Ichthys Calendar" = "Ichthys Calendar";
+"Many thanks to the site azbuka.ru for the data provided." = "Ευχαριστώ πολύ τον ιστότοπο azbuka.ru για τα δεδομένα που παρέχονται.";
+"Visit azbyka.ru" = "Επισκεφτείτε το azbyka.ru";
+"You will greatly help the project if you leave a review." = "Θα βοηθήσετε πολύ το έργο αν αφήσετε μια κριτική.";
+"Mail for communication and suggestions." = "Ταχυδρομείο για επικοινωνία και προτάσεις.";
+"You can share the link to the app with your friends." = "Μπορείτε να μοιραστείτε το σύνδεσμο προς την εφαρμογή με τους φίλους σας.";
+
+//DetailSavedSaint = DetailSaintView
+
+//MARK: - Supporting View
+//WelcomeView
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Επιλέξτε μια ημέρα από το αριστερό μενού. σύρετε από την αριστερή άκρη για να το εμφανίσετε.";
+
+//CurrentDayInfoView
+"Fasting" = "Νηστεία";
+"Not Fasting" = "Όχι νηστεία";
+"Days info" = "Πληροφορίες ημερών";
+
+//HolidayView
+"Holidays" = "Διακοπές";
+"Holiday" = "Αργία";
+
+//MARK: - Widget
+//DayInfoProvider
+"Failed to load day info" = "Αποτυχία φόρτωσης πληροφοριών ημέρας";
+
+//Ichthys Calendar Widget
+"Ichthys Calendar Widget" = "Ichthys Calendar Widget";
+"Shows the fast day and holiday." = "Δείχνει τη γρήγορη ημέρα και τις διακοπές";
+
+//DayInfo
+"Thursday" = "Πέμπτη";
+"Christmas fast" = "Χριστούγεννα γρήγορα";
+"Icons of the Mother of God called \"Sign\"" = "Εικονίδια της Μητέρας του Θεού που ονομάζεται \"Σημάδι \"";

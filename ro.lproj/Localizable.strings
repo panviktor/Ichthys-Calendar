@@ -5,3 +5,58 @@
   Created by Viktor on 01.12.2020.
   
 */
+
+//MARK: - Main View
+//Calendar View
+"Choose a day" = "Alege o zi";
+"Will be loaded the next day" = "Va fi încărcat a doua zi";
+"The previous day will be loaded" = "Ziua precedentă va fi încărcată";
+"Today" = "Astăzi";
+"Saved" = "Salvat";
+"About" = "Despre program";
+
+//DetailSaintView
+"Go back" = "Înapoi la";
+"Remove from Favorites" = "Eliminați din favorite";
+"Add to Favorites" = "Adaugă la favorite";
+"No Image" = "Fara poza";
+"History" = "Istorie";
+"Canon" = "Canon";
+"Prayers" = "Rugăciuni";
+
+//About
+"Ichthys Calendar" = "Ихтис Календарь";
+"Many thanks to the site azbuka.ru for the data provided." = "Multe mulțumiri site-ului azbuka.ru pentru datele furnizate.";
+"Visit azbyka.ru" = "Vizitați azbyka.ru";
+"You will greatly help the project if you leave a review." = "Veți fi de mare ajutor pentru proiect dacă lăsați o recenzie.";
+"Mail for communication and suggestions." = "E-mail pentru comunicare și sugestii.";
+"You can share the link to the app with your friends." = "Puteți partaja linkul către aplicație prietenilor dvs.";
+
+//DetailSavedSaint = DetailSaintView
+
+//MARK: - Supporting View
+//WelcomeView
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Vă rugăm să selectați o zi din meniul din stânga; glisați de la marginea stângă pentru a o dezvălui.";
+
+//CurrentDayInfoView
+"Fasting" = "Ziua de post";
+"Not Fasting" = "Unpostate";
+"Days info" = "Informații despre zi";
+
+//HolidayView
+"Holidays" = "Sărbători";
+"Holiday" = "Celebrare";
+
+//MARK: - Widget
+//DayInfoProvider
+"Failed to load day info" = "Eroare la încărcarea informațiilor despre zi";
+
+//Ichthys Calendar Widget
+"Ichthys Calendar Widget" = "Ichthys Calendar Widget";
+"Shows the fast day and holiday." = "Afișează zilele și sărbătorile de post.";
+
+//DayInfo
+"Thursday" = "Joi";
+"Christmas fast" = "Post de Crăciun";
+"Icons of the Mother of God called \"Sign\"" = "Icoanele Fecioarei sub titlul \"Semna\"";
+

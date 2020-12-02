@@ -5,3 +5,57 @@
   Created by Viktor on 01.12.2020.
   
 */
+
+//MARK: - Main View
+//Calendar View
+"Choose a day" = "Wähle einen Tag";
+"Will be loaded the next day" = "Wird am nächsten Tag geladen";
+"The previous day will be loaded" = "Der vorherige Tag wird geladen";
+"Today" = "Heute";
+"Saved" = "Gerettet";
+"About" = "Über";
+
+//DetailSaintView
+"Go back" = "Geh zurück";
+"Remove from Favorites" = "Von Favoriten entfernen";
+"Add to Favorites" = "Zu den Favoriten hinzufügen";
+"No Image" = "Kein Bild";
+"History" = "Geschichte";
+"Canon" = "Kanon";
+"Prayers" = "Gebete";
+
+//About
+"Ichthys Calendar" = "Ichthys Calendar";
+"Many thanks to the site azbuka.ru for the data provided." = "Vielen Dank an die Website azbuka.ru für die bereitgestellten Daten.";
+"Visit azbyka.ru" = "Visit azbyka.ru";
+"You will greatly help the project if you leave a review." = "Sie werden dem Projekt sehr helfen, wenn Sie eine Bewertung abgeben.";
+"Mail for communication and suggestions." = "Mail für Kommunikation und Vorschläge.";
+"You can share the link to the app with your friends." = "Sie können den Link zur App mit Ihren Freunden teilen.";
+
+//DetailSavedSaint = DetailSaintView
+
+//MARK: - Supporting View
+//WelcomeView
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Bitte wählen Sie einen Tag aus dem Menü auf der linken Seite. Wischen Sie vom linken Rand, um es anzuzeigen.";
+
+//CurrentDayInfoView
+"Fasting" = "Fasten";
+"Not Fasting" = "Nicht fasten";
+"Days info" = "Tagesinfo";
+
+//HolidayView
+"Holidays" = "Ferien";
+"Holiday" = "Ferien";
+
+//MARK: - Widget
+//DayInfoProvider
+"Failed to load day info" = "Fehler beim Laden der Tagesinformationen";
+
+//Ichthys Calendar Widget
+"Ichthys Calendar Widget" = "Ichthys Calendar Widget";
+"Shows the fast day and holiday." = "Zeigt den Fastentag und den Feiertag";
+
+//DayInfo
+"Thursday" = "Donnerstag";
+"Christmas fast" = "Weihnachtspost";
+"Icons of the Mother of God called \"Sign\"" = "Ikonen der Muttergottes namens \"Zeichen\"";

@@ -5,3 +5,57 @@
   Created by Viktor on 01.12.2020.
   
 */
+
+//MARK: - Main View
+//Calendar View
+"Choose a day" = "Wybierz dzień";
+"Will be loaded the next day" = "Zostanie załadowany następnego dnia";
+"The previous day will be loaded" = "Zostanie załadowany poprzedni dzień";
+"Today" = "Dzisiaj";
+"Saved" = "Ocaleni";
+"About" = "O";
+
+//DetailSaintView
+"Go back" = "Wróć";
+"Remove from Favorites" = "Usuń z ulubionych";
+"Add to Favorites" = "Dodaj do ulubionych";
+"No Image" = "Brak obrazka";
+"History" = "Historia";
+"Canon" = "Kanon";
+"Prayers" = "Modły";
+
+//About
+"Ichthys Calendar" = "Ichthys Calendar";
+"Many thanks to the site azbuka.ru for the data provided." = "Wielkie dzięki dla witryny azbuka.ru za podane dane.";
+"Visit azbyka.ru" = "Odwiedź azbyka.ru";
+"You will greatly help the project if you leave a review." = "Bardzo pomożesz projektowi, jeśli zostawisz recenzję.";
+"Mail for communication and suggestions." = "Napisz do komunikacji i sugestii.";
+"You can share the link to the app with your friends." = "Możesz udostępnić link do aplikacji swoim znajomym.";
+
+//DetailSavedSaint = DetailSaintView
+
+//MARK: - Supporting View
+//WelcomeView
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Proszę wybrać dzień z menu po lewej stronie; przesuń palcem od lewej krawędzi, aby go wyświetlić.";
+
+//CurrentDayInfoView
+"Fasting" = "Post";
+"Not Fasting" = "Nie post";
+"Days info" = "Informacje o dniach";
+
+//HolidayView
+"Holidays" = "Wakacje";
+"Holiday" = "Wakacje";
+
+//MARK: - Widget
+//DayInfoProvider
+"Failed to load day info" = "Nie udało się załadować informacji o dniu";
+
+//Ichthys Calendar Widget
+"Ichthys Calendar Widget" = "Ichthys Calendar Widget";
+"Shows the fast day and holiday." = "Pokazuje dzień postu i święta.";
+
+//DayInfo
+"Thursday" = "Czwartek";
+"Christmas fast" = "Boże Narodzenie szybko";
+"Icons of the Mother of God called \"Sign\"" = "Ikony Matki Bożej zwane \"Znakiem\"";

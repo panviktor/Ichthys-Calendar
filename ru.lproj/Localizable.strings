@@ -7,7 +7,6 @@
 */
 
 //MARK: - Main View
-
 //Calendar View
 "Choose a day" = "Выберите день";
 "Will be loaded the next day" = "Будет загружен следующий день";
@@ -36,7 +35,6 @@
 //DetailSavedSaint = DetailSaintView
 
 //MARK: - Supporting View
-
 //WelcomeView
 "Please select a day from the left-hand menu; swipe from the left edge to show it." = "Пожалуйста, выберите день в левом меню; проведите пальцем от левого края, чтобы показать его.";
 
@@ -54,11 +52,10 @@
 "Failed to load day info" = "Ошибка загрузки информации про день";
 
 //Ichthys Calendar Widget
-"Ichthys Calendar Widget" = "Ихтис Календар Виджет";
+"Ichthys Calendar Widget" = "Виджет Ихтис Календарь";
 "Shows the fast day and holiday." = "Показывает постные дни и праздники.";
 
 //DayInfo
 "Thursday" = "Четверг";
 "Christmas fast" = "Рождественский пост";
 "Icons of the Mother of God called \"Sign\"" = "Иконы Богородицы под названием \"Знамение\"";
-

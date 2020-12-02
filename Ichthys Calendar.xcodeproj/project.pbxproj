@@ -145,6 +145,7 @@
 		77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoViewModel.swift; sourceTree = "<group>"; };
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7723BE382569064100A02847 /* SavedSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSaintViewModel.swift; sourceTree = "<group>"; };
+		772E418D2577D47C00E11AC4 /* be-BY */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "be-BY"; path = "be-BY.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		7735CF2525658EB00048BD9D /* WaveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveShape.swift; sourceTree = "<group>"; };
 		7736262B256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageCDM+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7736262C256BC77F00E80CA0 /* ImageCDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageCDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -703,6 +704,7 @@
 				ro,
 				ko,
 				el,
+				"be-BY",
 			);
 			mainGroup = 7767E71A2555541600870197;
 			productRefGroup = 7767E7242555541600870197 /* Products */;
@@ -875,6 +877,7 @@
 				777979692577977F0090AE50 /* ru */,
 				7779796A257797800090AE50 /* es */,
 				7779796B257797810090AE50 /* uk */,
+				772E418D2577D47C00E11AC4 /* be-BY */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

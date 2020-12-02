@@ -5,3 +5,57 @@
   Created by Viktor on 01.12.2020.
   
 */
+
+//MARK: - Main View
+//Calendar View
+"Choose a day" = "Choisissez un jour";
+"Will be loaded the next day" = "Sera chargé le lendemain";
+"The previous day will be loaded" = "Le jour précédent sera chargé";
+"Today" = "Aujourd'hui";
+"Saved" = "Enregistrée";
+"About" = "À propos";
+
+//DetailSaintView
+"Go back" = "Retourner";
+"Remove from Favorites" = "Retirer des favoris";
+"Add to Favorites" = "Ajouter aux Favoris";
+"No Image" = "Pas d'image";
+"History" = "Histoire";
+"Canon" = "Canon";
+"Prayers" = "Prières";
+
+//About
+"Ichthys Calendar" = "Ichthys Calendar";
+"Many thanks to the site azbuka.ru for the data provided." = "Un grand merci au site azbuka.ru pour les données fournies.";
+"Visit azbyka.ru" = "Visite azbyka.ru";
+"You will greatly help the project if you leave a review." = "Vous aiderez grandement le projet si vous laissez un avis.";
+"Mail for communication and suggestions." = "Mail pour communication et suggestions.";
+"You can share the link to the app with your friends." = "Vous pouvez partager le lien vers l'application avec vos amis.";
+
+//DetailSavedSaint = DetailSaintView
+
+//MARK: - Supporting View
+//WelcomeView
+"Please select a day from the left-hand menu; swipe from the left edge to show it." = "Veuillez sélectionner un jour dans le menu de gauche; faites glisser votre doigt depuis le bord gauche pour l'afficher.";
+
+//CurrentDayInfoView
+"Fasting" = "Jour rapide";
+"Not Fasting" = "Jour rapide";
+"Days info" = "Infos sur les jours";
+
+//HolidayView
+"Holidays" = "Vacances";
+"Holiday" = "Vacances";
+
+//MARK: - Widget
+//DayInfoProvider
+"Failed to load day info" = "Échec du chargement des informations sur le jour";
+
+//Ichthys Calendar Widget
+"Ichthys Calendar Widget" = "Ichthys Calendar Widget";
+"Shows the fast day and holiday." = "Affiche le jour et les vacances rapides";
+
+//DayInfo
+"Thursday" = "Jeudi";
+"Christmas fast" = "Noël jeûne";
+"Icons of the Mother of God called \"Sign\"" = "Icônes de la Mère de Dieu appelées «Signe»";

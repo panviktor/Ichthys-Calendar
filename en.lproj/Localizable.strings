@@ -7,7 +7,6 @@
 */
 
 //MARK: - Main View
-
 //Calendar View
 "Choose a day" = "Choose a day";
 "Will be loaded the next day" = "Will be loaded the next day";
@@ -36,7 +35,6 @@
 //DetailSavedSaint = DetailSaintView
 
 //MARK: - Supporting View
-
 //WelcomeView
 "Please select a day from the left-hand menu; swipe from the left edge to show it." = "Please select a day from the left-hand menu; swipe from the left edge to show it.";
 
@@ -50,14 +48,12 @@
 "Holiday" = "Holiday";
 
 //MARK: - Widget
-
 //DayInfoProvider
 "Failed to load day info" = "Failed to load day info";
 
 //Ichthys Calendar Widget
-
 "Ichthys Calendar Widget" = "Ichthys Calendar Widget";
-"Shows the fast day and holiday." = "Shows the fast day and holiday";
+"Shows the fast day and holiday." = "Shows the fast day and holiday.";
 
 //DayInfo
 "Thursday" = "Thursday";
