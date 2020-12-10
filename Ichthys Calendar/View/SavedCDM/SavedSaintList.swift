@@ -57,6 +57,8 @@ struct SavedSaintList: View {
             .navigationBarHidden(true)
         }.onAppear {
             savedSaintViewModelList.updateScreen()
+        }.onTapGesture {
+            self.hideKeyboard()
         }
     }
     

@@ -96,6 +96,7 @@
 		77D2021B2572B89C0053532F /* SaintImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B7BBE2555CC16009C6835 /* SaintImg.swift */; };
 		77D2021E2572B8A30053532F /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE91255DC2FF0018B632 /* Prayer.swift */; };
 		77D202212572B8A60053532F /* Canon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE8E255DC2E30018B632 /* Canon.swift */; };
+		77DA14802582A58D0022618C /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA147F2582A58D0022618C /* Extension+View.swift */; };
 		77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEA25566E9C00BFDD3A /* APIService.swift */; };
 		77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */; };
 		77F06FF225566FA800BFDD3A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FF125566FA800BFDD3A /* APIError.swift */; };
@@ -219,6 +220,7 @@
 		77D0024325727EAC0087CBA0 /* Ichthys_Calendar_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ichthys_Calendar_Widget.swift; sourceTree = "<group>"; };
 		77D0024525727EAC0087CBA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77D0024725727EAC0087CBA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77DA147F2582A58D0022618C /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		77F06FEA25566E9C00BFDD3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		77F06FF125566FA800BFDD3A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -628,6 +630,7 @@
 				779724AC2569133C008C03D5 /* Extension+NSManagedObjectContext.swift */,
 				777EF14A2575A69100E4016E /* Extension+LinearGradient.swift */,
 				777EF14E2575A71200E4016E /* Extension+Color.swift */,
+				77DA147F2582A58D0022618C /* Extension+View.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */,
 				77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */,
 				775272CE25752FCC00FE8FFF /* Extension+UIApplication.swift in Sources */,
+				77DA14802582A58D0022618C /* Extension+View.swift in Sources */,
 				777EF1452575A35200E4016E /* SimpleButtonStyle.swift in Sources */,
 				77F0700B25570A9500BFDD3A /* ImageLoader.swift in Sources */,
 				774F898E256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift in Sources */,
@@ -1018,7 +1022,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "SwiftViktor.Ichthys-Calendar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1043,7 +1047,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "SwiftViktor.Ichthys-Calendar";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1066,7 +1070,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "SwiftViktor.Ichthys-Calendar.Ichthys-Calendar-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1090,7 +1094,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "SwiftViktor.Ichthys-Calendar.Ichthys-Calendar-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
