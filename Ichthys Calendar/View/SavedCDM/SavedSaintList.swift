@@ -24,8 +24,19 @@ struct SavedSaintList: View {
                         }
                         .frame(width: geometry.size.width, height: 35 )
                         .edgesIgnoringSafeArea(.top)
+                        
+                        HStack(spacing: 8) {
+                            TextField(NSLocalizedString("Search...", comment: ""), text: $savedSaintViewModelList.searchText)
+                            Image(systemName: "magnifyingglass")
+                                .imageScale(.medium)
+                        }
+                        .padding(.top, 5)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 20)
+                        .modifier(BasicNeumorphicShadow())
+                        
                         ScrollView {
-                            ForEach(self.savedSaintViewModelList.saints) { saint in
+                            ForEach(self.savedSaintViewModelList.filteredSaints) { saint in
                                 NavigationLink(
                                     destination:
                                         DetailSavedSaint(detailSavedSaintViewModel: DetailSavedSaintViewModel(saintServerID: Int(saint.serverID)), onDelete: deleteItems),
