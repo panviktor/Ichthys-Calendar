@@ -26,6 +26,13 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>rfcmedia.streamguys1.com/Newport.mp3</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 			<key>icecast.radonezh.cdnvideo.ru:8000/rad128</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>

@@ -11,19 +11,19 @@ import Foundation
  The `RadioPlayerDelegate` protocol defines methods you can implement to respond to playback events associated with an `RadioPlayer` object.
  */
 
-@objc protocol RadioPlayerDelegate {
+@objc protocol RadioPlayerDelegate: class {
     /**
      Called when player changes state
      - parameter player: RadioPlayer
      - parameter state: RadioPlayerState
      */
-    func radioPlayer(_ player: RadioPlayer, playerStateDidChange state: RadioPlayerState)
+    @objc func radioPlayer(_ player: RadioPlayer, playerStateDidChange state: RadioPlayerState)
     /**
      Called when the player changes the playing state
      - parameter player: RadioPlayer
      - parameter state: RadioPlaybackState
      */
-    func radioPlayer(_ player: RadioPlayer, playbackStateDidChange state: RadioPlaybackState)
+    @objc func radioPlayer(_ player: RadioPlayer, playbackStateDidChange state: RadioPlaybackState)
     /**
      Called when player changes the current player item
      - parameter player: RadioPlayer
@@ -44,10 +44,4 @@ import Foundation
      - parameter rawValue: metadata raw value
      */
     @objc optional func radioPlayer(_ player: RadioPlayer, metadataDidChange rawValue: String?)
-    /**
-     Called when the player gets the artwork for the playing song
-     - parameter player: RadioPlayer
-     - parameter artworkURL: URL for the artwork from iTunes
-     */
-    @objc optional func radioPlayer(_ player: RadioPlayer, artworkDidChange artworkURL: URL?)
 }
