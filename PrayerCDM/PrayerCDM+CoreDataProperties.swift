@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension PrayerCDM {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PrayerCDM> {
