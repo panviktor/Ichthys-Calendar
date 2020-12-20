@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		770E1B43256ADDE700D3ABA9 /* DetailSavedSaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */; };
 		77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */; };
+		7714695D258FB4CA006A8C37 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7714695C258FB4CA006A8C37 /* RadioPlayer.swift */; };
+		77146963258FB5BB006A8C37 /* RadioPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77146962258FB5BB006A8C37 /* RadioPlayerDelegate.swift */; };
+		77146967258FB5F6006A8C37 /* RadioPlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77146966258FB5F6006A8C37 /* RadioPlaybackState.swift */; };
+		7714696B258FB61C006A8C37 /* RadioPlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7714696A258FB61C006A8C37 /* RadioPlayerState.swift */; };
 		7716CDA5258E709500FE6675 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716CDA4258E709500FE6675 /* RadioView.swift */; };
+		7716CDBD258FAD9800FE6675 /* RadioViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716CDBC258FAD9800FE6675 /* RadioViewViewModel.swift */; };
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
 		7723BE392569064100A02847 /* SavedSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723BE382569064100A02847 /* SavedSaintViewModel.swift */; };
 		772E418A2577B7AC00E11AC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77797962257797590090AE50 /* Localizable.strings */; };
@@ -145,7 +150,12 @@
 /* Begin PBXFileReference section */
 		770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedSaint.swift; sourceTree = "<group>"; };
 		77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoViewModel.swift; sourceTree = "<group>"; };
+		7714695C258FB4CA006A8C37 /* RadioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		77146962258FB5BB006A8C37 /* RadioPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerDelegate.swift; sourceTree = "<group>"; };
+		77146966258FB5F6006A8C37 /* RadioPlaybackState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlaybackState.swift; sourceTree = "<group>"; };
+		7714696A258FB61C006A8C37 /* RadioPlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerState.swift; sourceTree = "<group>"; };
 		7716CDA4258E709500FE6675 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
+		7716CDBC258FAD9800FE6675 /* RadioViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewViewModel.swift; sourceTree = "<group>"; };
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7723BE382569064100A02847 /* SavedSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSaintViewModel.swift; sourceTree = "<group>"; };
 		772E418D2577D47C00E11AC4 /* be-BY */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "be-BY"; path = "be-BY.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -288,6 +298,17 @@
 				77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */,
 			);
 			path = SupportingViewModel;
+			sourceTree = "<group>";
+		};
+		7714695B258FB4A3006A8C37 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				77146966258FB5F6006A8C37 /* RadioPlaybackState.swift */,
+				7714696A258FB61C006A8C37 /* RadioPlayerState.swift */,
+				77146962258FB5BB006A8C37 /* RadioPlayerDelegate.swift */,
+				7714695C258FB4CA006A8C37 /* RadioPlayer.swift */,
+			);
+			path = Radio;
 			sourceTree = "<group>";
 		};
 		7716CDA3258E708300FE6675 /* RadioView */ = {
@@ -514,6 +535,7 @@
 				7766266E25595ADF0009B6FA /* DetailSaintViewModel.swift */,
 				770E1B46256ADE2300D3ABA9 /* SavedCDMViewModel */,
 				77136B71256EBA34003AEAEA /* SupportingViewModel */,
+				7716CDBC258FAD9800FE6675 /* RadioViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -521,8 +543,9 @@
 		779B7BD52555D47A009C6835 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				77AC69F72569234B004BAEE9 /* CoreData */,
 				77F06FED25566F7600BFDD3A /* API */,
+				77AC69F72569234B004BAEE9 /* CoreData */,
+				7714695B258FB4A3006A8C37 /* Radio */,
 				77FC05B1255963C0001AE985 /* Extension */,
 				776B81B32566BD300073C47E /* Constant.swift */,
 				775272C925752D9F00FE8FFF /* StoreReviewHelper.swift */,
@@ -692,7 +715,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					7767E7222555541600870197 = {
 						CreatedOnToolsVersion = 12.1;
@@ -771,6 +794,7 @@
 				7785672D256D8DF30024EDC1 /* CurrentDayInfoView.swift in Sources */,
 				779B7BD12555D45D009C6835 /* Extension+URLRequest.swift in Sources */,
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
+				7714696B258FB61C006A8C37 /* RadioPlayerState.swift in Sources */,
 				7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */,
 				776B81BB256705D60073C47E /* SavedSaintList.swift in Sources */,
 				773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */,
@@ -782,12 +806,14 @@
 				77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift in Sources */,
 				77AC6A16256ACC33004BAEE9 /* PrayerCDM+CoreDataProperties.swift in Sources */,
 				7736262D256BC77F00E80CA0 /* ImageCDM+CoreDataClass.swift in Sources */,
+				7716CDBD258FAD9800FE6675 /* RadioViewViewModel.swift in Sources */,
 				77F06FF225566FA800BFDD3A /* APIError.swift in Sources */,
 				77D00195257039560087CBA0 /* HolidayItem.swift in Sources */,
 				779724AD2569133C008C03D5 /* Extension+NSManagedObjectContext.swift in Sources */,
 				779A2537256D0F4600440E45 /* BigIconImageSaved.swift in Sources */,
 				774F898D256BFD2A00A84663 /* SaintCDM+CoreDataClass.swift in Sources */,
 				779D729A25684F030090E948 /* CalendarCDM.xcdatamodeld in Sources */,
+				77146967258FB5F6006A8C37 /* RadioPlaybackState.swift in Sources */,
 				77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */,
 				77AC6A19256ACC33004BAEE9 /* CanonCDM+CoreDataClass.swift in Sources */,
 				7723BE392569064100A02847 /* SavedSaintViewModel.swift in Sources */,
@@ -802,6 +828,7 @@
 				7766267225595B700009B6FA /* DetailSaintView.swift in Sources */,
 				77F06FFD2556A8B500BFDD3A /* DayViewModel.swift in Sources */,
 				77FD6ABC256EBC8B00571D36 /* BasicNeumorphicShadow.swift in Sources */,
+				77146963258FB5BB006A8C37 /* RadioPlayerDelegate.swift in Sources */,
 				77F0701125570B2500BFDD3A /* AsyncImage.swift in Sources */,
 				777EF14B2575A69100E4016E /* Extension+LinearGradient.swift in Sources */,
 				7774ACC3255C125000FE1252 /* SaintService.swift in Sources */,
@@ -812,6 +839,7 @@
 				779D729D25684F390090E948 /* CoreDataManager.swift in Sources */,
 				77CEBE8F255DC2E30018B632 /* Canon.swift in Sources */,
 				77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */,
+				7714695D258FB4CA006A8C37 /* RadioPlayer.swift in Sources */,
 				77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */,
 				775272CE25752FCC00FE8FFF /* Extension+UIApplication.swift in Sources */,
 				77DA14802582A58D0022618C /* Extension+View.swift in Sources */,
@@ -905,6 +933,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -966,6 +995,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
