@@ -99,7 +99,7 @@ struct CalendarView: View {
                     Image(systemName: "heart.circle")
                     Text(NSLocalizedString("Saved", comment: ""))
                 }
-            RadioView()
+            RadioView(viewModel: RadioViewViewModel())
                 .tabItem {
                     Image(systemName: "radio")
                     Text(NSLocalizedString("Radio", comment: ""))
