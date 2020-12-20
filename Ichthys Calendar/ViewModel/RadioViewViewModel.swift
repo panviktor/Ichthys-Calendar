@@ -10,9 +10,11 @@ import Foundation
 class RadioViewViewModel: ObservableObject {
     let radio = RadioPlayer.shared
     
-    let url = "http://icecast.radonezh.cdnvideo.ru:8000/rad128"
-    let url2 = "http://rfcmedia.streamguys1.com/Newport.mp3"
+    let url2 = "http://icecast.radonezh.cdnvideo.ru:8000/rad128"
+    let url = "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u"
     
+    @Published var artistName = ""
+    @Published var trackName = ""
     
     init() {
         radio.delegate = self
@@ -21,11 +23,12 @@ class RadioViewViewModel: ObservableObject {
 }
 
 extension RadioViewViewModel: RadioPlayerDelegate {
-    func radioPlayer(_ player: RadioPlayer, playerStateDidChange state: RadioPlayerState) {
-        
-    }
+    func radioPlayer(_ player: RadioPlayer, playerStateDidChange state: RadioPlayerState) {}
     
-    func radioPlayer(_ player: RadioPlayer, playbackStateDidChange state: RadioPlaybackState) {
-        
+    func radioPlayer(_ player: RadioPlayer, playbackStateDidChange state: RadioPlaybackState) {}
+    
+    func radioPlayer(_ player: RadioPlayer, metadataDidChange artistName: String?, trackName: String?) {
+        self.artistName = artistName ?? ""
+        self.trackName = trackName ?? ""
     }
 }

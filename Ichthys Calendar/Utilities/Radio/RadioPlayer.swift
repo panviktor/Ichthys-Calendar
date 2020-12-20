@@ -5,16 +5,13 @@
 //  Created by Viktor on 20.12.2020.
 //
 
-import Foundation
 import AVFoundation
 import MediaPlayer
 
 class RadioPlayer: NSObject {
-    
     // MARK: - Properties
-    
     /// Returns the singleton `RadioPlayer` instance.
-    public static let shared = RadioPlayer()
+    static let shared = RadioPlayer()
     
     /**
      The delegate object for the `RadioPlayer`.
@@ -31,17 +28,6 @@ class RadioPlayer: NSObject {
     
     /// The player starts playing when the radioURL property gets set. (default == true)
     var isAutoPlay = true
-    
-    /// Enable fetching albums artwork from the iTunes API. (default == true)
-    var enableArtwork = true
-    
-    /// Artwork image size. (default == 100 | 100x100)
-    var artworkSize = 100
-    
-    /// Read only property to get the current AVPlayer rate.
-    var rate: Float? {
-        return player?.rate
-    }
     
     /// Check if the player is playing
     var isPlaying: Bool {
@@ -83,7 +69,6 @@ class RadioPlayer: NSObject {
     }
     
     // MARK: - Private properties
-    
     /// AVPlayer
     private var player: AVPlayer?
     
@@ -102,49 +87,10 @@ class RadioPlayer: NSObject {
     
     /// Reachability for network interruption handling
     //  private let reachability = Reachability()!
-    
     /// Current network connectivity
     private var isConnected = false
     
     // MARK: - Initialization
-    
-    
-    //
-    private func setupRadioInfo() {
-        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
-        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
-        let title = "TV NAME"
-        let album = "TV DESCRIPTION"
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
-        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(value: 1.0)
-        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
-    }
-    
-    private func setupRemoteTransportControls() {
-        // Get the shared MPRemoteCommandCenter
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-        let commandCenter = MPRemoteCommandCenter.shared()
-        
-        setupRadioInfo()
-        
-        commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
-            self.pause()
-            return .success
-        }
-        
-        commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
-            self.play()
-            return .success
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
     private override init() {
         super.init()
         // Enable bluetooth playback
@@ -170,11 +116,39 @@ class RadioPlayer: NSObject {
         setupRemoteTransportControls()
     }
     
-    // MARK: - Control Methods
+    //
+    private func setupRadioInfo() {
+        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
+        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
+        let title = "TV NAME"
+        let album = "TV DESCRIPTION"
+        nowPlayingInfo[MPMediaItemPropertyTitle] = title
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(value: 1.0)
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+    }
     
+    private func setupRemoteTransportControls() {
+        // Get the shared MPRemoteCommandCenter
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        let commandCenter = MPRemoteCommandCenter.shared()
+
+        commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            self.pause()
+            return .success
+        }
+        
+        commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            self.play()
+            return .success
+        }
+        
+        setupRadioInfo()
+    }
+    
+    // MARK: - Control Methods
     /**
      Trigger the play function of the radio player
-     
      */
     func play() {
         guard let player = player else { return }
@@ -188,7 +162,6 @@ class RadioPlayer: NSObject {
     
     /**
      Trigger the pause function of the radio player
-     
      */
     func pause() {
         guard let player = player else { return }
@@ -198,7 +171,6 @@ class RadioPlayer: NSObject {
     
     /**
      Trigger the stop function of the radio player
-     
      */
     func stop() {
         guard let player = player else { return }
@@ -209,18 +181,15 @@ class RadioPlayer: NSObject {
     
     /**
      Toggle isPlaying state
-     
      */
     func togglePlaying() {
         isPlaying ? pause() : play()
     }
     
     // MARK: - Private helpers
-    
     private func radioURLDidChange(with url: URL?) {
         resetPlayer()
         guard let url = url else { state = .urlNotSet; return }
-        
         state = .loading
         
         preparePlayer(with: AVAsset(url: url)) { (success, asset) in
@@ -247,7 +216,6 @@ class RadioPlayer: NSObject {
     }
     
     /** Reset all player item observers and create new ones
-     
      */
     private func playerItemDidChange() {
         guard lastPlayerItem != playerItem else { return }
@@ -275,7 +243,6 @@ class RadioPlayer: NSObject {
     }
     
     /** Prepare the player from the passed AVAsset
-     
      */
     private func preparePlayer(with asset: AVAsset?, completionHandler: @escaping (_ isPlayable: Bool, _ asset: AVAsset?)->()) {
         guard let asset = asset else {
@@ -412,7 +379,8 @@ class RadioPlayer: NSObject {
     
     // MARK: - KVO
     /// :nodoc:
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if let item = object as? AVPlayerItem, let keyPath = keyPath, item == self.playerItem {
             
@@ -441,7 +409,9 @@ class RadioPlayer: NSObject {
 }
 
 extension RadioPlayer: AVPlayerItemMetadataOutputPushDelegate {
-    public func metadataOutput(_ output: AVPlayerItemMetadataOutput, didOutputTimedMetadataGroups groups: [AVTimedMetadataGroup], from track: AVPlayerItemTrack?) {
+    public func metadataOutput(_ output: AVPlayerItemMetadataOutput,
+                               didOutputTimedMetadataGroups groups: [AVTimedMetadataGroup],
+                               from track: AVPlayerItemTrack?) {
         
         // make this an AVMetadata item
         guard let item = groups.first?.items.first else {
@@ -452,4 +422,3 @@ extension RadioPlayer: AVPlayerItemMetadataOutputPushDelegate {
         timedMetadataDidChange(rawValue: item.value as? String)
     }
 }
-

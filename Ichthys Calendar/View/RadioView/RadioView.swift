@@ -12,6 +12,9 @@ struct RadioView: View {
     
     var body: some View {
         VStack {
+            Text(viewModel.artistName).padding()
+            Text(viewModel.trackName).padding()
+            
             Button("play") {
                 viewModel.radio.play()
             }
