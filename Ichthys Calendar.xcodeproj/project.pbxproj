@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		770E1B43256ADDE700D3ABA9 /* DetailSavedSaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */; };
 		77136B6F256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */; };
+		7716CDA5258E709500FE6675 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716CDA4258E709500FE6675 /* RadioView.swift */; };
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
 		7723BE392569064100A02847 /* SavedSaintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7723BE382569064100A02847 /* SavedSaintViewModel.swift */; };
 		772E418A2577B7AC00E11AC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77797962257797590090AE50 /* Localizable.strings */; };
@@ -144,6 +145,7 @@
 /* Begin PBXFileReference section */
 		770E1B42256ADDE700D3ABA9 /* DetailSavedSaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSavedSaint.swift; sourceTree = "<group>"; };
 		77136B6E256EB9D1003AEAEA /* CurrentDayInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDayInfoViewModel.swift; sourceTree = "<group>"; };
+		7716CDA4258E709500FE6675 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7723BE382569064100A02847 /* SavedSaintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedSaintViewModel.swift; sourceTree = "<group>"; };
 		772E418D2577D47C00E11AC4 /* be-BY */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "be-BY"; path = "be-BY.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -286,6 +288,14 @@
 				77D0018B256FCCE50087CBA0 /* HolidayViewViewModel.swift */,
 			);
 			path = SupportingViewModel;
+			sourceTree = "<group>";
+		};
+		7716CDA3258E708300FE6675 /* RadioView */ = {
+			isa = PBXGroup;
+			children = (
+				7716CDA4258E709500FE6675 /* RadioView.swift */,
+			);
+			path = RadioView;
 			sourceTree = "<group>";
 		};
 		7735CF2425658E940048BD9D /* CustomNavigationView */ = {
@@ -431,6 +441,7 @@
 				7767E7282555541600870197 /* CalendarView.swift */,
 				7766267125595B700009B6FA /* DetailSaintView.swift */,
 				770E1B45256ADE1200D3ABA9 /* SavedCDM */,
+				7716CDA3258E708300FE6675 /* RadioView */,
 				776B81BD256705DF0073C47E /* About.swift */,
 				7783F20925599F1600993068 /* SupportingView */,
 			);
@@ -808,6 +819,7 @@
 				77F0700B25570A9500BFDD3A /* ImageLoader.swift in Sources */,
 				774F898E256BFD2A00A84663 /* SaintCDM+CoreDataProperties.swift in Sources */,
 				7774ACCD255C657E00FE1252 /* BigIconImagePlaceholder.swift in Sources */,
+				7716CDA5258E709500FE6675 /* RadioView.swift in Sources */,
 				77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */,
 				77F070012556F28900BFDD3A /* DayIconImages.swift in Sources */,
 				775272CA25752D9F00FE8FFF /* StoreReviewHelper.swift in Sources */,
