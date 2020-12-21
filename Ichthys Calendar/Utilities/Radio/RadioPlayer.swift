@@ -21,9 +21,10 @@ class RadioPlayer: NSObject {
     weak var delegate: RadioPlayerDelegate?
     
     /// The player current radio URL
-    var radioURL: URL? {
+    var radioStation: RadioStation? {
         didSet {
-            radioURLDidChange(with: radioURL)
+            radioURLDidChange(with: radioStation?.streamURL)
+            setupRadioInfo(station: radioStation)
         }
     }
     
@@ -108,34 +109,14 @@ class RadioPlayer: NSObject {
         checkHeadphonesConnection(outputs: AVAudioSession.sharedInstance().currentRoute.outputs)
         // Check Internet
         setupInternetMonitor()
-        // GUI
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-        setupRemoteTransportControls()
-    }
-    
-    //MARK: - MPRemoteCommandCenter
-    private func setupRemoteTransportControls() {
-        // Get the shared MPRemoteCommandCenter
-        let commandCenter = MPRemoteCommandCenter.shared()
-
-        commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
-            self.pause()
-            return .success
-        }
-        
-        commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
-            self.play()
-            return .success
-        }
-        setupRadioInfo()
     }
     
     //MARK: - MPNowPlayingInfoCenter
-    private func setupRadioInfo() {
+    private func setupRadioInfo(station: RadioStation?) {
         let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
         var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
-        let title = "TV NAME"
-        let album = "TV DESCRIPTION"
+        let title = station?.description
+        let album = station?.longDescription
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(value: 1.0)
@@ -251,7 +232,7 @@ class RadioPlayer: NSObject {
             if isAutoPlay { play() }
         }
         
-        delegate?.radioPlayer?(self, itemDidChange: radioURL)
+        delegate?.radioPlayer?(self, itemDidChange: radioStation?.streamURL)
     }
     
     /** Prepare the player from the passed AVAsset

@@ -38,7 +38,6 @@ struct CalendarView: View {
                             .padding(.horizontal, 5)
                             .modifier(BasicNeumorphicShadow())
                             
-                            
                             CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                             HolidayView(viewModel: HolidayViewViewModel(holidays:  dayViewModel.holidays))
                             

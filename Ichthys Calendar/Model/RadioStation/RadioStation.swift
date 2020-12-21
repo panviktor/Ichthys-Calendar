@@ -9,15 +9,18 @@ import Foundation
 
 struct RadioStation: Codable {
     var name: String
-    var streamURL: String
+    var streamURL: URL
     var description: String
     var longDescription: String
+    var stationStringImage: String
     
-    init(name: String, streamURL: String, imageURL: String, description: String, longDescription: String = "") {
+    init(name: String, streamURL: URL,  description: String = "",
+         longDescription: String = "", stationStringImage: String = "") {
         self.name = name
         self.streamURL = streamURL
         self.description = description
         self.longDescription = longDescription
+        self.stationStringImage = stationStringImage
     }
 }
 
