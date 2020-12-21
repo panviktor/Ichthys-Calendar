@@ -13,6 +13,10 @@ struct Ichthys_CalendarApp: App {
     
     let calendarCoreDataManager = PersistenceManager.shared
     let storeReviewHelper = StoreReviewHelper.shared
+   
+    init() {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+    }
     
     var body: some Scene {
         WindowGroup {
