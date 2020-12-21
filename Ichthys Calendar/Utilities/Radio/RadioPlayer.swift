@@ -41,16 +41,13 @@ class RadioPlayer: NSObject {
         }
     }
     
-    /// Read and set the current AVPlayer volume, a value of 0.0 indicates silence; a value of 1.0 indicates full audio volume for the player instance.
-    var volume: Float? {
+    var mute: Bool? {
         get {
-            return player?.volume
+            return player?.isMuted
         }
         set {
-            guard
-                let newValue = newValue,
-                0.0...1.0 ~= newValue else { return }
-            player?.volume = newValue
+            guard let newValue = newValue else { return }
+            player?.isMuted = newValue
         }
     }
     
@@ -93,6 +90,9 @@ class RadioPlayer: NSObject {
     /// Current network connectivity
     private var isConnected = false
     
+    /// MPNowPlayingInfoCenter
+    let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
+    
     // MARK: - Initialization
     private override init() {
         super.init()
@@ -113,14 +113,11 @@ class RadioPlayer: NSObject {
     
     //MARK: - MPNowPlayingInfoCenter
     private func setupRadioInfo(station: RadioStation?) {
-        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
-        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
-        let title = station?.description
-        let album = station?.longDescription
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
-        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(value: 1.0)
-        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+        guard let station = station else { return }
+        let title = station.description
+        let album = station.longDescription
+        let stringImage = station.stationStringImage
+        setupPlayingInfo(title, album, image: stringImage)
     }
     
     //MARK: - Internet Monitor
@@ -264,6 +261,34 @@ class RadioPlayer: NSObject {
         let parts = metadataCleaned?.components(separatedBy: " - ")
         delegate?.radioPlayer?(self, metadataDidChange: parts?.first, trackName: parts?.last)
         delegate?.radioPlayer?(self, metadataDidChange: rawValue)
+        
+        guard let partFirst = parts?.first else { return }
+        guard let partLast = parts?.last else { return }
+        
+        setupPlayingInfo(partFirst, partLast)
+    }
+    
+    private func setupPlayingInfo(_ partFirst: String, _ partLast: String, image: String? = nil) {
+        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
+        if !partFirst.isEmpty {
+            nowPlayingInfo[MPMediaItemPropertyTitle] = partFirst
+        }
+        
+        if !partLast.isEmpty {
+            nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = partLast
+        }
+        
+        if let unrappedImage = image, let image = UIImage(named: unrappedImage) {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { size -> UIImage in
+                return image
+            })
+        } else {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: Constant.radioImage.size, requestHandler: { size -> UIImage in
+                Constant.radioImage
+            })
+        }
+        
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
     }
     
     private func cleanMetadata(_ rawValue: String?) -> String? {

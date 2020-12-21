@@ -32,7 +32,6 @@ import Foundation
     @objc optional func radioPlayer(_ player: RadioPlayer, itemDidChange url: URL?)
     /**
      Called when player item changes the timed metadata value, it uses (separatedBy: " - ") to get the artist/song name, if you want more control over the raw metadata, consider using `metadataDidChange rawValue` instead
-     
      - parameter player: RadioPlayer
      - parameter artistName: The artist name
      - parameter trackName: The track name
