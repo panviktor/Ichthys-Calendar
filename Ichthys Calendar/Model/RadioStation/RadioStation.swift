@@ -12,10 +12,10 @@ struct RadioStation: Codable {
     var streamURL: URL
     var description: String
     var longDescription: String
-    var stationStringImage: String
+    var stationStringImage: String?
     
     init(name: String, streamURL: URL,  description: String = "",
-         longDescription: String = "", stationStringImage: String = "") {
+         longDescription: String = "", stationStringImage: String? = nil) {
         self.name = name
         self.streamURL = streamURL
         self.description = description
