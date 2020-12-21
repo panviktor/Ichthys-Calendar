@@ -7,6 +7,7 @@
 
 import AVFoundation
 import MediaPlayer
+import Network
 
 class RadioPlayer: NSObject {
     // MARK: - Properties
@@ -86,7 +87,8 @@ class RadioPlayer: NSObject {
     }
     
     /// Reachability for network interruption handling
-    //  private let reachability = Reachability()!
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue.global(qos: .background)
     /// Current network connectivity
     private var isConnected = false
     
@@ -98,39 +100,22 @@ class RadioPlayer: NSObject {
         
         // Start audio session
         let audioSession = AVAudioSession.sharedInstance()
-        try? audioSession.setCategory(AVAudioSession.Category.playback,
-                                      mode: AVAudioSession.Mode.default, options: options)
+        try? audioSession.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: options)
         
         // Notifications
         setupNotifications()
         // Check for headphones
         checkHeadphonesConnection(outputs: AVAudioSession.sharedInstance().currentRoute.outputs)
-        
-        
-        // Reachability config
-        //        try? reachability.startNotifier()
-        //        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
-        //        isConnected = reachability.connection != .none
-        
-        
+        // Check Internet
+        setupInternetMonitor()
+        // GUI
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         setupRemoteTransportControls()
     }
     
-    //
-    private func setupRadioInfo() {
-        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
-        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
-        let title = "TV NAME"
-        let album = "TV DESCRIPTION"
-        nowPlayingInfo[MPMediaItemPropertyTitle] = title
-        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
-        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(value: 1.0)
-        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
-    }
-    
+    //MARK: - MPRemoteCommandCenter
     private func setupRemoteTransportControls() {
         // Get the shared MPRemoteCommandCenter
-        UIApplication.shared.beginReceivingRemoteControlEvents()
         let commandCenter = MPRemoteCommandCenter.shared()
 
         commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
@@ -142,8 +127,35 @@ class RadioPlayer: NSObject {
             self.play()
             return .success
         }
-        
         setupRadioInfo()
+    }
+    
+    //MARK: - MPNowPlayingInfoCenter
+    private func setupRadioInfo() {
+        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
+        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
+        let title = "TV NAME"
+        let album = "TV DESCRIPTION"
+        nowPlayingInfo[MPMediaItemPropertyTitle] = title
+        nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = NSNumber(value: 1.0)
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+    }
+    
+    //MARK: - Internet Monitor
+    private func setupInternetMonitor() {
+        monitor.start(queue: queue)
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.isConnected = true
+                // Check if the internet connection was lost
+                self.checkNetworkInterruption()
+            } else {
+                self.isConnected = false
+                self.pause()
+                print("No connection.")
+            }
+        }
     }
     
     // MARK: - Control Methods
@@ -249,9 +261,9 @@ class RadioPlayer: NSObject {
             completionHandler(false, nil)
             return
         }
-        
+
         let requestedKey = ["playable"]
-        
+
         asset.loadValuesAsynchronously(forKeys: requestedKey) {
             DispatchQueue.main.async {
                 var error: NSError?
@@ -260,7 +272,7 @@ class RadioPlayer: NSObject {
                     completionHandler(false, nil)
                     return
                 }
-                
+
                 completionHandler(true, asset)
             }
         }
@@ -325,24 +337,9 @@ class RadioPlayer: NSObject {
         }
     }
     
-    //    @objc func reachabilityChanged(note: Notification) {
-    //
-    //        guard let reachability = note.object as? Reachability else { return }
-    //
-    //        // Check if the internet connection was lost
-    //        if reachability.connection != .none, !isConnected {
-    //            checkNetworkInterruption()
-    //        }
-    //
-    //        isConnected = reachability.connection != .none
-    //    }
-    
     // Check if the playback could keep up after a network interruption
     private func checkNetworkInterruption() {
-        guard let item = playerItem, !item.isPlaybackLikelyToKeepUp
-        //            reachability.connection != .none
-        else { return }
-        
+        guard let item = playerItem, !item.isPlaybackLikelyToKeepUp, isConnected else { return }
         player?.pause()
         
         // Wait 1 sec to recheck and make sure the reload is needed
@@ -381,9 +378,7 @@ class RadioPlayer: NSObject {
     /// :nodoc:
     override func observeValue(forKeyPath keyPath: String?, of object: Any?,
                                change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
         if let item = object as? AVPlayerItem, let keyPath = keyPath, item == self.playerItem {
-            
             switch keyPath {
             case "status":
                 if player?.status == AVPlayer.Status.readyToPlay {
@@ -391,16 +386,13 @@ class RadioPlayer: NSObject {
                 } else if player?.status == AVPlayer.Status.failed {
                     self.state = .error
                 }
-                
             case "playbackBufferEmpty":
                 if item.isPlaybackBufferEmpty {
                     self.state = .loading
                     self.checkNetworkInterruption()
                 }
-                
             case "playbackLikelyToKeepUp":
                 self.state = item.isPlaybackLikelyToKeepUp ? .loadingFinished : .loading
-                
             default:
                 break
             }

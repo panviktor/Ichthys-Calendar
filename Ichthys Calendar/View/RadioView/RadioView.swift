@@ -22,6 +22,15 @@ struct RadioView: View {
             Button("stop") {
                 viewModel.radio.pause()
             }
+            
+            Button("fm1") {
+                viewModel.changeStation1()
+            }
+            .padding()
+            
+            Button("fm2") {
+                viewModel.changeStation2()
+            }
             .padding()
         }
         .padding()

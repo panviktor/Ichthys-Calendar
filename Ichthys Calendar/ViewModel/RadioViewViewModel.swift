@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MediaPlayer
 
 class RadioViewViewModel: ObservableObject {
     let radio = RadioPlayer.shared
@@ -18,7 +19,30 @@ class RadioViewViewModel: ObservableObject {
     
     init() {
         radio.delegate = self
+        setupRemoteTransportControls()
+    }
+    
+    func changeStation1() {
         radio.radioURL = URL(string: url)
+    }
+    
+    func changeStation2() {
+        radio.radioURL = URL(string: url2)
+    }
+    
+    private func setupRemoteTransportControls() {
+        // Get the shared MPRemoteCommandCenter
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.nextTrackCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            self.changeStation1()
+            return .success
+        }
+
+        commandCenter.previousTrackCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            self.changeStation2()
+            return .success
+        }
     }
 }
 
