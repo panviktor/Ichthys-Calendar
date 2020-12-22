@@ -1,0 +1,17 @@
+[
+     {
+     "name": "Радио Радонеж",
+     "streamURL": "http://icecast.radonezh.cdnvideo.ru:8000/rad128",
+     "stationImage": "Radonez",
+     "description": "Ра́донеж — московская православная радиостанция, вещающая с 1991 года и существующая на пожертвования своих слушателей.",
+     "longDescription": "All your favorite country hits and artists, from Johnny Cash to Taylor Swift, on 1.FM's Absolute Country, playing non-stop crooners and banjos, dance-tunes and fiddles, ballads and harmonicas. Absolute Country focuses on 5th, 6th and 7th generation Country (from the 90s on) but often delves into classic, older tunes as well."
+     },
+     {
+     "name": "Newport Folk Radio",
+     "streamURL": "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u",
+     "stationImage": "station-newportfolk.png",
+     "description": "Are you ready to Folk?",
+     "longDescription": "Do you like Indie music and along with that wants a radio that will provide lots of folk music in their daily radio programs than wait not just tune in to Newport Folk Radio as this is the kind of radio that has got lots of types of Indie music in their daily radio programs along with popular Folk music."
+     }
+ 
+]
