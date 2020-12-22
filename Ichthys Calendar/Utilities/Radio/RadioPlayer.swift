@@ -114,9 +114,9 @@ class RadioPlayer: NSObject {
     //MARK: - MPNowPlayingInfoCenter
     private func setupRadioInfo(station: RadioStation?) {
         guard let station = station else { return }
-        let title = station.description
-        let album = station.longDescription
-        let stringImage = station.stationStringImage
+        let title = station.name
+        let album = station.description
+        let stringImage = station.stationImage
         setupPlayingInfo(title, album, image: stringImage)
     }
     

@@ -17,7 +17,6 @@ let radioStation1: RadioStation = RadioStation(name: "Radonezh", streamURL: url,
 let radioStation2: RadioStation = RadioStation(name: "Радио Радонеж", streamURL: url2,
                                                description: "Desc22", longDescription: "Long desk 22", stationStringImage: "Radonez")
 
-
 class RadioViewViewModel: ObservableObject {
     let radio = RadioPlayer.shared
     @AppStorage("currentStation") private var currentStationIndex = 0
@@ -27,7 +26,7 @@ class RadioViewViewModel: ObservableObject {
     @Published var artistName = ""
     @Published var trackName = ""
     @Published var stationImage = UIImage()
-    
+
     init() {
         radio.delegate = self
         setupRemoteTransportControls()
@@ -35,8 +34,9 @@ class RadioViewViewModel: ObservableObject {
     }
     
     private func fetchRadioStaionList() {
-        stations.append(radioStation1)
-        stations.append(radioStation2)
+//        stations.append(radioStation1)
+//        stations.append(radioStation2)
+        stations = Bundle.main.decode([RadioStation].self, from: "stations.json")
     }
     
     //MARK: - Contol Station
@@ -65,12 +65,11 @@ class RadioViewViewModel: ObservableObject {
     func playRadioStation(_ station: RadioStation) {
         radio.radioStation = station
         
-        if let unrappedImage = station.stationStringImage {
+        if let unrappedImage = station.stationImage {
             stationImage = UIImage(named: unrappedImage) ?? Constant.radioImage
         } else {
             stationImage = Constant.radioImage
         }
-       
     }
     
     func play() {
@@ -120,5 +119,36 @@ extension RadioViewViewModel: RadioPlayerDelegate {
     func radioPlayer(_ player: RadioPlayer, metadataDidChange artistName: String?, trackName: String?) {
         self.artistName = artistName ?? ""
         self.trackName = trackName ?? ""
+    }
+}
+
+
+extension Bundle {
+    func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
+        guard let url = self.url(forResource: file, withExtension: nil) else {
+            fatalError("Failed to locate \(file) in bundle.")
+        }
+
+        guard let data = try? Data(contentsOf: url) else {
+            fatalError("Failed to load \(file) from bundle.")
+        }
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = dateDecodingStrategy
+        decoder.keyDecodingStrategy = keyDecodingStrategy
+
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch DecodingError.keyNotFound(let key, let context) {
+            fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' not found – \(context.debugDescription)")
+        } catch DecodingError.typeMismatch(_, let context) {
+            fatalError("Failed to decode \(file) from bundle due to type mismatch – \(context.debugDescription)")
+        } catch DecodingError.valueNotFound(let type, let context) {
+            fatalError("Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
+        } catch DecodingError.dataCorrupted(_) {
+            fatalError("Failed to decode \(file) from bundle because it appears to be invalid JSON")
+        } catch {
+            fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
+        }
     }
 }
