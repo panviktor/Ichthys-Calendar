@@ -8,15 +8,6 @@
 import SwiftUI
 import MediaPlayer
 
-let url = URL(string: "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u")!
-let url2 = URL(string: "http://icecast.radonezh.cdnvideo.ru:8000/rad128")!
-
-let radioStation1: RadioStation = RadioStation(name: "Radonezh", streamURL: url,
-                                               description: "Desc1", longDescription: "Long desk 1")
-
-let radioStation2: RadioStation = RadioStation(name: "Радио Радонеж", streamURL: url2,
-                                               description: "Desc22", longDescription: "Long desk 22", stationStringImage: "Radonez")
-
 class RadioViewViewModel: ObservableObject {
     let radio = RadioPlayer.shared
     @AppStorage("currentStation") private var currentStationIndex = 0
@@ -34,8 +25,6 @@ class RadioViewViewModel: ObservableObject {
     }
     
     private func fetchRadioStaionList() {
-//        stations.append(radioStation1)
-//        stations.append(radioStation2)
         stations = Bundle.main.decode([RadioStation].self, from: "stations.json")
     }
     
