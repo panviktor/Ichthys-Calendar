@@ -39,6 +39,10 @@ struct RadioList: View {
                                     .fill(Constant.gradientBackground)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 VStack {
+                                    Text("sfdgdfgdfgdfgdfgfdfgdf")
+                                        .font(.callout)
+                                        .padding()
+                                    
                                     HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
                                         Button(action: {
                                             viewModel.previousStation()
@@ -60,6 +64,15 @@ struct RadioList: View {
                                         .buttonStyle((RadioButtonStyle()))
                                         
                                         Button(action: {
+                                            viewModel.stop()
+                                        }) {
+                                            Image(systemName: "stop.fill")
+                                                .foregroundColor(.red)
+                                                .font(.title)
+                                        }
+                                        .buttonStyle((RadioButtonStyle()))
+                                        
+                                        Button(action: {
                                             viewModel.nextStation()
                                         }) {
                                             Image(systemName: "forward.fill")
@@ -68,7 +81,7 @@ struct RadioList: View {
                                         }
                                         .buttonStyle((RadioButtonStyle()))
                                     }
-                                    Text("sdfsdfs")
+                                    .padding(.bottom )
                                 }
                             }
                             .cornerRadius(15)

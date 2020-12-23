@@ -10,7 +10,7 @@ import SwiftUI
 struct RadioButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(25)
+            .padding(15)
             .background(
                 Group {
                     if configuration.isPressed {
