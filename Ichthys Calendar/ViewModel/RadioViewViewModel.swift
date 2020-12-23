@@ -17,6 +17,9 @@ class RadioViewViewModel: ObservableObject {
     @Published var artistName = ""
     @Published var trackName = ""
     @Published var stationImage = UIImage()
+    var isPlaying: Bool {
+        radio.isPlaying
+    }
 
     init() {
         radio.delegate = self
@@ -61,12 +64,8 @@ class RadioViewViewModel: ObservableObject {
         }
     }
     
-    func play() {
-        radio.play()
-    }
-    
-    func pause() {
-        radio.pause()
+    func togglePlaying() {
+        radio.togglePlaying()
     }
     
     func stop() {
