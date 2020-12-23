@@ -16,6 +16,8 @@
 		771469792590A2C9006A8C37 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771469782590A2C9006A8C37 /* RadioStation.swift */; };
 		7714698725920550006A8C37 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 7714698625920550006A8C37 /* stations.json */; };
 		7714698D2593684E006A8C37 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7714698C2593684E006A8C37 /* VolumeSlider.swift */; };
+		771469942593802B006A8C37 /* RadioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771469932593802B006A8C37 /* RadioRow.swift */; };
+		7714699B259384F5006A8C37 /* RadioIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7714699A259384F5006A8C37 /* RadioIconImage.swift */; };
 		7716CDA5258E709500FE6675 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716CDA4258E709500FE6675 /* RadioView.swift */; };
 		7716CDBD258FAD9800FE6675 /* RadioViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7716CDBC258FAD9800FE6675 /* RadioViewViewModel.swift */; };
 		7717BAA7255D426F002AD3A6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7717BAA6255D426F002AD3A6 /* WelcomeView.swift */; };
@@ -160,6 +162,8 @@
 		771469782590A2C9006A8C37 /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
 		7714698625920550006A8C37 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		7714698C2593684E006A8C37 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
+		771469932593802B006A8C37 /* RadioRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioRow.swift; sourceTree = "<group>"; };
+		7714699A259384F5006A8C37 /* RadioIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioIconImage.swift; sourceTree = "<group>"; };
 		7716CDA4258E709500FE6675 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		7716CDBC258FAD9800FE6675 /* RadioViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioViewViewModel.swift; sourceTree = "<group>"; };
 		7717BAA6255D426F002AD3A6 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				7714698C2593684E006A8C37 /* VolumeSlider.swift */,
+				7714699A259384F5006A8C37 /* RadioIconImage.swift */,
 			);
 			path = RadioView;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				7716CDA4258E709500FE6675 /* RadioView.swift */,
+				771469932593802B006A8C37 /* RadioRow.swift */,
 			);
 			path = RadioView;
 			sourceTree = "<group>";
@@ -808,6 +814,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771469942593802B006A8C37 /* RadioRow.swift in Sources */,
 				77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */,
 				77F50300256D09A500CEB92D /* DayIconImageSaved.swift in Sources */,
 				773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */,
@@ -854,6 +861,7 @@
 				77F070142557234B00BFDD3A /* ImageCache.swift in Sources */,
 				77AC6A1A256ACC33004BAEE9 /* CanonCDM+CoreDataProperties.swift in Sources */,
 				7766267225595B700009B6FA /* DetailSaintView.swift in Sources */,
+				7714699B259384F5006A8C37 /* RadioIconImage.swift in Sources */,
 				77F06FFD2556A8B500BFDD3A /* DayViewModel.swift in Sources */,
 				77FD6ABC256EBC8B00571D36 /* BasicNeumorphicShadow.swift in Sources */,
 				77146963258FB5BB006A8C37 /* RadioPlayerDelegate.swift in Sources */,

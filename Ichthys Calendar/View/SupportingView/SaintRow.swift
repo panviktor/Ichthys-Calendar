@@ -51,5 +51,6 @@ struct SaintRow: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         SaintRow(saintName: "мц. Кла́вдия Анкирская (Коринфская), дева", saintImageURL:  URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!)
+            .previewLayout(.fixed(width: 600, height: 200))
     }
 }
