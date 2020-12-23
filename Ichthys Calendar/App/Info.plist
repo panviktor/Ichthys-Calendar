@@ -33,6 +33,15 @@
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
+            
+            <key>s01.radio-tochka.com:4990/radio</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+            
 			<key>icecast.radonezh.cdnvideo.ru:8000/rad128</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>

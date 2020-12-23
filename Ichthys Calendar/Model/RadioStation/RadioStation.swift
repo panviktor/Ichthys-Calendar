@@ -8,14 +8,16 @@
 import Foundation
 
 struct RadioStation: Codable {
-    var name: String
-    var streamURL: URL
-    var description: String
-    var longDescription: String
-    var stationImage: String?
+    let id: Int
+    let name: String
+    let streamURL: URL
+    let description: String
+    let longDescription: String
+    let stationImage: String?
     
-    init(name: String, streamURL: URL,  description: String = "",
+    init(id: Int, name: String, streamURL: URL,  description: String = "",
          longDescription: String = "", stationStringImage: String? = nil) {
+        self.id = id
         self.name = name
         self.streamURL = streamURL
         self.description = description
@@ -26,6 +28,6 @@ struct RadioStation: Codable {
 
 extension RadioStation: Equatable {
     static func == (lhs: RadioStation, rhs: RadioStation) -> Bool {
-        return (lhs.name == rhs.name) && (lhs.streamURL == rhs.streamURL) && (lhs.description == rhs.description) && (lhs.longDescription == rhs.longDescription)
+        return (lhs.id == rhs.id) && (lhs.name == rhs.name) && (lhs.streamURL == rhs.streamURL)
     }
 }
