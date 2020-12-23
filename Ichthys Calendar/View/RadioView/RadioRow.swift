@@ -11,29 +11,43 @@ struct RadioRow: View {
     let station: RadioStation
     
     var body: some View {
-            ZStack(alignment: .leading)  {
-                WaveShape()
+        GeometryReader { geometry in
+            ZStack {
+                Rectangle()
                     .fill(Constant.gradientBackground)
-                    HStack {
-                        Image(uiImage: UIImage(named: station.stationImage!) ?? Constant.radioImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(3)
-                            .clipped()
-                            .frame(width: 135, height: 135)
-                        VStack {
-                            Text(station.name)
-                                .font(.title)
-                                .layoutPriority(10)
-                        }
-                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack(alignment: .center) {
+                    Image(uiImage: UIImage(named: station.stationImage!) ?? Constant.radioImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding(1)
+                        .frame(minWidth: geometry.size.width * 0.25,
+                               maxWidth: geometry.size.width * 0.35,
+                               minHeight: geometry.size.width * 0.25,
+                               maxHeight: geometry.size.width * 0.35)
+                    Text(station.name)
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .padding(2)
+                }
             }
+            .frame(width: geometry.size.width * 0.44, height: geometry.size.width * 0.44)
+            .cornerRadius(15)
+            .padding(6)
+            .modifier(BasicNeumorphicShadow())
+        }
     }
 }
 
 struct RadioRow_Previews: PreviewProvider {
     static var previews: some View {
-        RadioRow(station: RadioStation.mocRadio)
-            .previewLayout(.fixed(width: 600, height: 400))
+        Group {
+            RadioRow(station: RadioStation.mocRadio)
+            RadioRow(station: RadioStation.mocRadio)
+                .preferredColorScheme(.dark)
+        }
     }
 }
