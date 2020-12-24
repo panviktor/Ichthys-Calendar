@@ -22,6 +22,7 @@ struct Ichthys_CalendarApp: App {
         WindowGroup {
             CalendarView(dayViewModel: DayViewModel())
                 .environment(\.managedObjectContext, calendarCoreDataManager.persistentContainer.viewContext)
+                .environmentObject(OrientationInfo())
         }
         .onChange(of: scenePhase) { phase in
             switch phase {
