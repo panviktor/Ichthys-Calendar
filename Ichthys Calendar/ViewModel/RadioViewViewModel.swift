@@ -10,10 +10,12 @@ import MediaPlayer
 
 class RadioViewViewModel: ObservableObject {
     let radio = RadioPlayer.shared
-    @AppStorage("currentStation") private var currentStationIndex = 0
+ //   @AppStorage("currentStation")
+    private var currentStationIndex = 0
     
     // MARK: - Lists
     @Published var stations = [RadioStation]()
+    @Published var currentStation: RadioStation?
     @Published var artistName = ""
     @Published var trackName = ""
     @Published var stationImage = UIImage()
@@ -56,7 +58,7 @@ class RadioViewViewModel: ObservableObject {
     
     func playRadioStation(_ station: RadioStation) {
         radio.radioStation = station
-        
+        currentStation = station
         if let unrappedImage = station.stationImage {
             stationImage = UIImage(named: unrappedImage) ?? Constant.radioImage
         } else {
