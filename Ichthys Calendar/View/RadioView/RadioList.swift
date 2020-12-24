@@ -24,12 +24,13 @@ struct RadioList: View {
                     }
                     .frame(width: geometry.size.width, height: 15)
                     .edgesIgnoringSafeArea(.top)
-                  
+                    
                     if orientationInfo.orientation == .portrait {
                         Spacer()
                         Text("Grid 2")
                         Spacer()
                         
+                        //MARK: - Portrait Player GUI
                         ZStack {
                             Rectangle()
                                 .fill(Constant.gradientBackground)
@@ -41,10 +42,9 @@ struct RadioList: View {
                                         .fill(Constant.gradientBackground)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     VStack {
-                                        Text("sfdgdfgdfgdfgdfgfdfgdf")
+                                        Text(viewModel.currentStation?.name ?? "Choose radio station")
                                             .font(.callout)
                                             .padding()
-                                        
                                         HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
                                             Button(action: {
                                                 viewModel.previousStation()
@@ -95,6 +95,7 @@ struct RadioList: View {
                         .cornerRadius(15)
                         .padding(5)
                     } else {
+                        //MARK: - Landscape Player GUI
                         HStack {
                             ZStack {
                                 Rectangle()
@@ -108,7 +109,27 @@ struct RadioList: View {
                                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                                         VStack {
                                             Spacer()
-                                            Text("sfdgdfgdfgdfgdfgfdfgdf")
+                                            if let image = viewModel.currentStation?.stationImage, let uiImage = UIImage(named: image) {
+                                                Image(uiImage: uiImage)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .padding(1)
+                                                    .frame(minWidth: geometry.size.width * 0.15,
+                                                           maxWidth: geometry.size.width * 0.35,
+                                                           minHeight: geometry.size.width * 0.15,
+                                                           maxHeight: geometry.size.width * 0.35)
+                                            } else {
+                                                Image(uiImage: Constant.radioImage)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .padding(1)
+                                                    .frame(minWidth: geometry.size.width * 0.15,
+                                                           maxWidth: geometry.size.width * 0.35,
+                                                           minHeight: geometry.size.width * 0.15,
+                                                           maxHeight: geometry.size.width * 0.35)
+                                            }
+                                            
+                                            Text(viewModel.currentStation?.name ?? "Choose radio station")
                                                 .font(.callout)
                                                 .padding(.vertical)
                                             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
@@ -161,7 +182,7 @@ struct RadioList: View {
                             .cornerRadius(15)
                             .padding(5)
                             
-                          Spacer()
+                            Spacer()
                         }
                     }
                 }
