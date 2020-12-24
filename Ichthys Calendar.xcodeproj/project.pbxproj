@@ -121,6 +121,8 @@
 		77F070172557260300BFDD3A /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F070162557260300BFDD3A /* TemporaryImageCache.swift */; };
 		77F0701A25572C0300BFDD3A /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F0701925572C0300BFDD3A /* ImageCacheKey.swift */; };
 		77F50300256D09A500CEB92D /* DayIconImageSaved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F502FF256D09A500CEB92D /* DayIconImageSaved.swift */; };
+		77F5ACD925951FB700F481A6 /* OrientationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5ACD825951FB700F481A6 /* OrientationInfo.swift */; };
+		77F5ACDD259520EA00F481A6 /* Extension+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F5ACDC259520EA00F481A6 /* Extension+Bundle.swift */; };
 		77F94F322566BC020015DA7A /* SaintRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F94F312566BC020015DA7A /* SaintRow.swift */; };
 		77FC05AC2559637B001AE985 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AB2559637B001AE985 /* Extension+String.swift */; };
 		77FC05AF2559638A001AE985 /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC05AE2559638A001AE985 /* Extension+Data.swift */; };
@@ -256,6 +258,8 @@
 		77F070162557260300BFDD3A /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
 		77F0701925572C0300BFDD3A /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
 		77F502FF256D09A500CEB92D /* DayIconImageSaved.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayIconImageSaved.swift; sourceTree = "<group>"; };
+		77F5ACD825951FB700F481A6 /* OrientationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationInfo.swift; sourceTree = "<group>"; };
+		77F5ACDC259520EA00F481A6 /* Extension+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Bundle.swift"; sourceTree = "<group>"; };
 		77F94F312566BC020015DA7A /* SaintRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintRow.swift; sourceTree = "<group>"; };
 		77FC05AB2559637B001AE985 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		77FC05AE2559638A001AE985 /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
@@ -580,6 +584,7 @@
 				77FC05B1255963C0001AE985 /* Extension */,
 				776B81B32566BD300073C47E /* Constant.swift */,
 				775272C925752D9F00FE8FFF /* StoreReviewHelper.swift */,
+				77F5ACD825951FB700F481A6 /* OrientationInfo.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				777EF14A2575A69100E4016E /* Extension+LinearGradient.swift */,
 				777EF14E2575A71200E4016E /* Extension+Color.swift */,
 				77DA147F2582A58D0022618C /* Extension+View.swift */,
+				77F5ACDC259520EA00F481A6 /* Extension+Bundle.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -816,6 +822,7 @@
 			files = (
 				771469942593802B006A8C37 /* RadioRow.swift in Sources */,
 				77CEBE92255DC2FF0018B632 /* Prayer.swift in Sources */,
+				77F5ACD925951FB700F481A6 /* OrientationInfo.swift in Sources */,
 				77F50300256D09A500CEB92D /* DayIconImageSaved.swift in Sources */,
 				773B3513256431A500B0BFE1 /* Extension+DateFormatter.swift in Sources */,
 				7774ACC6255C421100FE1252 /* MainImagePlaceholder.swift in Sources */,
@@ -831,6 +838,7 @@
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
 				7714696B258FB61C006A8C37 /* RadioPlayerState.swift in Sources */,
 				7766266F25595ADF0009B6FA /* DetailSaintViewModel.swift in Sources */,
+				77F5ACDD259520EA00F481A6 /* Extension+Bundle.swift in Sources */,
 				776B81BB256705D60073C47E /* SavedSaintList.swift in Sources */,
 				773B351625650EFC00B0BFE1 /* HolidayView.swift in Sources */,
 				779724A92569119D008C03D5 /* PersistenceManager.swift in Sources */,
