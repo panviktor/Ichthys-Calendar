@@ -59,10 +59,17 @@ struct RadioList: View {
                                         .fill(Constant.gradientBackground)
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     VStack {
-                                        Text(viewModel.currentStation?.name ?? "Choose radio station")
+                                        Text(viewModel.currentStation?.name ?? NSLocalizedString("Choose radio station", comment: ""))
                                             .font(.callout)
+                                            .bold()
                                             .padding()
-                                        HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                                        VStack(alignment: .leading) {
+                                            Text(viewModel.trackName)
+                                                .font(.caption2)
+                                                .padding(.bottom, 5)
+                                        }
+                                        
+                                        HStack(alignment: .center, spacing: 10) {
                                             Button(action: {
                                                 viewModel.previousStation()
                                             }) {
@@ -147,9 +154,6 @@ struct RadioList: View {
                                                            maxHeight: geometry.size.width * 0.35)
                                             }
                                             
-                                            Text(viewModel.currentStation?.name ?? "Choose radio station")
-                                                .font(.callout)
-                                                .padding(.vertical)
                                             HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
                                                 Button(action: {
                                                     viewModel.previousStation()
