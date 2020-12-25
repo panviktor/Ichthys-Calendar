@@ -10,8 +10,8 @@ import MediaPlayer
 
 class RadioViewViewModel: ObservableObject {
     let radio = RadioPlayer.shared
- //   @AppStorage("currentStation")
-    private var currentStationIndex = 0
+    @AppStorage("currentStation") private var currentStationIndex = 0
+    @AppStorage("wasPlaying") private var wasPlaying = false
     
     // MARK: - Lists
     @Published var stations = [RadioStation]()
@@ -22,11 +22,12 @@ class RadioViewViewModel: ObservableObject {
     var isPlaying: Bool {
         radio.isPlaying
     }
-
+    
     init() {
         radio.delegate = self
         setupRemoteTransportControls()
         fetchRadioStaionList()
+        play()
     }
     
     private func fetchRadioStaionList() {
@@ -67,11 +68,20 @@ class RadioViewViewModel: ObservableObject {
     }
     
     func togglePlaying() {
+        wasPlaying.toggle()
         radio.togglePlaying()
     }
-    
+
     func stop() {
+        wasPlaying = false
         radio.stop()
+    }
+    
+    private func play() {
+        guard !stations.isEmpty else { return }
+        if wasPlaying {
+            playRadioStation(stations[currentStationIndex])
+        }
     }
     
     //MARK: - Volume

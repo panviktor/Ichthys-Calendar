@@ -12,13 +12,13 @@ struct RadioList: View {
     @EnvironmentObject var orientationInfo: OrientationInfo
     @Environment(\.colorScheme) var colorScheme
     @State var isPlaying = true
+    @State private var selectedStation: RadioStation? = nil
     
     let portraitLayout = [GridItem(.flexible()), GridItem(.flexible())]
     let landscapeLayout = [GridItem(.flexible())]
     
     var body: some View {
         GeometryReader { geometry in
-            
             colorScheme == .dark ? Color.black : Color.white
             ZStack {
                 VStack {
@@ -35,6 +35,12 @@ struct RadioList: View {
                             LazyVGrid(columns: portraitLayout, alignment: .center, spacing: 5) {
                                 ForEach(viewModel.stations) { station in
                                     RadioRow(station: station)
+                                        .onTapGesture {
+                                            viewModel.playRadioStation(station)
+                                        }
+                                        .onLongPressGesture(minimumDuration: 1.5) {
+                                            selectedStation = station
+                                        }
                                 }
                             }
                         }
@@ -96,6 +102,7 @@ struct RadioList: View {
                                         }
                                         .padding(.bottom )
                                     }
+                                    .compositingGroup()
                                 }
                                 .cornerRadius(15)
                                 .padding(6)
@@ -188,6 +195,7 @@ struct RadioList: View {
                                     .padding(6)
                                     .modifier(BasicNeumorphicShadow())
                                 }
+                                .compositingGroup()
                             }
                             .frame(width: geometry.size.width / 1.8)
                             .cornerRadius(15)
@@ -200,6 +208,12 @@ struct RadioList: View {
                                     LazyHGrid(rows: landscapeLayout, alignment: .center, spacing: 10) {
                                         ForEach(viewModel.stations) { station in
                                             RadioRow(station: station)
+                                                .onTapGesture {
+                                                    viewModel.playRadioStation(station)
+                                                }
+                                                .onLongPressGesture(minimumDuration: 2) {
+                                                    selectedStation = station
+                                                }
                                         }
                                     }
                                 }
@@ -211,7 +225,11 @@ struct RadioList: View {
                     }
                 }
             }
+            .sheet(item: $selectedStation) { station in
+                DetailRadioView(station: station)
+            }
         }
+        
     }
 }
 
