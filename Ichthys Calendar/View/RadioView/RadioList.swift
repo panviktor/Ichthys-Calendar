@@ -13,8 +13,12 @@ struct RadioList: View {
     @Environment(\.colorScheme) var colorScheme
     @State var isPlaying = true
     
+    let portraitLayout = [GridItem(.flexible()), GridItem(.flexible())]
+    let landscapeLayout = [GridItem(.flexible())]
+    
     var body: some View {
         GeometryReader { geometry in
+            
             colorScheme == .dark ? Color.black : Color.white
             ZStack {
                 VStack {
@@ -27,7 +31,14 @@ struct RadioList: View {
                     
                     if orientationInfo.orientation == .portrait {
                         Spacer()
-                        Text("Grid 2")
+                        ScrollView {
+                            LazyVGrid(columns: portraitLayout, alignment: .center, spacing: 5) {
+                                ForEach(viewModel.stations) { station in
+                                    RadioRow(station: station)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 2.5)
                         Spacer()
                         
                         //MARK: - Portrait Player GUI
@@ -183,6 +194,19 @@ struct RadioList: View {
                             .padding(5)
                             
                             Spacer()
+                            VStack {
+                                Spacer()
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    LazyHGrid(rows: landscapeLayout, alignment: .center, spacing: 10) {
+                                        ForEach(viewModel.stations) { station in
+                                            RadioRow(station: station)
+                                        }
+                                    }
+                                }
+                                .padding(5)
+                                Spacer()
+                            }
+                            Spacer()
                         }
                     }
                 }
@@ -195,7 +219,9 @@ struct RadioView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             RadioList(viewModel: RadioViewViewModel())
+                .environmentObject(OrientationInfo())
             RadioList(viewModel: RadioViewViewModel())
+                .environmentObject(OrientationInfo())
                 .preferredColorScheme(.dark)
                 .previewDevice("iPod touch (7th generation)")
         }

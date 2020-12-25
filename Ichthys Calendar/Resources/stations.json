@@ -24,5 +24,77 @@
         "stationImage": "station-newportfolk.png",
         "description": "Are you ready to Folk?",
         "longDescription": "Do you like Indie music and along with that wants a radio that will provide lots of folk music in their daily radio programs than wait not just tune in to Newport Folk Radio as this is the kind of radio that has got lots of types of Indie music in their daily radio programs along with popular Folk music."
+    },
+    
+    {
+        "id": 5,
+        "name": "Рязанское епархиальное радио",
+        "streamURL": "http://s01.radio-tochka.com:4990/radio",
+        "stationImage": "RazanEparhialnoeRadio",
+        "description": "Рязанское епархиальное радио – разговорно-музыкальная станция, работающая ежедневно на частоте 102.5 FM в Рязани и 101 FM в области, а также в сети интернет.",
+        "longDescription": " Часы вещания – с 7.00 до 9.00 и с 19.00 до 21.00 по будням, и в выходные – с 11.00 до 12.00, с 15.00 до 16.00, с 19.00 до 21.00 часа. Программы епархиального радио затрагивают не только узкую церковную тематику, но также освещают вопросы науки, истории, культуры, семейных ценностей и жизни молодежи, и будут интересны широкому кругу радиослушателей."
+    },
+    
+    {
+        "id": 6,
+        "name": "Newport Folk Radio",
+        "streamURL": "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u",
+        "stationImage": "station-newportfolk.png",
+        "description": "Are you ready to Folk?",
+        "longDescription": "Do you like Indie music and along with that wants a radio that will provide lots of folk music in their daily radio programs than wait not just tune in to Newport Folk Radio as this is the kind of radio that has got lots of types of Indie music in their daily radio programs along with popular Folk music."
+    },
+    
+    {
+        "id": 7,
+        "name": "Рязанское епархиальное радио",
+        "streamURL": "http://s01.radio-tochka.com:4990/radio",
+        "stationImage": "RazanEparhialnoeRadio",
+        "description": "Рязанское епархиальное радио – разговорно-музыкальная станция, работающая ежедневно на частоте 102.5 FM в Рязани и 101 FM в области, а также в сети интернет.",
+        "longDescription": " Часы вещания – с 7.00 до 9.00 и с 19.00 до 21.00 по будням, и в выходные – с 11.00 до 12.00, с 15.00 до 16.00, с 19.00 до 21.00 часа. Программы епархиального радио затрагивают не только узкую церковную тематику, но также освещают вопросы науки, истории, культуры, семейных ценностей и жизни молодежи, и будут интересны широкому кругу радиослушателей."
+    },
+    
+    {
+        "id": 8,
+        "name": "Newport Folk Radio",
+        "streamURL": "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u",
+        "stationImage": "station-newportfolk.png",
+        "description": "Are you ready to Folk?",
+        "longDescription": "Do you like Indie music and along with that wants a radio that will provide lots of folk music in their daily radio programs than wait not just tune in to Newport Folk Radio as this is the kind of radio that has got lots of types of Indie music in their daily radio programs along with popular Folk music."
+    },
+    
+    {
+        "id": 9,
+        "name": "Рязанское епархиальное радио",
+        "streamURL": "http://s01.radio-tochka.com:4990/radio",
+        "stationImage": "RazanEparhialnoeRadio",
+        "description": "Рязанское епархиальное радио – разговорно-музыкальная станция, работающая ежедневно на частоте 102.5 FM в Рязани и 101 FM в области, а также в сети интернет.",
+        "longDescription": " Часы вещания – с 7.00 до 9.00 и с 19.00 до 21.00 по будням, и в выходные – с 11.00 до 12.00, с 15.00 до 16.00, с 19.00 до 21.00 часа. Программы епархиального радио затрагивают не только узкую церковную тематику, но также освещают вопросы науки, истории, культуры, семейных ценностей и жизни молодежи, и будут интересны широкому кругу радиослушателей."
+    },
+    
+    {
+        "id": 10,
+        "name": "Newport Folk Radio",
+        "streamURL": "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u",
+        "stationImage": "station-newportfolk.png",
+        "description": "Are you ready to Folk?",
+        "longDescription": "Do you like Indie music and along with that wants a radio that will provide lots of folk music in their daily radio programs than wait not just tune in to Newport Folk Radio as this is the kind of radio that has got lots of types of Indie music in their daily radio programs along with popular Folk music."
+    },
+    
+    {
+        "id": 11,
+        "name": "Рязанское епархиальное радио",
+        "streamURL": "http://s01.radio-tochka.com:4990/radio",
+        "stationImage": "RazanEparhialnoeRadio",
+        "description": "Рязанское епархиальное радио – разговорно-музыкальная станция, работающая ежедневно на частоте 102.5 FM в Рязани и 101 FM в области, а также в сети интернет.",
+        "longDescription": " Часы вещания – с 7.00 до 9.00 и с 19.00 до 21.00 по будням, и в выходные – с 11.00 до 12.00, с 15.00 до 16.00, с 19.00 до 21.00 часа. Программы епархиального радио затрагивают не только узкую церковную тематику, но также освещают вопросы науки, истории, культуры, семейных ценностей и жизни молодежи, и будут интересны широкому кругу радиослушателей."
+    },
+    
+    {
+        "id": 12,
+        "name": "Newport Folk Radio",
+        "streamURL": "https://upwaveradio.ru/playlist/upwaveradio_128kb.m3u",
+        "stationImage": "station-newportfolk.png",
+        "description": "Are you ready to Folk?",
+        "longDescription": "Do you like Indie music and along with that wants a radio that will provide lots of folk music in their daily radio programs than wait not just tune in to Newport Folk Radio as this is the kind of radio that has got lots of types of Indie music in their daily radio programs along with popular Folk music."
     }
 ]
