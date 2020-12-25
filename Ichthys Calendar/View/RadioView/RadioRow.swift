@@ -52,6 +52,7 @@ struct RadioRow: View {
             .cornerRadius(15)
             .padding(6)
             .modifier(BasicNeumorphicShadow())
+            .compositingGroup()
         } else {
             ZStack {
                 Rectangle()
@@ -82,6 +83,7 @@ struct RadioRow: View {
             .cornerRadius(15)
             .padding(6)
             .modifier(BasicNeumorphicShadow())
+            .compositingGroup()
         }
     }
 }

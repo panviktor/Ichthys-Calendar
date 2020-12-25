@@ -108,6 +108,7 @@
 		77D2021E2572B8A30053532F /* Prayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE91255DC2FF0018B632 /* Prayer.swift */; };
 		77D202212572B8A60053532F /* Canon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CEBE8E255DC2E30018B632 /* Canon.swift */; };
 		77DA14802582A58D0022618C /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DA147F2582A58D0022618C /* Extension+View.swift */; };
+		77E73E722596518300B64729 /* DetailRadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E73E712596518300B64729 /* DetailRadioView.swift */; };
 		77F06FEB25566E9C00BFDD3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEA25566E9C00BFDD3A /* APIService.swift */; };
 		77F06FEF25566F8700BFDD3A /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */; };
 		77F06FF225566FA800BFDD3A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F06FF125566FA800BFDD3A /* APIError.swift */; };
@@ -245,6 +246,7 @@
 		77D0024525727EAC0087CBA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77D0024725727EAC0087CBA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77DA147F2582A58D0022618C /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		77E73E712596518300B64729 /* DetailRadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRadioView.swift; sourceTree = "<group>"; };
 		77F06FEA25566E9C00BFDD3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		77F06FEE25566F8700BFDD3A /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		77F06FF125566FA800BFDD3A /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			children = (
 				7716CDA4258E709500FE6675 /* RadioList.swift */,
 				771469932593802B006A8C37 /* RadioRow.swift */,
+				77E73E712596518300B64729 /* DetailRadioView.swift */,
 			);
 			path = RadioView;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				779B7BB42555CBD1009C6835 /* Holiday.swift in Sources */,
 				771469792590A2C9006A8C37 /* RadioStation.swift in Sources */,
 				779B7BBC2555CBFE009C6835 /* Saint.swift in Sources */,
+				77E73E722596518300B64729 /* DetailRadioView.swift in Sources */,
 				7785672D256D8DF30024EDC1 /* CurrentDayInfoView.swift in Sources */,
 				779B7BD12555D45D009C6835 /* Extension+URLRequest.swift in Sources */,
 				7788CB3725557231000D70D8 /* DayData.swift in Sources */,
@@ -1098,7 +1102,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
@@ -1123,7 +1127,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"Ichthys Calendar/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				ENABLE_PREVIEWS = YES;
@@ -1147,7 +1151,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar Widget/WidgetCore/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
@@ -1171,7 +1175,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_TEAM = PFT2629W4Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Ichthys Calendar Widget/WidgetCore/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
