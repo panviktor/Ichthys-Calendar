@@ -13,6 +13,7 @@
 "The previous day will be loaded" = "Η προηγούμενη ημέρα θα φορτωθεί";
 "Today" = "Σήμερα";
 "Saved" = "Αποθηκεύτηκε";
+"Radio" = "Ραδιόφωνο";
 "About" = "Σχετικά με";
 
 //DetailSaintView
@@ -60,3 +61,6 @@
 "Thursday" = "Πέμπτη";
 "Christmas fast" = "Χριστούγεννα γρήγορα";
 "Icons of the Mother of God called \"Sign\"" = "Εικονίδια της Μητέρας του Θεού που ονομάζεται \"Σημάδι \"";
+
+//RadioList
+"Choose radio station" = "Επιλέξτε ραδιοφωνικό σταθμό";

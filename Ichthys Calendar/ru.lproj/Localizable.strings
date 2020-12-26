@@ -13,6 +13,7 @@
 "The previous day will be loaded" = "Будет загружен предыдущий день";
 "Today" = "Сегодня";
 "Saved" = "Сохраненные";
+"Radio" = "Радио";
 "About" = "Про программу";
 
 //DetailSaintView
@@ -60,3 +61,6 @@
 "Thursday" = "Четверг";
 "Christmas fast" = "Рождественский пост";
 "Icons of the Mother of God called \"Sign\"" = "Иконы Богородицы под названием \"Знамение\"";
+
+//RadioList
+"Choose radio station" = "Выберите радиостанцию";

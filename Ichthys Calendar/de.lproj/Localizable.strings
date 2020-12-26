@@ -13,6 +13,7 @@
 "The previous day will be loaded" = "Der vorherige Tag wird geladen";
 "Today" = "Heute";
 "Saved" = "Gerettet";
+"Radio" = "Radio";
 "About" = "Über";
 
 //DetailSaintView
@@ -60,3 +61,6 @@
 "Thursday" = "Donnerstag";
 "Christmas fast" = "Weihnachtspost";
 "Icons of the Mother of God called \"Sign\"" = "Ikonen der Muttergottes namens \"Zeichen\"";
+
+//RadioList
+"Choose radio station" = "Wählen Sie einen Radiosender";

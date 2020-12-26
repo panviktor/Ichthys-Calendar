@@ -37,11 +37,10 @@ struct CalendarView: View {
                             .cornerRadius(15)
                             .padding(.horizontal, 5)
                             .modifier(BasicNeumorphicShadow())
-                           
-
+                            
                             CurrentDayInfoView(viewModel: CurrentDayInfoViewModel(date: dayViewModel.date, dayInfo: dayViewModel.fasting))
                             HolidayView(viewModel: HolidayViewViewModel(holidays:  dayViewModel.holidays))
-                        
+                            
                             ScrollView {
                                 Rectangle()
                                     .fill(Color(#colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)).opacity(0))
@@ -92,17 +91,22 @@ struct CalendarView: View {
             }
             .tabItem {
                 Image(systemName: "calendar")
-                Text("Today")
+                Text(NSLocalizedString("Today", comment: ""))
             }
             SavedSaintList()
                 .tabItem {
                     Image(systemName: "heart.circle")
-                    Text("Saved")
+                    Text(NSLocalizedString("Saved", comment: ""))
+                }
+            RadioList(viewModel: RadioViewViewModel())
+                .tabItem {
+                    Image(systemName: "radio")
+                    Text(NSLocalizedString("Radio", comment: ""))
                 }
             About()
                 .tabItem {
                     Image(systemName: "info.circle")
-                    Text("About")
+                    Text(NSLocalizedString("About", comment: ""))
                 }
         }
         .onAppear {

@@ -13,6 +13,7 @@
 "The previous day will be loaded" = "Ziua precedentă va fi încărcată";
 "Today" = "Astăzi";
 "Saved" = "Salvat";
+"Radio" = "Radio";
 "About" = "Despre program";
 
 //DetailSaintView
@@ -61,3 +62,5 @@
 "Christmas fast" = "Post de Crăciun";
 "Icons of the Mother of God called \"Sign\"" = "Icoanele Fecioarei sub titlul \"Semna\"";
 
+//RadioList
+"Choose radio station" = "Alege postul de radio";
