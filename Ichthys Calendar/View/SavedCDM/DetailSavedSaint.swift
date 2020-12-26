@@ -23,6 +23,20 @@ struct DetailSavedSaint: View {
         }
     }
     
+    var backButton : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+    }) {
+        HStack {
+            if sizeClass == .compact {
+                Image(systemName: "arrow.backward.square.fill")
+                    .aspectRatio(contentMode: .fit)
+                Text(NSLocalizedString("Go back", comment: ""))
+            } else {
+                EmptyView()
+            }
+        }}
+    }
+    
     var headerView: some View {
         ZStack {
             if let image = detailSavedSaintViewModel.images.first {
@@ -124,7 +138,13 @@ struct DetailSavedSaint: View {
             }
             .padding(.horizontal)
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitle(Text(detailSavedSaintViewModel.name), displayMode: .inline)
-        .navigationBarItems( trailing: saveButton)
+        .navigationBarItems(leading:backButton, trailing: saveButton)
+        .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
+            if (value.startLocation.x < 20 && value.translation.width > 100) {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }))
     }
 }

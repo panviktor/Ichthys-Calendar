@@ -26,7 +26,49 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>217.24.181.164:8000/stream.mp3</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>91.203.4.121:8000/stream160</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
 			<key>icecast.radonezh.cdnvideo.ru:8000/rad128</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>live.borneo.ru:8888/bv128.m3u</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>radio-blagoveshchenie.ru:10000/stream</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>radio-spb.rusk.ru:8000/stream.m3u</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<key>radio.ukr.radio:8000/ur1-mp3-m</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -47,35 +89,14 @@
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
-			<key>217.24.181.164:8000/stream.mp3</key>
+			<key>s2.voscast.com:7584/stream</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
-			<key>radio-blagoveshchenie.ru:10000/stream</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>live.borneo.ru:8888/bv128.m3u</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>stream0.radiostyle.ru:8000/hramtroicy</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>radio-spb.rusk.ru:8000/stream.m3u</key>
+			<key>server.gradleva.com:8888/radio</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -89,28 +110,7 @@
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
-			<key>s2.voscast.com:7584/stream</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>91.203.4.121:8000/stream160</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>radio.ukr.radio:8000/ur1-mp3-m</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>server.gradleva.com:8888/radio</key>
+			<key>stream0.radiostyle.ru:8000/hramtroicy</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
