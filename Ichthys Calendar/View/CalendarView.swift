@@ -101,11 +101,11 @@ struct CalendarView: View {
             
             /// Apple demands to provide documents that I do not violate copyright.
             
-//            RadioList(viewModel: RadioViewViewModel())
-//                .tabItem {
-//                    Image(systemName: "radio")
-//                    Text(NSLocalizedString("Radio", comment: ""))
-//                }
+            RadioList(viewModel: RadioViewViewModel())
+                .tabItem {
+                    Image(systemName: "radio")
+                    Text(NSLocalizedString("Radio", comment: ""))
+                }
             About()
                 .tabItem {
                     Image(systemName: "info.circle")
