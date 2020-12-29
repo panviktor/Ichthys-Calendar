@@ -100,7 +100,6 @@ struct CalendarView: View {
                 }
             
             /// Apple demands to provide documents that I do not violate copyright.
-            
             RadioList(viewModel: RadioViewViewModel())
                 .tabItem {
                     Image(systemName: "radio")
