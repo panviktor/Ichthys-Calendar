@@ -1,0 +1,137 @@
+#EXTM3U url-tvg="http://www.teleguide.info/download/new3/xmltv.xml.gz"
+
+#EXTINF:-1 tvg-name="Союз" tvg-logo="http://profi-rus.narod.ru/iptv/logo/1s.png" ,Союз
+#EXTGRP:ТВ
+http://tvsoyuz.cdnvideo.ru/tvsoyuz/soyuz/playlist.m3u8
+
+#EXTINF:-1 tvg-name="Спас ТВ" tvg-logo="http://profi-rus.narod.ru/iptv/logo/2s.png" ,Спас
+#EXTGRP:ТВ
+http://spas.mediacdn.ru/cdn/spas/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-name="Радость_Моя" tvg-logo="http://profi-rus.narod.ru/iptv/logo/3r.png" ,Радость Моя
+#EXTGRP:ТВ
+http://strm.yandex.ru/kal/radostmoya/radostmoya0_169_576p.json/index-v1-a1.m3u8
+
+
+
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/6rr.png" ,Радио «Радонеж»
+#EXTGRP:Радио
+http://icecast.radonezh.cdnvideo.ru:8000/rad128
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/7v.png" ,Радио «Вера»
+#EXTGRP:Радио
+http://radiovera.hostingradio.ru:8007/radiovera_128
+
+#EXTINF:-1 tvg-name="TV Hram" tvg-logo="http://profi-rus.narod.ru/iptv/logo/30sh.png" ,Храм
+#EXTGRP:ТВ
+http://178.253.194.75:1935/live/hram.stream/playlist.m3u8
+
+#EXTINF:-1 tvg-name="Plovdiv Orthodox TV" tvg-logo="http://profi-rus.narod.ru/iptv/logo/31pd.png" ,Пловдив
+#EXTGRP:ТВ
+http://tv.plovdivskamitropolia.bg:1935/live/pptv.stream/playlist.m3u8
+
+
+#EXTINF:-1 tvg-name="МузСоюз" tvg-logo="http://profi-rus.narod.ru/iptv/logo/5m.png" ,Муз Союз
+#EXTGRP:ТВ
+http://strm.yandex.ru/kal/muzsoyuz/muzsoyuz0_169_576p.json/index-v1-a1.m3u8
+
+#EXTINF:-1 tvg-name="Глас" tvg-logo="http://profi-rus.narod.ru/iptv/logo/4g.png" ,Глас
+#EXTGRP:ТВ
+http://g7.wi.com.ua/hls/glassru.m3u8
+
+
+
+
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/8p.png" ,Радио «Санкт-Петербурга»
+#EXTGRP:Радио
+http://radio-spb.rusk.ru:8000/stream
+
+
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/17ss.png" ,Радио «Спасение»
+#EXTGRP:Радио
+http://s2.voscast.com:7584/stream
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/13e.png" ,Радио «Евангелие»
+#EXTGRP:Радио
+http://radio-tochka.com:6095/;stream.mp3
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/9v.png" ,Радио «Воскресение»
+#EXTGRP:Радио
+http://217.24.181.164:8000/stream.mp3
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/15d.png" ,Радио «Духовная Музыка»
+#EXTGRP:Радио
+http://ic7.101.ru:8000/a38?userid=1&
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/14g.png" ,Радио «Глаголъ»
+#EXTGRP:Радио
+http://s4.radioheart.ru:8007/8080
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/16o.png" ,Радио «Orthodox chants»
+#EXTGRP:Радио
+http://orthodox-chants.ru:8000/128kb
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/11b.png" ,Радио «Благовещение»
+#EXTGRP:Радио
+http://radio-blagoveshchenie.ru:10000/stream
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/12l.png" ,Радио «Луг Духовный»
+#EXTGRP:Радио
+http://radioveramolitva128mp3.streamr.ru
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/18o.png" ,Радио «Образ»
+#EXTGRP:Радио
+http://213.177.106.78:8006/
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/19b.png" ,Радио «Благо»
+#EXTGRP:Радио
+http://live.radioblago.ru:3281/broadwavehigh.mp3
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/20h.png" ,Радио Храма Живоначальной Троицы
+#EXTGRP:Радио
+http://stream0.radiostyle.ru:8000/hramtroicy
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/21o.png" ,Радио «Победа»
+#EXTGRP:Радио
+http://source.hostingradio.ru:8010/pobedaradio128-2.mp3
+
+
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/22a.png" ,Радио «Ancient Faith Radio»
+#EXTGRP:Радио
+https://ancientfaith.streamguys1.com/music
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/23r.png" ,Радио «The Rudder»
+#EXTGRP:Радио
+http://radio.myocn.net:8080/;stream/1
+
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/24h.png" ,ORTHODOX HEAVEN
+#EXTGRP:Радио
+http://s3.orthodoxheaven.com:8830/stream
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/25or.png" ,Радио Orthodoxia (17:00-22:00)
+#EXTGRP:Радио
+http://icecast.orth.weblike.pl:8000/orthodoxia.mp3
+
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/21o.png" ,Азбука «Жития святых»
+#EXTGRP:Радио
+https://radio.azbyka.ru/lives
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/21o.png" ,Азбука «Псалтирь (цся)»
+#EXTGRP:Радио
+https://radio.azbyka.ru/psaltir
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/21o.png" ,Азбука «Евангелие (цся)»
+#EXTGRP:Радио
+https://radio.azbyka.ru/chitaem-evangelie-csya
+
+#EXTINF:-1 tvg-logo="http://profi-rus.narod.ru/iptv/logo/21o.png" ,Азбука «Добротолюбие»
+#EXTGRP:Радио
+https://radio.azbyka.ru/dobrotolubie
+
+# Playlist created by http://profi-rus.narod.ru/
